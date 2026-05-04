@@ -239,6 +239,9 @@ export const womenTheme = {
       "tabActive": "#52766A",
       "tabInactive": "#6B7C85",
       "tabBackground": "#FFFFFF"
+    },
+    "overlay": {
+      "scrim": "rgba(0, 0, 0, 0.5)"
     }
   },
   "type": {

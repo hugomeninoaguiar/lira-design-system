@@ -239,6 +239,9 @@ export declare const tokens: {
       readonly tabInactive: "#6B7C85";
       readonly tabBackground: "#FFFFFF";
     };
+    readonly overlay: {
+      readonly scrim: "rgba(0, 0, 0, 0.5)";
+    };
   };
   readonly type: {
     readonly display: {

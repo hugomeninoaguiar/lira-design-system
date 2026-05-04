@@ -60,6 +60,9 @@
       "tabActive":     { "value": "{color.green.500}" },
       "tabInactive":   { "value": "{color.neutral.300}" },
       "tabBackground": { "value": "{color.neutral.0}" }
+    },
+    "overlay": {
+      "scrim": { "value": "rgba(0, 0, 0, 0.5)" }
     }
   }
 }
