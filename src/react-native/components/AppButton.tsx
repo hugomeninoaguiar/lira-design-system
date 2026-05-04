@@ -106,7 +106,7 @@ export function AppButton({
           {
             height: sized.height,
             paddingHorizontal: sized.paddingX,
-            borderRadius: theme.radius.pill ?? 999,
+            borderRadius: theme.radius.md ?? 16,
             opacity: isDisabled ? 0.6 : 1,
           },
           v.container,
