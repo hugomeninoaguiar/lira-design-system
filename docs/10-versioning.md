@@ -37,13 +37,13 @@ Anything else is non-breaking.
 Default to floating on `main` while the system is iterating fast:
 
 ```jsonc
-"@lira/design-system": "github:feelwithlira/lira-design-system#main"
+"@lira/design-system": "github:hugomeninoaguiar/lira-design-system#main"
 ```
 
 Pin to a tag once a consumer ships to production:
 
 ```jsonc
-"@lira/design-system": "github:feelwithlira/lira-design-system#v1.0.0"
+"@lira/design-system": "github:hugomeninoaguiar/lira-design-system#v1.0.0"
 ```
 
 Re-pin during a planned upgrade window — never silently drift.
@@ -53,7 +53,7 @@ Re-pin during a planned upgrade window — never silently drift.
 For experimental work, push a branch and pin consumers to it:
 
 ```jsonc
-"@lira/design-system": "github:feelwithlira/lira-design-system#feature/dark-mode"
+"@lira/design-system": "github:hugomeninoaguiar/lira-design-system#feature/dark-mode"
 ```
 
 Once the work is merged, swap back to a tag.

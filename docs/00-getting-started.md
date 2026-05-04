@@ -8,7 +8,7 @@ Pick the surface you're integrating and follow the matching section. Each sectio
 // package.json (any consumer repo)
 {
   "dependencies": {
-    "@lira/design-system": "github:feelwithlira/lira-design-system#main"
+    "@lira/design-system": "github:hugomeninoaguiar/lira-design-system#main"
   }
 }
 ```

@@ -18,7 +18,7 @@ Underneath all four: a **Universal Core** of tokens, type, spacing, radius, shad
 1. **One source of truth.** Every hex, every spacing value lives in `tokens/*.json`. Nothing else.
 2. **Two themes, one set of components.** Components reference *semantic* tokens (e.g. `--semantic-action-primary`). The active theme — Women or Professionals — is picked by setting `data-theme` on `<html>` (web) or wrapping in `<LiraThemeProvider>` (RN).
 3. **Generated artifacts.** `npm run build:tokens` emits CSS variables, a Tailwind v4 preset, ES + CJS JS, TS types, and an RN theme. Consumers import these — they never see the source JSON.
-4. **Distributed via git URL.** Each consumer adds `"@lira/design-system": "github:feelwithlira/lira-design-system#main"` to its `package.json`. No npm registry, no monorepo migration.
+4. **Distributed via git URL.** Each consumer adds `"@lira/design-system": "github:hugomeninoaguiar/lira-design-system#main"` to its `package.json`. No npm registry, no monorepo migration.
 
 ---
 
@@ -70,7 +70,7 @@ Each surface has a one-page integration spec under `docs/00-getting-started.md`.
 ```jsonc
 // package.json
 "dependencies": {
-  "@lira/design-system": "github:feelwithlira/lira-design-system#main"
+  "@lira/design-system": "github:hugomeninoaguiar/lira-design-system#main"
 }
 ```
 
@@ -101,7 +101,7 @@ import { Button, Card, CardTitle, CardContent, Field, Input } from "@lira/design
 
 ```jsonc
 "dependencies": {
-  "@lira/design-system": "github:feelwithlira/lira-design-system#main"
+  "@lira/design-system": "github:hugomeninoaguiar/lira-design-system#main"
 }
 ```
 
@@ -149,7 +149,7 @@ We follow semver. The package is private — bump versions via git tags:
 git tag v1.0.0 && git push --tags
 ```
 
-Consumer repos can pin to a tag: `"github:feelwithlira/lira-design-system#v1.0.0"`.
+Consumer repos can pin to a tag: `"github:hugomeninoaguiar/lira-design-system#v1.0.0"`.
 
 See `CHANGELOG.md` for change history and `docs/10-versioning.md` for the policy.
 
