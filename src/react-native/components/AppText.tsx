@@ -7,6 +7,7 @@ export type AppTextVariant =
   | 'h1'
   | 'h2'
   | 'h3'
+  | 'h4'
   | 'title'
   | 'bodyLarge'
   | 'body'
@@ -47,6 +48,7 @@ export function AppText({
     h1:         { fontSize: theme.fontSize[40] ?? 40, lineHeight: 46, fontWeight: '700' },
     h2:         { fontSize: theme.fontSize[32] ?? 32, lineHeight: 40, fontWeight: '700' },
     h3:         { fontSize: theme.fontSize[24] ?? 24, lineHeight: 32, fontWeight: '600' },
+    h4:         { fontSize: theme.fontSize[20] ?? 20, lineHeight: 28, fontWeight: '600' },
     title:      { fontSize: theme.fontSize[18] ?? 18, lineHeight: 24, fontWeight: '600' },
     bodyLarge:  { fontSize: theme.fontSize[18] ?? 18, lineHeight: 28, fontWeight: '400' },
     body:       { fontSize: theme.fontSize[16] ?? 16, lineHeight: 24, fontWeight: '400' },
