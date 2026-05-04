@@ -45,7 +45,7 @@
         "level2": { "value": "{color.amber.300}" },
         "level3": { "value": "{color.amber.100}" },
         "level4": { "value": "{color.green.300}" },
-        "level5": { "value": "{color.purple.300}" }
+        "level5": { "value": "{color.green.700}" }
       }
     },
     "cycle": {

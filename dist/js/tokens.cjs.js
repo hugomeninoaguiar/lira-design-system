@@ -223,7 +223,7 @@ module.exports = {
         "level2": "#F0C060",
         "level3": "#F8E8B9",
         "level4": "#ACDBC5",
-        "level5": "#A78BD6"
+        "level5": "#2D5A42"
       }
     },
     "cycle": {

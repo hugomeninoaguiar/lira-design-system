@@ -223,7 +223,7 @@ export declare const tokens: {
         readonly level2: "#F0C060";
         readonly level3: "#F8E8B9";
         readonly level4: "#ACDBC5";
-        readonly level5: "#A78BD6";
+        readonly level5: "#2D5A42";
       };
     };
     readonly cycle: {
