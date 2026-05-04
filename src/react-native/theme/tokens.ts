@@ -4,7 +4,6 @@
  */
 export {
   womenTheme,
-  professionalsTheme,
   themes,
   type LiraTheme,
   type LiraThemeName,

@@ -1,20 +1,28 @@
 {
   "$description": "Primitive color scales. Raw values, never reference these directly in product code. Use semantic tokens instead.",
   "color": {
+    "neutral": {
+      "0":   { "value": "#FFFFFF", "$description": "Surface" },
+      "50":  { "value": "#F7F9FA", "$description": "App background" },
+      "100": { "value": "#E8EEF0", "$description": "Subtle border" },
+      "200": { "value": "#C7D3D9" },
+      "300": { "value": "#6B7C85", "$description": "Secondary text" },
+      "500": { "value": "#1C2A2E", "$description": "Primary text" }
+    },
     "green": {
       "50":  { "value": "#F0F9F4", "$description": "Subtle background tint" },
       "100": { "value": "#DDF1E6", "$description": "Soft background, hover surfaces" },
       "200": { "value": "#B8D8C4", "$description": "Soft borders, dividers" },
-      "300": { "value": "#ACDBC5", "$description": "Brand mint — marketing accent surface" },
+      "300": { "value": "#ACDBC5", "$description": "Brand mint accent surface" },
       "400": { "value": "#A8D5BA", "$description": "Brand mint hover" },
-      "500": { "value": "#5A9E78", "$description": "Primary action — Women" },
-      "600": { "value": "#3F7E5C", "$description": "Pressed / hover state for primary" },
+      "500": { "value": "#52766A", "$description": "Primary action" },
+      "600": { "value": "#3F5E56", "$description": "Pressed / hover state for primary" },
       "700": { "value": "#2D5A42", "$description": "Deep green for text on light tints" }
     },
     "sage": {
       "300": { "value": "#9CC4B0" },
-      "500": { "value": "#52766A", "$description": "Primary action — Professionals" },
-      "600": { "value": "#3D5A50", "$description": "Pressed / hover state for Professionals primary" },
+      "500": { "value": "#52766A", "$description": "Deep sage scale reference" },
+      "600": { "value": "#3D5A50", "$description": "Pressed / dark sage reference" },
       "700": { "value": "#2C4339" }
     },
     "amber": {
@@ -22,6 +30,11 @@
       "100": { "value": "#F8E8B9" },
       "300": { "value": "#F0C060", "$description": "Warm accent — used sparingly for highlight or underline" },
       "500": { "value": "#C99B3A" }
+    },
+    "purple": {
+      "100": { "value": "#EDE7FA", "$description": "Soft accent background" },
+      "300": { "value": "#A78BD6", "$description": "Primary accent" },
+      "500": { "value": "#7668C8", "$description": "Deep accent" }
     },
     "dustyRed": {
       "50":  { "value": "#FDE7E9" },
@@ -42,15 +55,21 @@
       "800": { "value": "#2B2722" },
       "900": { "value": "#1C1C1C", "$description": "Primary text on warm" }
     },
+    "peach": {
+      "50":  { "value": "#FBF4EA", "$description": "Subtle warm card surface" },
+      "100": { "value": "#F4E8D5", "$description": "Women app page background — production-faithful peach-cream" },
+      "150": { "value": "#EFDDC4", "$description": "Soft peach card on peach page" },
+      "200": { "value": "#E5CFB0" }
+    },
     "cool": {
       "0":   { "value": "#FFFFFF" },
-      "50":  { "value": "#F8FAF8", "$description": "Professionals app background" },
+      "50":  { "value": "#F8FAF8", "$description": "Cool neutral background reference" },
       "100": { "value": "#F1F4F2" },
-      "200": { "value": "#D8E0DC", "$description": "Professionals soft border" },
+      "200": { "value": "#D8E0DC", "$description": "Cool neutral border reference" },
       "300": { "value": "#B7C4BE" },
-      "500": { "value": "#5F6B64", "$description": "Professionals secondary text" },
+      "500": { "value": "#5F6B64", "$description": "Cool neutral secondary text reference" },
       "700": { "value": "#2E3833" },
-      "900": { "value": "#17211D", "$description": "Professionals primary text" }
+      "900": { "value": "#17211D", "$description": "Cool neutral primary text reference" }
     },
     "data": {
       "blue": {

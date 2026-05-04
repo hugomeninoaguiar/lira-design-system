@@ -4,12 +4,10 @@
  *
  * Reads token JSON files in `tokens/`, resolves `{path.to.token}` references,
  * and emits:
- *   dist/css/tokens.css           — CSS variables, theme-scoped (Women @ :root, Professionals @ [data-theme])
- *   dist/tailwind/theme.css       — Tailwind v4 @theme block bound to the CSS vars
  *   dist/js/tokens.esm.js         — ESM token object
  *   dist/js/tokens.cjs.js         — CJS token object
  *   dist/js/tokens.d.ts           — TypeScript declarations
- *   dist/react-native/theme.ts    — RN theme: { women, professionals } typed objects
+ *   dist/react-native/theme.ts    — RN women theme object
  *
  * Run with: `npm run build:tokens` (or `node scripts/build-tokens.mjs`).
  */
@@ -26,7 +24,6 @@ const PRIMITIVES = ['color', 'space', 'radius', 'typography', 'shadow'].map((n) 
 );
 const SEMANTIC_CORE = 'tokens/semantic/core.json';
 const SEMANTIC_TYPE = 'tokens/semantic/typography.json';
-const SEMANTIC_PROFESSIONALS = 'tokens/semantic/professionals.json';
 const COMPONENTS = ['button', 'chart'].map((n) => `tokens/components/${n}.json`);
 
 const META_KEYS = new Set(['$description', 'description', 'comment']);
@@ -133,139 +130,18 @@ const isLayoutNumeric = (path) => {
 const primitivesObj = PRIMITIVES.reduce((acc, p) => merge(acc, readJson(p)), {});
 const semanticCore = readJson(SEMANTIC_CORE);
 const semanticType = readJson(SEMANTIC_TYPE);
-const semanticProf = readJson(SEMANTIC_PROFESSIONALS);
 const componentsObj = COMPONENTS.reduce((acc, p) => merge(acc, readJson(p)), {});
 
 // Base = primitives + core semantic + semantic typography + components.
 const baseTree = merge(merge(merge(merge(primitivesObj, semanticCore), semanticType), componentsObj), {});
-// Professionals override sits on top of base (only override the semantic.* paths).
-const profTree = merge(baseTree, semanticProf);
 
 const flatBase = new Map();
 for (const { path, value } of walk(baseTree)) flatBase.set(path.join('.'), String(value));
-const flatProf = new Map();
-for (const { path, value } of walk(profTree)) flatProf.set(path.join('.'), String(value));
 
 // Resolve refs (a value may reference another path).
 const resolvedBase = new Map();
 for (const [k, v] of flatBase) resolvedBase.set(k, resolveRefs(v, flatBase));
-const resolvedProf = new Map();
-for (const [k, v] of flatProf) resolvedProf.set(k, resolveRefs(v, flatProf));
-
-// ---- 2. CSS: theme-scoped tokens -----------------------------------------
-
-const writeCssTokens = () => {
-  const lines = [
-    '/**',
-    ' * Lira Design System — generated tokens.',
-    ' * Source of truth: tokens/. Run `npm run build:tokens` to regenerate.',
-    ' * Theming model:',
-    ' *   :root  →  Universal Core (= Women theme by default)',
-    ' *   [data-theme="professionals"]  →  Professionals overrides',
-    ' */',
-    '',
-    ':root {',
-  ];
-
-  // Stable order: by depth, then alphabetical, with primitives first then semantic.
-  const sortedKeys = [...resolvedBase.keys()].sort();
-  for (const k of sortedKeys) {
-    const path = k.split('.');
-    const v = resolvedBase.get(k);
-    lines.push(`  ${cssVarName(path)}: ${numericOrPx(v, path)};`);
-  }
-  lines.push('}', '');
-
-  // Women is the default — alias the attribute for explicit pages.
-  lines.push('[data-theme="women"] {', '  /* Women equals Universal Core — see :root above. */', '}', '');
-
-  // Professionals: only emit semantic.* differences from base.
-  lines.push('[data-theme="professionals"] {');
-  for (const k of sortedKeys) {
-    if (!k.startsWith('semantic.')) continue;
-    const profVal = resolvedProf.get(k);
-    if (profVal === undefined) continue;
-    if (profVal === resolvedBase.get(k)) continue;
-    const path = k.split('.');
-    lines.push(`  ${cssVarName(path)}: ${numericOrPx(profVal, path)};`);
-  }
-  lines.push('}', '');
-
-  writeFile('dist/css/tokens.css', lines.join('\n'));
-};
-
-writeCssTokens();
-
-// ---- 3. Tailwind v4 @theme preset ----------------------------------------
-
-const writeTailwindTheme = () => {
-  const lines = [
-    '/**',
-    ' * Lira Design System — Tailwind v4 @theme preset.',
-    ' * Import this AFTER tokens.css and BEFORE `@import "tailwindcss"`:',
-    ' *',
-    ' *   @import "@lira/design-system/tokens.css";',
-    ' *   @import "@lira/design-system/tailwind";',
-    ' *   @import "tailwindcss";',
-    ' */',
-    '',
-    '@theme inline {',
-  ];
-
-  const keys = [...resolvedBase.keys()].sort();
-  for (const k of keys) {
-    const path = k.split('.');
-    const root = path[0];
-    const ref = `var(${cssVarName(path)})`;
-    const sub = path.slice(1).join('-');
-    switch (root) {
-      case 'color':
-        lines.push(`  --color-${sub}: ${ref};`);
-        break;
-      case 'space':
-        lines.push(`  --spacing-${sub}: ${ref};`);
-        break;
-      case 'radius':
-        lines.push(`  --radius-${sub}: ${ref};`);
-        break;
-      case 'fontSize':
-        lines.push(`  --text-${sub}: ${ref};`);
-        break;
-      case 'fontFamily':
-        lines.push(`  --font-${sub}: ${ref};`);
-        break;
-      case 'fontWeight':
-        lines.push(`  --font-weight-${sub}: ${ref};`);
-        break;
-      case 'lineHeight':
-        lines.push(`  --leading-${sub}: ${ref};`);
-        break;
-      case 'letterSpacing':
-        lines.push(`  --tracking-${sub}: ${ref};`);
-        break;
-      case 'shadow':
-        lines.push(`  --shadow-${sub}: ${ref};`);
-        break;
-      case 'semantic': {
-        const [, group, ...rest] = path;
-        const tail = rest.join('-');
-        if (group === 'background') lines.push(`  --color-bg-${tail}: ${ref};`);
-        else if (group === 'text')   lines.push(`  --color-text-${tail}: ${ref};`);
-        else if (group === 'border') lines.push(`  --color-border-${tail}: ${ref};`);
-        else if (group === 'action') lines.push(`  --color-action-${tail}: ${ref};`);
-        else if (group === 'feedback') lines.push(`  --color-${tail}: ${ref};`);
-        else if (group === 'accent') lines.push(`  --color-accent-${tail}: ${ref};`);
-        break;
-      }
-    }
-  }
-  lines.push('}', '');
-  writeFile('dist/tailwind/theme.css', lines.join('\n'));
-};
-
-writeTailwindTheme();
-
-// ---- 4. JS / TS token objects --------------------------------------------
+// ---- 2. JS / TS token objects --------------------------------------------
 
 const buildNested = (flatMap) => {
   const root = {};
@@ -288,7 +164,6 @@ const buildNested = (flatMap) => {
 };
 
 const baseObj = buildNested(resolvedBase);
-const profObj = buildNested(resolvedProf);
 const baseJson = JSON.stringify(baseObj, null, 2);
 
 writeFile(
@@ -319,19 +194,17 @@ writeFile(
   `/* Generated. Do not edit — run \`npm run build:tokens\` instead. */\nexport declare const tokens: ${typeShape(baseObj)};\nexport default tokens;\n`
 );
 
-// ---- 5. React Native theme -----------------------------------------------
+// ---- 3. React Native theme -----------------------------------------------
 
 const rnThemeBody = [
   '/* Generated. Do not edit — run `npm run build:tokens` instead. */',
   '',
   'export const womenTheme = ' + JSON.stringify(baseObj, null, 2) + ' as const;',
   '',
-  'export const professionalsTheme = ' + JSON.stringify(profObj, null, 2) + ' as const;',
-  '',
   'export type LiraTheme = typeof womenTheme;',
-  'export type LiraThemeName = "women" | "professionals";',
+  'export type LiraThemeName = "women";',
   '',
-  'export const themes = { women: womenTheme, professionals: professionalsTheme } as const;',
+  'export const themes = { women: womenTheme } as const;',
   '',
   'export default themes;',
   '',
@@ -342,8 +215,6 @@ writeFile('dist/react-native/theme.ts', rnThemeBody);
 // ---- done ---------------------------------------------------------------
 
 console.log('✓ Tokens built');
-console.log('  dist/css/tokens.css');
-console.log('  dist/tailwind/theme.css');
 console.log('  dist/js/tokens.esm.js');
 console.log('  dist/js/tokens.cjs.js');
 console.log('  dist/js/tokens.d.ts');

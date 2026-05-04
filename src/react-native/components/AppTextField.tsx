@@ -29,7 +29,7 @@ export function AppTextField({
   const isDisabled = editable === false;
 
   const borderColor = isError
-    ? theme.semantic.feedback.errorFg
+    ? theme.semantic.feedback.error.fg
     : focused
       ? theme.semantic.border.focus
       : theme.semantic.border.default;
@@ -41,19 +41,17 @@ export function AppTextField({
         style={[
           styles.input,
           {
-            backgroundColor: isDisabled
-              ? theme.semantic.background.surfaceMuted
-              : theme.semantic.background.surface,
+            backgroundColor: theme.semantic.background.surface,
             borderColor,
             color: theme.semantic.text.primary,
-            borderRadius: theme.radius.md ?? 12,
+            borderRadius: theme.radius.md ?? 16,
             paddingHorizontal: theme.space[4] ?? 16,
             fontSize: theme.fontSize[16] ?? 16,
             opacity: isDisabled ? 0.7 : 1,
           },
           inputStyle,
         ]}
-        placeholderTextColor={theme.semantic.text.muted}
+        placeholderTextColor={theme.semantic.text.secondary}
         editable={editable}
         onFocus={(e) => { setFocused(true); onFocus?.(e); }}
         onBlur={(e) => { setFocused(false); onBlur?.(e); }}
@@ -67,9 +65,9 @@ export function AppTextField({
 }
 
 const styles = StyleSheet.create({
-  field: { gap: 6 },
+  field: { gap: 8 },
   input: {
     height: 48,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: 1,
   },
 });

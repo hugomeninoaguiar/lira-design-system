@@ -31,12 +31,12 @@ export function AppListRow({
           backgroundColor: selected
             ? theme.semantic.action.primarySoft
             : pressed
-              ? theme.semantic.action.ghostHover
+              ? theme.semantic.background.subtle
               : theme.semantic.background.surface,
-          borderColor: selected ? theme.semantic.action.primary : theme.semantic.border.subtle,
-          borderRadius: theme.radius.md ?? 12,
+          borderColor: selected ? theme.semantic.action.primary : theme.semantic.border.default,
+          borderRadius: theme.radius.md ?? 16,
           paddingHorizontal: theme.space[4] ?? 16,
-          paddingVertical: theme.space[3] ?? 12,
+          paddingVertical: theme.space[2] ?? 8,
           minHeight: 56,
         },
       ]}
@@ -53,7 +53,7 @@ export function AppListRow({
 }
 
 const styles = StyleSheet.create({
-  row: { flexDirection: 'row', alignItems: 'center', borderWidth: StyleSheet.hairlineWidth },
+  row: { flexDirection: 'row', alignItems: 'center', borderWidth: 1 },
   left: { marginRight: 12 },
   body: { flex: 1, gap: 2 },
   right: { marginLeft: 12 },

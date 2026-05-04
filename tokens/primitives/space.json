@@ -1,5 +1,5 @@
 {
-  "$description": "Spacing scale in pixels. 4px base unit. Use semantic spacing or these primitive tokens directly. Tailwind uses these as `p-2`, `gap-4`, etc.",
+  "$description": "Spacing scale in pixels for the mobile system. Prefer 8pt rhythm in screen/component layout decisions.",
   "space": {
     "0":  { "value": "0" },
     "px": { "value": "1" },

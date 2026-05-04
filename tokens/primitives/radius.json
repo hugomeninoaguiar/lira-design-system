@@ -1,13 +1,13 @@
 {
-  "$description": "Corner radius scale. Lira leans soft — most surfaces use `md` or `lg`. `pill` is for full pill buttons.",
+  "$description": "Corner radius scale for the mobile system. Base card/input sizes are sm=8, md=16, lg=24.",
   "radius": {
     "none": { "value": "0" },
     "xs":   { "value": "4" },
     "sm":   { "value": "8" },
-    "md":   { "value": "12" },
-    "lg":   { "value": "16" },
-    "xl":   { "value": "20" },
-    "2xl":  { "value": "24" },
+    "md":   { "value": "16" },
+    "lg":   { "value": "24" },
+    "xl":   { "value": "28" },
+    "2xl":  { "value": "32" },
     "3xl":  { "value": "32" },
     "pill": { "value": "999" }
   }

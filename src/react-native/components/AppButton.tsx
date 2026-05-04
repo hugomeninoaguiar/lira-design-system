@@ -41,8 +41,8 @@ export function AppButton({
   const isDisabled = disabled || loading;
 
   const sizeMap: Record<AppButtonSize, { height: number; paddingX: number; fontSize: number }> = {
-    sm: { height: 36, paddingX: theme.space[4] ?? 16, fontSize: theme.fontSize[14] ?? 14 },
-    md: { height: 44, paddingX: theme.space[5] ?? 20, fontSize: theme.fontSize[16] ?? 16 },
+    sm: { height: 40, paddingX: theme.space[4] ?? 16, fontSize: theme.fontSize[14] ?? 14 },
+    md: { height: 48, paddingX: theme.space[6] ?? 24, fontSize: theme.fontSize[16] ?? 16 },
     lg: { height: 56, paddingX: theme.space[6] ?? 24, fontSize: theme.fontSize[18] ?? 18 },
   };
 
@@ -52,21 +52,23 @@ export function AppButton({
       case 'primary':
         return {
           container: {
-            backgroundColor: pressed ? a.primaryHover : a.primary,
+            backgroundColor: a.primary,
+            opacity: pressed ? 0.9 : 1,
           },
-          textColor: a.primaryFg,
+          textColor: theme.semantic.text.onPrimary,
         };
       case 'secondary':
         return {
           container: {
-            backgroundColor: pressed ? a.primarySoftHover : a.primarySoft,
+            backgroundColor: a.primarySoft,
+            opacity: pressed ? 0.9 : 1,
           },
-          textColor: a.primarySoftFg,
+          textColor: theme.semantic.text.primary,
         };
       case 'outline':
         return {
           container: {
-            backgroundColor: pressed ? a.ghostHover : 'transparent',
+            backgroundColor: pressed ? theme.semantic.background.subtle : 'transparent',
             borderWidth: 1,
             borderColor: theme.semantic.border.default,
           },
@@ -75,16 +77,17 @@ export function AppButton({
       case 'ghost':
         return {
           container: {
-            backgroundColor: pressed ? a.ghostHover : 'transparent',
+            backgroundColor: pressed ? theme.semantic.background.subtle : 'transparent',
           },
-          textColor: a.ghostFg,
+          textColor: theme.semantic.text.primary,
         };
       case 'destructive':
         return {
           container: {
-            backgroundColor: pressed ? a.destructiveHover : a.destructive,
+            backgroundColor: a.destructive,
+            opacity: pressed ? 0.9 : 1,
           },
-          textColor: a.destructiveFg,
+          textColor: theme.semantic.text.onPrimary,
         };
     }
   };

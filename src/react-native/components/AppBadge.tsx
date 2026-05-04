@@ -3,7 +3,7 @@ import { View, StyleSheet, type ViewProps } from 'react-native';
 import { useLiraTheme } from '../theme/ThemeProvider';
 import { AppText } from './AppText';
 
-export type AppBadgeTone = 'neutral' | 'brand' | 'success' | 'warning' | 'error' | 'info';
+export type AppBadgeTone = 'neutral' | 'accent' | 'success' | 'error' | 'info';
 
 export interface AppBadgeProps extends ViewProps {
   label: string;
@@ -14,12 +14,11 @@ export function AppBadge({ label, tone = 'neutral', style, ...props }: AppBadgeP
   const theme = useLiraTheme();
 
   const map: Record<AppBadgeTone, { bg: string; fg: string; border?: string }> = {
-    neutral: { bg: theme.semantic.background.surfaceSubtle, fg: theme.semantic.text.secondary, border: theme.semantic.border.subtle },
-    brand:   { bg: theme.semantic.accent.mintSoft, fg: theme.semantic.text.onAccent, border: theme.semantic.accent.mint },
-    success: { bg: theme.semantic.feedback.successBg, fg: theme.semantic.feedback.successFg },
-    warning: { bg: theme.semantic.feedback.warningBg, fg: theme.semantic.feedback.warningFg },
-    error:   { bg: theme.semantic.feedback.errorBg, fg: theme.semantic.feedback.errorFg },
-    info:    { bg: theme.semantic.feedback.infoBg, fg: theme.semantic.feedback.infoFg },
+    neutral: { bg: theme.semantic.background.subtle, fg: theme.semantic.text.secondary, border: theme.semantic.border.default },
+    accent:  { bg: theme.semantic.accent.subtle, fg: theme.semantic.text.primary, border: theme.semantic.accent.primary },
+    success: { bg: theme.semantic.feedback.success.bg, fg: theme.semantic.feedback.success.fg },
+    error:   { bg: theme.semantic.feedback.error.bg, fg: theme.semantic.feedback.error.fg },
+    info:    { bg: theme.semantic.feedback.info.bg, fg: theme.semantic.feedback.info.fg },
   };
   const t = map[tone];
 
@@ -30,7 +29,7 @@ export function AppBadge({ label, tone = 'neutral', style, ...props }: AppBadgeP
         {
           backgroundColor: t.bg,
           borderColor: t.border ?? 'transparent',
-          borderWidth: t.border ? StyleSheet.hairlineWidth : 0,
+          borderWidth: t.border ? 1 : 0,
           borderRadius: theme.radius.pill ?? 999,
         },
         style,

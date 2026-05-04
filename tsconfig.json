@@ -18,7 +18,6 @@
     "baseUrl": ".",
     "paths": {
       "@lira/design-system": ["./src/index.ts"],
-      "@lira/design-system/web": ["./src/web/index.ts"],
       "@lira/design-system/react-native": ["./src/react-native/index.ts"],
       "@lira/design-system/chart-utils": ["./src/chart-utils/index.ts"]
     }

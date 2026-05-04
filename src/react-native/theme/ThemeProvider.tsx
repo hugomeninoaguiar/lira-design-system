@@ -17,8 +17,7 @@ interface LiraThemeProviderProps {
 }
 
 /**
- * Wrap the app root with this provider. Defaults to 'women' (the Lira home base).
- * Set themeName="professionals" if hosting the Professionals product as a mobile app.
+ * Wrap the app root with this provider. Women is the only supported theme.
  *
  *   <LiraThemeProvider>
  *     <App />

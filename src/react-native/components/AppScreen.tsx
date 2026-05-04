@@ -32,8 +32,8 @@ export function AppScreen({
   ...props
 }: AppScreenProps) {
   const theme = useLiraTheme();
-  const px = paddingX ?? theme.space[5] ?? 20;
-  const py = paddingY ?? theme.space[5] ?? 20;
+  const px = paddingX ?? theme.space[6] ?? 24;
+  const py = paddingY ?? theme.space[6] ?? 24;
   const bg = theme.semantic.background.app;
 
   if (!scrollable) {

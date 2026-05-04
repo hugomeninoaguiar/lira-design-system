@@ -27,7 +27,7 @@ export function AppStepper({ total, current }: AppStepperProps) {
                     ? theme.semantic.action.primary
                     : past
                       ? theme.semantic.action.primarySoft
-                      : theme.semantic.background.surfaceMuted,
+                      : theme.semantic.background.subtle,
                 width: active ? 20 : 8,
               },
             ]}

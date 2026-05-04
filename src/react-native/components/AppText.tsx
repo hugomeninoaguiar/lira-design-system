@@ -17,11 +17,9 @@ export type AppTextVariant =
 export type AppTextTone =
   | 'primary'
   | 'secondary'
-  | 'muted'
-  | 'onBrand'
-  | 'onAccent'
+  | 'onPrimary'
   | 'success'
-  | 'warning'
+  | 'info'
   | 'error';
 
 export interface AppTextProps extends RNTextProps {
@@ -60,12 +58,10 @@ export function AppText({
   const toneMap: Record<AppTextTone, string> = {
     primary:   theme.semantic.text.primary,
     secondary: theme.semantic.text.secondary,
-    muted:     theme.semantic.text.muted,
-    onBrand:   theme.semantic.text.onBrand,
-    onAccent:  theme.semantic.text.onAccent,
-    success:   theme.semantic.feedback.successFg,
-    warning:   theme.semantic.feedback.warningFg,
-    error:     theme.semantic.feedback.errorFg,
+    onPrimary: theme.semantic.text.onPrimary,
+    success:   theme.semantic.feedback.success.fg,
+    info:      theme.semantic.feedback.info.fg,
+    error:     theme.semantic.feedback.error.fg,
   };
 
   const weightMap = { regular: '400', medium: '500', semibold: '600', bold: '700', heavy: '800' } as const;

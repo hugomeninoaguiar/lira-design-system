@@ -13,7 +13,7 @@ The token model has three layers. You should know which layer to touch.
 │  Semantic                                                        │
 │  Purpose-bound. This is what components and apps reference.      │
 │  e.g. semantic.action.primary, semantic.text.secondary           │
-│       semantic.background.app, semantic.border.subtle            │
+│       semantic.background.app, semantic.border.default           │
 └──────────────────────────────────────────────────────────────────┘
                               ↓
 ┌──────────────────────────────────────────────────────────────────┐
@@ -27,56 +27,29 @@ The token model has three layers. You should know which layer to touch.
 
 | File | Layer | What it owns |
 |---|---|---|
-| `tokens/primitives/color.json` | primitive | Color scales (green, sage, amber, dustyRed, warm, cool, data, feedback) |
+| `tokens/primitives/color.json` | primitive | Color scales (green, amber, dustyRed, warm, peach, data, feedback) |
 | `tokens/primitives/space.json` | primitive | 4px-base spacing scale (`0`, `1`–`32`) |
 | `tokens/primitives/radius.json` | primitive | `none`, `xs`, `sm`, `md`, `lg`, `xl`, `2xl`, `3xl`, `pill` |
 | `tokens/primitives/typography.json` | primitive | font family, size, line-height, weight, letter-spacing scales |
 | `tokens/primitives/shadow.json` | primitive | `none`, `soft`, `lifted`, `raised`, `focus` |
-| `tokens/semantic/core.json` | semantic | Universal Core (= Women defaults). Background, text, border, action, feedback, accent |
-| `tokens/semantic/professionals.json` | semantic | Overrides applied under `[data-theme="professionals"]` |
+| `tokens/semantic/core.json` | semantic | Guided core set for Women mobile. Background, text, border, action, feedback, accent, data, cycle, navigation |
 | `tokens/semantic/typography.json` | semantic | Type styles: display, h1–h5, body, caption, label, etc. |
 | `tokens/components/button.json` | component | Button sizes, radius |
-| `tokens/components/chart.json` | component | Consumer + clinical chart palettes |
+| `tokens/components/chart.json` | component | Mobile chart palette tokens |
 
 ## Naming convention
 
 Token paths in JSON map deterministically to:
 
-- **CSS variables** — `tokens/primitives/color.json:color.green.500` → `--color-green-500`
 - **JS / TS object** — `tokens.color.green[500]`
-- **Tailwind utility** — `bg-green-500` (primitive) or `bg-action-primary` (semantic)
 - **RN theme** — `theme.color.green[500]` or `theme.semantic.action.primary`
 
-Semantic tokens get a friendlier Tailwind alias:
+These values are consumed in React Native via `useLiraTheme()` or exported theme objects.
 
-| Semantic path | Tailwind utility |
-|---|---|
-| `semantic.background.app` | `bg-bg-app` |
-| `semantic.background.surface` | `bg-bg-surface` |
-| `semantic.text.primary` | `text-text-primary` |
-| `semantic.text.secondary` | `text-text-secondary` |
-| `semantic.border.subtle` | `border-border-subtle` |
-| `semantic.action.primary` | `bg-action-primary` |
-| `semantic.action.primaryFg` | `text-action-primaryFg` |
-| `semantic.feedback.successFg` | `text-successFg` |
-| `semantic.accent.mint` | `bg-accent-mint` |
-| `semantic.time.*` | No Tailwind alias (mobile-specific). Use `theme.semantic.time.*` in RN or `var(--semantic-time-*)` in CSS if needed. |
+### Home screen semantic additions
 
-### How app code uses `semantic.time`
-
-Use RN theme values directly:
-
-```tsx
-const theme = useLiraTheme();
-// …
-<AppButton
-  label="Evening check-in"
-  variant="primary"
-  style={{ backgroundColor: theme.semantic.time.evening.bg }}
-/>
-```
-
-If the `primary` variant still overrides background via CVA, pass a custom background prop when available or wrap the button and set container styles.
+- `semantic.data.energy.*` — energy dot scale for check-in data visualization (`empty`, `level1` … `level5`).
+- `semantic.cycle.*` — cycle card/chip semantics (`surface`, `border`, `confidenceHigh/Medium/Low`, `icon`).
 
 ## Adding a new token
 
@@ -94,15 +67,8 @@ Follow this order:
      "highlight": { "value": "{color.blush.300}" }
    }
    ```
-3. **Add a Professionals override** if the role should differ.
-   ```json
-   // tokens/semantic/professionals.json
-   "background": {
-     "highlight": { "value": "{color.cool.100}" }
-   }
-   ```
-4. **Run the build** — `npm run build:tokens` regenerates `dist/`.
-5. **Commit `tokens/` and `dist/` together.** Consumers depend on `dist/`.
+3. **Run the build** — `npm run build:tokens` regenerates `dist/`.
+4. **Commit `tokens/` and `dist/` together.** Consumers depend on `dist/`.
 
 ## Don't do this
 
@@ -110,4 +76,4 @@ Follow this order:
 - ❌ Add a primitive but skip the semantic binding ("temporarily").
 - ❌ Reference a primitive directly from a component (`bg-green-500` in a Button). Use the semantic role.
 - ❌ Hand-edit `dist/`. It's regenerated.
-- ❌ Introduce a token that exists only in one theme (e.g. only Women) without a fallback in the other.
+- ❌ Introduce mobile UI styles with hardcoded values in app code when a semantic token should exist.

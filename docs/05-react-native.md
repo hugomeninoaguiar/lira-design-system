@@ -6,7 +6,7 @@ Import everything from `@lira/design-system/react-native`.
 import {
   LiraThemeProvider,
   useLiraTheme,
-  AppScreen, AppHeader, AppText, AppButton, AppCard,
+  AppScreen, AppAuthLayout, AppHeader, AppText, AppButton, AppCard,
   AppListRow, AppCallout, AppTextField, AppToggle, AppStepper, AppBadge,
 } from '@lira/design-system/react-native';
 ```
@@ -43,8 +43,34 @@ Top-level container — applies the theme's app background and consistent paddin
 | Prop | Default |
 |---|---|
 | `scrollable` | `true` |
-| `paddingX` | `space[5]` (20) |
-| `paddingY` | `space[5]` (20) |
+| `paddingX` | `space[6]` (24) |
+| `paddingY` | `space[6]` (24) |
+
+## AppAuthLayout
+
+Standardized auth screen wrapper that enforces the card-first structure used across the app.
+
+```tsx
+<AppAuthLayout
+  title="Welcome back"
+  subtitle="Good to see you again."
+  logo={<BrandMark />}
+  footer={<SocialAuthRow />}
+>
+  <AppTextField label="Email" />
+  <AppTextField label="Password" secureTextEntry />
+  <AppButton label="Log in" />
+</AppAuthLayout>
+```
+
+| Prop | Default |
+|---|---|
+| `scrollable` | `true` |
+| `centerCard` | `true` |
+| `maxCardWidth` | `420` |
+| `paddingX` | `space[4]` (16) |
+| `paddingY` | `space[6]` (24) |
+| `cardPadding` | `lg` |
 
 ## AppText
 
@@ -52,11 +78,11 @@ Top-level container — applies the theme's app background and consistent paddin
 <AppText variant="display">Inner World</AppText>
 <AppText variant="h2">Morning check-in</AppText>
 <AppText variant="body" tone="secondary">Two minutes — that's it.</AppText>
-<AppText variant="caption" tone="muted">12:34 PM</AppText>
+<AppText variant="caption" tone="info">12:34 PM</AppText>
 ```
 
 | Variant | `display` `h1` `h2` `h3` `title` `bodyLarge` `body` `bodySmall` `caption` `label` |
-| Tone | `primary` `secondary` `muted` `onBrand` `onAccent` `success` `warning` `error` |
+| Tone | `primary` `secondary` `onPrimary` `success` `info` `error` |
 | Weight | `regular` `medium` `semibold` `bold` `heavy` (overrides default) |
 
 ## AppButton
@@ -147,15 +173,15 @@ Compact progress dots for onboarding / multi-step flows.
 ## AppCallout
 
 ```tsx
-<AppCallout tone="brand" title="New">Lira's inner world just got bigger.</AppCallout>
-<AppCallout tone="warning">You're offline — we'll sync later.</AppCallout>
+<AppCallout tone="accent" title="New">Lira's inner world just got bigger.</AppCallout>
+<AppCallout tone="info">You're offline — we'll sync later.</AppCallout>
 ```
 
 ## AppBadge
 
 ```tsx
 <AppBadge label="Beta" />
-<AppBadge label="New" tone="brand" />
+<AppBadge label="New" tone="accent" />
 <AppBadge label="Active" tone="success" />
 ```
 
@@ -182,7 +208,7 @@ function Sparkline({ values }: { values: number[] }) {
   return (
     <Path
       stroke={theme.semantic.action.primary}
-      fill={theme.semantic.accent.mintSoft}
+      fill={theme.semantic.accent.subtle}
       d={…}
     />
   );

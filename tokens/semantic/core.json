@@ -1,78 +1,65 @@
 {
-  "$description": "Universal Core semantic tokens. These are the defaults applied at :root. They equal the Women theme — Women is Lira's home base. The Professionals theme overrides them under [data-theme='professionals'].",
+  "$description": "Core semantic tokens for the Lira for Women mobile app.",
   "semantic": {
     "background": {
-      "app":          { "value": "{color.warm.100}", "$description": "Page background" },
-      "surface":      { "value": "{color.warm.0}",   "$description": "Cards, sheets, inputs" },
-      "surfaceSubtle":{ "value": "{color.warm.150}", "$description": "Secondary surfaces, table stripes" },
-      "surfaceMuted": { "value": "{color.warm.200}", "$description": "Disabled, inactive" },
-      "inverse":      { "value": "{color.warm.900}", "$description": "Dark surface on light page (badges, tooltips)" }
+      "app":     { "value": "{color.neutral.50}" },
+      "surface": { "value": "{color.neutral.0}" },
+      "subtle":  { "value": "{color.neutral.100}" }
     },
     "text": {
-      "primary":      { "value": "{color.warm.900}" },
-      "secondary":    { "value": "{color.warm.500}" },
-      "muted":        { "value": "{color.warm.400}" },
-      "onBrand":      { "value": "{color.warm.0}",   "$description": "Text on filled brand surfaces (e.g. primary button label)" },
-      "onAccent":     { "value": "{color.warm.900}", "$description": "Text on soft brand tints (e.g. mint hero)" },
-      "link":         { "value": "{color.green.600}" },
-      "linkHover":    { "value": "{color.green.700}" }
+      "primary":   { "value": "{color.neutral.500}" },
+      "secondary": { "value": "{color.neutral.300}" },
+      "onPrimary": { "value": "{color.neutral.0}" }
     },
     "border": {
-      "subtle":       { "value": "{color.warm.200}" },
-      "default":      { "value": "{color.warm.300}" },
-      "strong":       { "value": "{color.warm.500}" },
-      "brand":        { "value": "{color.green.300}" },
-      "focus":        { "value": "{color.green.500}" }
+      "default": { "value": "{color.neutral.100}" },
+      "focus":   { "value": "{color.green.500}" }
     },
     "action": {
-      "primary":         { "value": "{color.green.500}", "$description": "Filled CTA background" },
-      "primaryHover":    { "value": "{color.green.600}" },
-      "primaryActive":   { "value": "{color.green.700}" },
-      "primaryFg":       { "value": "{color.warm.0}",    "$description": "Filled CTA label" },
-      "primarySoft":     { "value": "{color.green.100}", "$description": "Soft CTA background (secondary)" },
-      "primarySoftHover":{ "value": "{color.green.200}" },
-      "primarySoftFg":   { "value": "{color.green.700}" },
-      "ghostHover":      { "value": "{color.warm.150}" },
-      "ghostFg":         { "value": "{color.warm.900}" },
-      "disabledBg":      { "value": "{color.warm.200}" },
-      "disabledFg":      { "value": "{color.warm.500}" },
-      "destructive":     { "value": "{color.dustyRed.400}" },
-      "destructiveHover":{ "value": "{color.dustyRed.600}" },
-      "destructiveFg":   { "value": "{color.warm.0}" }
+      "primary":     { "value": "{color.green.500}" },
+      "primarySoft": { "value": "{color.green.100}" },
+      "destructive": { "value": "{color.dustyRed.400}" }
     },
     "feedback": {
-      "successFg":  { "value": "{color.feedback.successFg}" },
-      "successBg":  { "value": "{color.feedback.successBg}" },
-      "warningFg":  { "value": "{color.feedback.warningFg}" },
-      "warningBg":  { "value": "{color.feedback.warningBg}" },
-      "errorFg":    { "value": "{color.feedback.errorFg}" },
-      "errorBg":    { "value": "{color.feedback.errorBg}" },
-      "infoFg":     { "value": "{color.feedback.infoFg}" },
-      "infoBg":     { "value": "{color.feedback.infoBg}" }
-    },
-    "time": {
-      "morning": {
-        "bg": { "value": "{color.amber.100}" },
-        "fg": { "value": "{color.warm.900}" }
+      "success": {
+        "fg": { "value": "{color.feedback.successFg}" },
+        "bg": { "value": "{color.feedback.successBg}" }
       },
-      "afternoon": {
-        "bg": { "value": "{color.green.300}" },
-        "fg": { "value": "{color.warm.900}" }
+      "error": {
+        "fg": { "value": "{color.feedback.errorFg}" },
+        "bg": { "value": "{color.feedback.errorBg}" }
       },
-      "evening": {
-        "bg": { "value": "{color.sage.700}" },
-        "fg": { "value": "{color.warm.0}" }
-      },
-      "night": {
-        "bg": { "value": "{color.warm.900}" },
-        "fg": { "value": "{color.warm.0}" }
+      "info": {
+        "fg": { "value": "{color.feedback.infoFg}" },
+        "bg": { "value": "{color.feedback.infoBg}" }
       }
     },
     "accent": {
-      "mint":      { "value": "{color.green.300}", "$description": "Marketing hero / illustration backdrop" },
-      "mintSoft":  { "value": "{color.green.100}" },
-      "amber":     { "value": "{color.amber.300}", "$description": "Warm highlight underline (subtle, sparingly)" },
-      "amberSoft": { "value": "{color.amber.100}" }
+      "primary": { "value": "{color.purple.300}" },
+      "subtle":  { "value": "{color.purple.100}" }
+    },
+    "data": {
+      "energy": {
+        "empty":  { "value": "{color.neutral.200}" },
+        "level1": { "value": "{color.dustyRed.200}" },
+        "level2": { "value": "{color.amber.300}" },
+        "level3": { "value": "{color.amber.100}" },
+        "level4": { "value": "{color.green.300}" },
+        "level5": { "value": "{color.purple.300}" }
+      }
+    },
+    "cycle": {
+      "surface":          { "value": "{color.neutral.0}" },
+      "border":           { "value": "{color.neutral.100}" },
+      "confidenceHigh":   { "value": "{color.green.500}" },
+      "confidenceMedium": { "value": "{color.amber.500}" },
+      "confidenceLow":    { "value": "{color.dustyRed.400}" },
+      "icon":             { "value": "{color.purple.300}" }
+    },
+    "navigation": {
+      "tabActive":     { "value": "{color.green.500}" },
+      "tabInactive":   { "value": "{color.neutral.300}" },
+      "tabBackground": { "value": "{color.neutral.0}" }
     }
   }
 }

@@ -26,7 +26,7 @@ export function AppHeader({
   const theme = useLiraTheme();
 
   return (
-    <View style={[styles.row, { paddingVertical: theme.space[3] ?? 12 }, style]}>
+    <View style={[styles.row, { paddingVertical: theme.space[4] ?? 16 }, style]}>
       <Pressable
         accessibilityRole="button"
         onPress={onLeftPress}

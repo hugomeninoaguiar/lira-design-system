@@ -1,14 +1,22 @@
 /* Generated. Do not edit — run `npm run build:tokens` instead. */
 export declare const tokens: {
   readonly color: {
+    readonly neutral: {
+      readonly "0": "#FFFFFF";
+      readonly "50": "#F7F9FA";
+      readonly "100": "#E8EEF0";
+      readonly "200": "#C7D3D9";
+      readonly "300": "#6B7C85";
+      readonly "500": "#1C2A2E";
+    };
     readonly green: {
       readonly "50": "#F0F9F4";
       readonly "100": "#DDF1E6";
       readonly "200": "#B8D8C4";
       readonly "300": "#ACDBC5";
       readonly "400": "#A8D5BA";
-      readonly "500": "#5A9E78";
-      readonly "600": "#3F7E5C";
+      readonly "500": "#52766A";
+      readonly "600": "#3F5E56";
       readonly "700": "#2D5A42";
     };
     readonly sage: {
@@ -22,6 +30,11 @@ export declare const tokens: {
       readonly "100": "#F8E8B9";
       readonly "300": "#F0C060";
       readonly "500": "#C99B3A";
+    };
+    readonly purple: {
+      readonly "100": "#EDE7FA";
+      readonly "300": "#A78BD6";
+      readonly "500": "#7668C8";
     };
     readonly dustyRed: {
       readonly "50": "#FDE7E9";
@@ -41,6 +54,12 @@ export declare const tokens: {
       readonly "700": "#54493E";
       readonly "800": "#2B2722";
       readonly "900": "#1C1C1C";
+    };
+    readonly peach: {
+      readonly "50": "#FBF4EA";
+      readonly "100": "#F4E8D5";
+      readonly "150": "#EFDDC4";
+      readonly "200": "#E5CFB0";
     };
     readonly cool: {
       readonly "0": "#FFFFFF";
@@ -161,77 +180,64 @@ export declare const tokens: {
   };
   readonly semantic: {
     readonly background: {
-      readonly app: "#F7F3ED";
+      readonly app: "#F7F9FA";
       readonly surface: "#FFFFFF";
-      readonly surfaceSubtle: "#F6EFE7";
-      readonly surfaceMuted: "#E9E0D6";
-      readonly inverse: "#1C1C1C";
+      readonly subtle: "#E8EEF0";
     };
     readonly text: {
-      readonly primary: "#1C1C1C";
-      readonly secondary: "#8A7A6A";
-      readonly muted: "#B5A595";
-      readonly onBrand: "#FFFFFF";
-      readonly onAccent: "#1C1C1C";
-      readonly link: "#3F7E5C";
-      readonly linkHover: "#2D5A42";
+      readonly primary: "#1C2A2E";
+      readonly secondary: "#6B7C85";
+      readonly onPrimary: "#FFFFFF";
     };
     readonly border: {
-      readonly subtle: "#E9E0D6";
-      readonly default: "#E0D4C4";
-      readonly strong: "#8A7A6A";
-      readonly brand: "#ACDBC5";
-      readonly focus: "#5A9E78";
+      readonly default: "#E8EEF0";
+      readonly focus: "#52766A";
     };
     readonly action: {
-      readonly primary: "#5A9E78";
-      readonly primaryHover: "#3F7E5C";
-      readonly primaryActive: "#2D5A42";
-      readonly primaryFg: "#FFFFFF";
+      readonly primary: "#52766A";
       readonly primarySoft: "#DDF1E6";
-      readonly primarySoftHover: "#B8D8C4";
-      readonly primarySoftFg: "#2D5A42";
-      readonly ghostHover: "#F6EFE7";
-      readonly ghostFg: "#1C1C1C";
-      readonly disabledBg: "#E9E0D6";
-      readonly disabledFg: "#8A7A6A";
       readonly destructive: "#B66A72";
-      readonly destructiveHover: "#8C4951";
-      readonly destructiveFg: "#FFFFFF";
     };
     readonly feedback: {
-      readonly successFg: "#2D5A42";
-      readonly successBg: "#DDF1E6";
-      readonly warningFg: "#7A5A1A";
-      readonly warningBg: "#FFF8D6";
-      readonly errorFg: "#8C4951";
-      readonly errorBg: "#FDE7E9";
-      readonly infoFg: "#2A4A6E";
-      readonly infoBg: "#DDE9F8";
-    };
-    readonly time: {
-      readonly morning: {
-        readonly bg: "#F8E8B9";
-        readonly fg: "#1C1C1C";
+      readonly success: {
+        readonly fg: "#2D5A42";
+        readonly bg: "#DDF1E6";
       };
-      readonly afternoon: {
-        readonly bg: "#ACDBC5";
-        readonly fg: "#1C1C1C";
+      readonly error: {
+        readonly fg: "#8C4951";
+        readonly bg: "#FDE7E9";
       };
-      readonly evening: {
-        readonly bg: "#2C4339";
-        readonly fg: "#FFFFFF";
-      };
-      readonly night: {
-        readonly bg: "#1C1C1C";
-        readonly fg: "#FFFFFF";
+      readonly info: {
+        readonly fg: "#2A4A6E";
+        readonly bg: "#DDE9F8";
       };
     };
     readonly accent: {
-      readonly mint: "#ACDBC5";
-      readonly mintSoft: "#DDF1E6";
-      readonly amber: "#F0C060";
-      readonly amberSoft: "#F8E8B9";
+      readonly primary: "#A78BD6";
+      readonly subtle: "#EDE7FA";
+    };
+    readonly data: {
+      readonly energy: {
+        readonly empty: "#C7D3D9";
+        readonly level1: "#E8B8BE";
+        readonly level2: "#F0C060";
+        readonly level3: "#F8E8B9";
+        readonly level4: "#ACDBC5";
+        readonly level5: "#A78BD6";
+      };
+    };
+    readonly cycle: {
+      readonly surface: "#FFFFFF";
+      readonly border: "#E8EEF0";
+      readonly confidenceHigh: "#52766A";
+      readonly confidenceMedium: "#C99B3A";
+      readonly confidenceLow: "#B66A72";
+      readonly icon: "#A78BD6";
+    };
+    readonly navigation: {
+      readonly tabActive: "#52766A";
+      readonly tabInactive: "#6B7C85";
+      readonly tabBackground: "#FFFFFF";
     };
   };
   readonly type: {
@@ -329,7 +335,7 @@ export declare const tokens: {
   };
   readonly chart: {
     readonly consumer: {
-      readonly stroke: "#5A9E78";
+      readonly stroke: "#52766A";
       readonly area: "#DDF1E6";
       readonly grid: "#E9E0D6";
       readonly axis: "#8A7A6A";

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, type ViewProps, StyleSheet } from 'react-native';
+import { View, type ViewProps } from 'react-native';
 import { useLiraTheme } from '../theme/ThemeProvider';
 
 export type AppCardTone = 'default' | 'subtle' | 'accent';
@@ -25,19 +25,19 @@ export function AppCard({
 
   const toneBg: Record<AppCardTone, string> = {
     default: theme.semantic.background.surface,
-    subtle:  theme.semantic.background.surfaceSubtle,
-    accent:  theme.semantic.accent.mintSoft,
+    subtle:  theme.semantic.background.subtle,
+    accent:  theme.semantic.accent.subtle,
   };
   const toneBorder: Record<AppCardTone, string> = {
-    default: theme.semantic.border.subtle,
-    subtle:  theme.semantic.border.subtle,
-    accent:  theme.semantic.accent.mint,
+    default: theme.semantic.border.default,
+    subtle:  theme.semantic.border.default,
+    accent:  theme.semantic.border.default,
   };
 
   const paddingMap: Record<AppCardPadding, number> = {
     none: 0,
     sm: theme.space[4] ?? 16,
-    md: theme.space[5] ?? 20,
+    md: theme.space[6] ?? 24,
     lg: theme.space[6] ?? 24,
   };
 
@@ -54,8 +54,8 @@ export function AppCard({
         {
           backgroundColor: toneBg[tone],
           borderColor: toneBorder[tone],
-          borderWidth: StyleSheet.hairlineWidth,
-          borderRadius: theme.radius.lg ?? 16,
+          borderWidth: 1,
+          borderRadius: theme.radius.lg ?? 24,
           padding: paddingMap[padding],
         },
         elevationStyle,

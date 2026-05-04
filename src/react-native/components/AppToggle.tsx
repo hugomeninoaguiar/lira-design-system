@@ -27,7 +27,7 @@ export function AppToggle({
 
   const trackBg = anim.interpolate({
     inputRange: [0, 1],
-    outputRange: [theme.semantic.background.surfaceMuted, theme.semantic.action.primary],
+    outputRange: [theme.semantic.background.subtle, theme.semantic.action.primary],
   });
   const knobX = anim.interpolate({ inputRange: [0, 1], outputRange: [2, 22] });
 

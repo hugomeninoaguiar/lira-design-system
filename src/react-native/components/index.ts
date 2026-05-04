@@ -1,6 +1,7 @@
 export { AppText, type AppTextProps, type AppTextVariant, type AppTextTone } from './AppText';
 export { AppButton, type AppButtonProps, type AppButtonVariant, type AppButtonSize } from './AppButton';
 export { AppCard, type AppCardProps } from './AppCard';
+export { AppAuthLayout, type AppAuthLayoutProps } from './AppAuthLayout';
 export { AppScreen, type AppScreenProps } from './AppScreen';
 export { AppHeader, type AppHeaderProps } from './AppHeader';
 export { AppListRow, type AppListRowProps } from './AppListRow';

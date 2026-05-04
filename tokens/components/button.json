@@ -2,8 +2,8 @@
   "$description": "Button component tokens. Sizes are layout primitives; intents map to semantic actions.",
   "button": {
     "size": {
-      "sm": { "height": { "value": "36" }, "paddingX": { "value": "{space.4}" }, "fontSize": { "value": "{fontSize.14}" } },
-      "md": { "height": { "value": "44" }, "paddingX": { "value": "{space.5}" }, "fontSize": { "value": "{fontSize.16}" } },
+      "sm": { "height": { "value": "40" }, "paddingX": { "value": "{space.4}" }, "fontSize": { "value": "{fontSize.14}" } },
+      "md": { "height": { "value": "48" }, "paddingX": { "value": "{space.6}" }, "fontSize": { "value": "{fontSize.16}" } },
       "lg": { "height": { "value": "56" }, "paddingX": { "value": "{space.6}" }, "fontSize": { "value": "{fontSize.18}" } }
     },
     "radius": { "value": "{radius.pill}", "$description": "Lira buttons are pill-shaped. Override per surface if needed." }

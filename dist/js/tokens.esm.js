@@ -1,14 +1,22 @@
 /* Generated. Do not edit — run `npm run build:tokens` instead. */
 export const tokens = {
   "color": {
+    "neutral": {
+      "0": "#FFFFFF",
+      "50": "#F7F9FA",
+      "100": "#E8EEF0",
+      "200": "#C7D3D9",
+      "300": "#6B7C85",
+      "500": "#1C2A2E"
+    },
     "green": {
       "50": "#F0F9F4",
       "100": "#DDF1E6",
       "200": "#B8D8C4",
       "300": "#ACDBC5",
       "400": "#A8D5BA",
-      "500": "#5A9E78",
-      "600": "#3F7E5C",
+      "500": "#52766A",
+      "600": "#3F5E56",
       "700": "#2D5A42"
     },
     "sage": {
@@ -22,6 +30,11 @@ export const tokens = {
       "100": "#F8E8B9",
       "300": "#F0C060",
       "500": "#C99B3A"
+    },
+    "purple": {
+      "100": "#EDE7FA",
+      "300": "#A78BD6",
+      "500": "#7668C8"
     },
     "dustyRed": {
       "50": "#FDE7E9",
@@ -41,6 +54,12 @@ export const tokens = {
       "700": "#54493E",
       "800": "#2B2722",
       "900": "#1C1C1C"
+    },
+    "peach": {
+      "50": "#FBF4EA",
+      "100": "#F4E8D5",
+      "150": "#EFDDC4",
+      "200": "#E5CFB0"
     },
     "cool": {
       "0": "#FFFFFF",
@@ -102,10 +121,10 @@ export const tokens = {
     "none": 0,
     "xs": 4,
     "sm": 8,
-    "md": 12,
-    "lg": 16,
-    "xl": 20,
-    "2xl": 24,
+    "md": 16,
+    "lg": 24,
+    "xl": 28,
+    "2xl": 32,
     "3xl": 32,
     "pill": 999
   },
@@ -161,77 +180,64 @@ export const tokens = {
   },
   "semantic": {
     "background": {
-      "app": "#F7F3ED",
+      "app": "#F7F9FA",
       "surface": "#FFFFFF",
-      "surfaceSubtle": "#F6EFE7",
-      "surfaceMuted": "#E9E0D6",
-      "inverse": "#1C1C1C"
+      "subtle": "#E8EEF0"
     },
     "text": {
-      "primary": "#1C1C1C",
-      "secondary": "#8A7A6A",
-      "muted": "#B5A595",
-      "onBrand": "#FFFFFF",
-      "onAccent": "#1C1C1C",
-      "link": "#3F7E5C",
-      "linkHover": "#2D5A42"
+      "primary": "#1C2A2E",
+      "secondary": "#6B7C85",
+      "onPrimary": "#FFFFFF"
     },
     "border": {
-      "subtle": "#E9E0D6",
-      "default": "#E0D4C4",
-      "strong": "#8A7A6A",
-      "brand": "#ACDBC5",
-      "focus": "#5A9E78"
+      "default": "#E8EEF0",
+      "focus": "#52766A"
     },
     "action": {
-      "primary": "#5A9E78",
-      "primaryHover": "#3F7E5C",
-      "primaryActive": "#2D5A42",
-      "primaryFg": "#FFFFFF",
+      "primary": "#52766A",
       "primarySoft": "#DDF1E6",
-      "primarySoftHover": "#B8D8C4",
-      "primarySoftFg": "#2D5A42",
-      "ghostHover": "#F6EFE7",
-      "ghostFg": "#1C1C1C",
-      "disabledBg": "#E9E0D6",
-      "disabledFg": "#8A7A6A",
-      "destructive": "#B66A72",
-      "destructiveHover": "#8C4951",
-      "destructiveFg": "#FFFFFF"
+      "destructive": "#B66A72"
     },
     "feedback": {
-      "successFg": "#2D5A42",
-      "successBg": "#DDF1E6",
-      "warningFg": "#7A5A1A",
-      "warningBg": "#FFF8D6",
-      "errorFg": "#8C4951",
-      "errorBg": "#FDE7E9",
-      "infoFg": "#2A4A6E",
-      "infoBg": "#DDE9F8"
-    },
-    "time": {
-      "morning": {
-        "bg": "#F8E8B9",
-        "fg": "#1C1C1C"
+      "success": {
+        "fg": "#2D5A42",
+        "bg": "#DDF1E6"
       },
-      "afternoon": {
-        "bg": "#ACDBC5",
-        "fg": "#1C1C1C"
+      "error": {
+        "fg": "#8C4951",
+        "bg": "#FDE7E9"
       },
-      "evening": {
-        "bg": "#2C4339",
-        "fg": "#FFFFFF"
-      },
-      "night": {
-        "bg": "#1C1C1C",
-        "fg": "#FFFFFF"
+      "info": {
+        "fg": "#2A4A6E",
+        "bg": "#DDE9F8"
       }
     },
     "accent": {
-      "mint": "#ACDBC5",
-      "mintSoft": "#DDF1E6",
-      "amber": "#F0C060",
-      "amberSoft": "#F8E8B9"
+      "primary": "#A78BD6",
+      "subtle": "#EDE7FA"
+    },
+    "data": {
+      "energy": {
+        "empty": "#C7D3D9",
+        "level1": "#E8B8BE",
+        "level2": "#F0C060",
+        "level3": "#F8E8B9",
+        "level4": "#ACDBC5",
+        "level5": "#A78BD6"
+      }
+    },
+    "cycle": {
+      "surface": "#FFFFFF",
+      "border": "#E8EEF0",
+      "confidenceHigh": "#52766A",
+      "confidenceMedium": "#C99B3A",
+      "confidenceLow": "#B66A72",
+      "icon": "#A78BD6"
+    },
+    "navigation": {
+      "tabActive": "#52766A",
+      "tabInactive": "#6B7C85",
+      "tabBackground": "#FFFFFF"
     }
   },
   "type": {
@@ -310,13 +316,13 @@ export const tokens = {
   "button": {
     "size": {
       "sm": {
-        "height": 36,
+        "height": 40,
         "paddingX": 16,
         "fontSize": 14
       },
       "md": {
-        "height": 44,
-        "paddingX": 20,
+        "height": 48,
+        "paddingX": 24,
         "fontSize": 16
       },
       "lg": {
@@ -329,7 +335,7 @@ export const tokens = {
   },
   "chart": {
     "consumer": {
-      "stroke": "#5A9E78",
+      "stroke": "#52766A",
       "area": "#DDF1E6",
       "grid": "#E9E0D6",
       "axis": "#8A7A6A",

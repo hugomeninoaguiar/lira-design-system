@@ -12,8 +12,6 @@
  *       </LiraThemeProvider>
  *     );
  *   }
- *
- * To switch themes (e.g. for the Professionals app shell), pass `themeName="professionals"`.
  */
 
 export * from './components';
@@ -24,7 +22,6 @@ export {
 } from './theme/ThemeProvider';
 export {
   womenTheme,
-  professionalsTheme,
   themes,
   colors,
   semantic,
