@@ -30,6 +30,8 @@ export interface AppTextProps extends RNTextProps {
   weight?: 'regular' | 'medium' | 'semibold' | 'bold' | 'heavy';
   /** Override the resolved color outright. */
   color?: string;
+  /** Explicit children declaration required for React 19 compatibility. */
+  children?: React.ReactNode;
 }
 
 export function AppText({
