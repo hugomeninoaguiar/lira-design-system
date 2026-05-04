@@ -209,6 +209,24 @@ export const tokens = {
       "infoFg": "#2A4A6E",
       "infoBg": "#DDE9F8"
     },
+    "time": {
+      "morning": {
+        "bg": "#F8E8B9",
+        "fg": "#1C1C1C"
+      },
+      "afternoon": {
+        "bg": "#ACDBC5",
+        "fg": "#1C1C1C"
+      },
+      "evening": {
+        "bg": "#2C4339",
+        "fg": "#FFFFFF"
+      },
+      "night": {
+        "bg": "#1C1C1C",
+        "fg": "#FFFFFF"
+      }
+    },
     "accent": {
       "mint": "#ACDBC5",
       "mintSoft": "#DDF1E6",

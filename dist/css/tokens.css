@@ -172,6 +172,14 @@
   --semantic-text-onBrand: #FFFFFF;
   --semantic-text-primary: #1C1C1C;
   --semantic-text-secondary: #8A7A6A;
+  --semantic-time-afternoon-bg: #ACDBC5;
+  --semantic-time-afternoon-fg: #1C1C1C;
+  --semantic-time-evening-bg: #2C4339;
+  --semantic-time-evening-fg: #FFFFFF;
+  --semantic-time-morning-bg: #F8E8B9;
+  --semantic-time-morning-fg: #1C1C1C;
+  --semantic-time-night-bg: #1C1C1C;
+  --semantic-time-night-fg: #FFFFFF;
   --shadow-color: #000000;
   --shadow-focus: 0 0 0 3px rgba(90,158,120,0.35);
   --shadow-lifted: 0 2px 4px rgba(0,0,0,0.05), 0 8px 16px rgba(0,0,0,0.06);

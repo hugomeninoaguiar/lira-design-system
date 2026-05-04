@@ -60,6 +60,23 @@ Semantic tokens get a friendlier Tailwind alias:
 | `semantic.action.primaryFg` | `text-action-primaryFg` |
 | `semantic.feedback.successFg` | `text-successFg` |
 | `semantic.accent.mint` | `bg-accent-mint` |
+| `semantic.time.*` | No Tailwind alias (mobile-specific). Use `theme.semantic.time.*` in RN or `var(--semantic-time-*)` in CSS if needed. |
+
+### How app code uses `semantic.time`
+
+Use RN theme values directly:
+
+```tsx
+const theme = useLiraTheme();
+// …
+<AppButton
+  label="Evening check-in"
+  variant="primary"
+  style={{ backgroundColor: theme.semantic.time.evening.bg }}
+/>
+```
+
+If the `primary` variant still overrides background via CVA, pass a custom background prop when available or wrap the button and set container styles.
 
 ## Adding a new token
 

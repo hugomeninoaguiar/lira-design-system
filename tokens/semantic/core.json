@@ -50,6 +50,24 @@
       "infoFg":     { "value": "{color.feedback.infoFg}" },
       "infoBg":     { "value": "{color.feedback.infoBg}" }
     },
+    "time": {
+      "morning": {
+        "bg": { "value": "{color.amber.100}" },
+        "fg": { "value": "{color.warm.900}" }
+      },
+      "afternoon": {
+        "bg": { "value": "{color.green.300}" },
+        "fg": { "value": "{color.warm.900}" }
+      },
+      "evening": {
+        "bg": { "value": "{color.sage.700}" },
+        "fg": { "value": "{color.warm.0}" }
+      },
+      "night": {
+        "bg": { "value": "{color.warm.900}" },
+        "fg": { "value": "{color.warm.0}" }
+      }
+    },
     "accent": {
       "mint":      { "value": "{color.green.300}", "$description": "Marketing hero / illustration backdrop" },
       "mintSoft":  { "value": "{color.green.100}" },

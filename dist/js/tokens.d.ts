@@ -209,6 +209,24 @@ export declare const tokens: {
       readonly infoFg: "#2A4A6E";
       readonly infoBg: "#DDE9F8";
     };
+    readonly time: {
+      readonly morning: {
+        readonly bg: "#F8E8B9";
+        readonly fg: "#1C1C1C";
+      };
+      readonly afternoon: {
+        readonly bg: "#ACDBC5";
+        readonly fg: "#1C1C1C";
+      };
+      readonly evening: {
+        readonly bg: "#2C4339";
+        readonly fg: "#FFFFFF";
+      };
+      readonly night: {
+        readonly bg: "#1C1C1C";
+        readonly fg: "#FFFFFF";
+      };
+    };
     readonly accent: {
       readonly mint: "#ACDBC5";
       readonly mintSoft: "#DDF1E6";
