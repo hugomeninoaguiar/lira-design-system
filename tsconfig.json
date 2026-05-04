@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowJs": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lira/design-system": ["./src/index.ts"],
+      "@lira/design-system/web": ["./src/web/index.ts"],
+      "@lira/design-system/react-native": ["./src/react-native/index.ts"],
+      "@lira/design-system/chart-utils": ["./src/chart-utils/index.ts"]
+    }
+  },
+  "include": ["src/**/*", "dist/**/*.ts"],
+  "exclude": ["node_modules", "dist/js/*.js"]
+}

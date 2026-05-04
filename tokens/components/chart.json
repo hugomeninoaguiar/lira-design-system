@@ -1,0 +1,23 @@
+{
+  "$description": "Chart palettes. Consumer charts are warm/green; clinical charts use the data palette. Blue is reserved exclusively for clinical data series — never UI.",
+  "chart": {
+    "consumer": {
+      "stroke": { "value": "{color.green.500}" },
+      "area":   { "value": "{color.green.100}" },
+      "grid":   { "value": "{color.warm.200}" },
+      "axis":   { "value": "{color.warm.500}" },
+      "label":  { "value": "{color.warm.500}" }
+    },
+    "clinical": {
+      "axis":     { "value": "#C8D2CD" },
+      "grid":     { "value": "#E3E8E5" },
+      "label":    { "value": "{color.cool.500}" },
+      "seriesA":  { "value": "{color.data.clinical.green}" },
+      "seriesB":  { "value": "{color.data.clinical.plum}" },
+      "seriesC":  { "value": "{color.data.clinical.slate}" },
+      "seriesD":  { "value": "{color.data.clinical.teal}" },
+      "seriesE":  { "value": "{color.data.clinical.sand}" },
+      "dataBlue": { "value": "{color.data.blue.500}", "$description": "Use only for additional data series, never for action UI" }
+    }
+  }
+}

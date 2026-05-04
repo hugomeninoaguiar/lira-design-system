@@ -1,0 +1,14 @@
+{
+  "$description": "Corner radius scale. Lira leans soft — most surfaces use `md` or `lg`. `pill` is for full pill buttons.",
+  "radius": {
+    "none": { "value": "0" },
+    "xs":   { "value": "4" },
+    "sm":   { "value": "8" },
+    "md":   { "value": "12" },
+    "lg":   { "value": "16" },
+    "xl":   { "value": "20" },
+    "2xl":  { "value": "24" },
+    "3xl":  { "value": "32" },
+    "pill": { "value": "999" }
+  }
+}

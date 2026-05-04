@@ -1,0 +1,45 @@
+{
+  "$description": "Type primitives. Font family, size, line-height, weight, letter-spacing scales.",
+  "fontFamily": {
+    "sans":   { "value": "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", "$description": "Default UI font. Replace with brand font once chosen." },
+    "serif":  { "value": "Georgia, 'Times New Roman', serif" },
+    "mono":   { "value": "ui-monospace, 'SF Mono', Menlo, monospace" },
+    "system": { "value": "System", "$description": "Reserved for React Native default" }
+  },
+  "fontSize": {
+    "10": { "value": "10" },
+    "12": { "value": "12" },
+    "14": { "value": "14" },
+    "16": { "value": "16" },
+    "18": { "value": "18" },
+    "20": { "value": "20" },
+    "24": { "value": "24" },
+    "28": { "value": "28" },
+    "32": { "value": "32" },
+    "40": { "value": "40" },
+    "48": { "value": "48" },
+    "56": { "value": "56" },
+    "64": { "value": "64" }
+  },
+  "lineHeight": {
+    "tight":   { "value": "1.15" },
+    "snug":    { "value": "1.3" },
+    "normal":  { "value": "1.5" },
+    "relaxed": { "value": "1.65" },
+    "loose":   { "value": "1.85" }
+  },
+  "fontWeight": {
+    "regular":  { "value": "400" },
+    "medium":   { "value": "500" },
+    "semibold": { "value": "600" },
+    "bold":     { "value": "700" },
+    "heavy":    { "value": "800" }
+  },
+  "letterSpacing": {
+    "tighter": { "value": "-0.02em" },
+    "tight":   { "value": "-0.01em" },
+    "normal":  { "value": "0" },
+    "wide":    { "value": "0.02em" },
+    "wider":   { "value": "0.04em" }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "$description": "Primitive color scales. Raw values, never reference these directly in product code. Use semantic tokens instead.",
+  "color": {
+    "green": {
+      "50":  { "value": "#F0F9F4", "$description": "Subtle background tint" },
+      "100": { "value": "#DDF1E6", "$description": "Soft background, hover surfaces" },
+      "200": { "value": "#B8D8C4", "$description": "Soft borders, dividers" },
+      "300": { "value": "#ACDBC5", "$description": "Brand mint — marketing accent surface" },
+      "400": { "value": "#A8D5BA", "$description": "Brand mint hover" },
+      "500": { "value": "#5A9E78", "$description": "Primary action — Women" },
+      "600": { "value": "#3F7E5C", "$description": "Pressed / hover state for primary" },
+      "700": { "value": "#2D5A42", "$description": "Deep green for text on light tints" }
+    },
+    "sage": {
+      "300": { "value": "#9CC4B0" },
+      "500": { "value": "#52766A", "$description": "Primary action — Professionals" },
+      "600": { "value": "#3D5A50", "$description": "Pressed / hover state for Professionals primary" },
+      "700": { "value": "#2C4339" }
+    },
+    "amber": {
+      "50":  { "value": "#FFF8D6" },
+      "100": { "value": "#F8E8B9" },
+      "300": { "value": "#F0C060", "$description": "Warm accent — used sparingly for highlight or underline" },
+      "500": { "value": "#C99B3A" }
+    },
+    "dustyRed": {
+      "50":  { "value": "#FDE7E9" },
+      "200": { "value": "#E8B8BE" },
+      "400": { "value": "#B66A72", "$description": "Soft destructive — never alarming" },
+      "600": { "value": "#8C4951" }
+    },
+    "warm": {
+      "0":   { "value": "#FFFFFF" },
+      "50":  { "value": "#FBF8F3" },
+      "100": { "value": "#F7F3ED", "$description": "Women app background" },
+      "150": { "value": "#F6EFE7" },
+      "200": { "value": "#E9E0D6", "$description": "Soft border on warm" },
+      "300": { "value": "#E0D4C4" },
+      "400": { "value": "#B5A595" },
+      "500": { "value": "#8A7A6A", "$description": "Secondary text on warm" },
+      "700": { "value": "#54493E" },
+      "800": { "value": "#2B2722" },
+      "900": { "value": "#1C1C1C", "$description": "Primary text on warm" }
+    },
+    "cool": {
+      "0":   { "value": "#FFFFFF" },
+      "50":  { "value": "#F8FAF8", "$description": "Professionals app background" },
+      "100": { "value": "#F1F4F2" },
+      "200": { "value": "#D8E0DC", "$description": "Professionals soft border" },
+      "300": { "value": "#B7C4BE" },
+      "500": { "value": "#5F6B64", "$description": "Professionals secondary text" },
+      "700": { "value": "#2E3833" },
+      "900": { "value": "#17211D", "$description": "Professionals primary text" }
+    },
+    "data": {
+      "blue": {
+        "100": { "value": "#DDE9F8" },
+        "300": { "value": "#8DAFD8" },
+        "500": { "value": "#426B9A", "$description": "Data only — never UI" }
+      },
+      "clinical": {
+        "green":  { "value": "#52766A" },
+        "teal":   { "value": "#4F7F82" },
+        "sand":   { "value": "#C7B99D" },
+        "plum":   { "value": "#7A6578" },
+        "slate":  { "value": "#5F6B73" }
+      }
+    },
+    "feedback": {
+      "successFg":  { "value": "#2D5A42" },
+      "successBg":  { "value": "#DDF1E6" },
+      "warningFg":  { "value": "#7A5A1A" },
+      "warningBg":  { "value": "#FFF8D6" },
+      "errorFg":    { "value": "#8C4951" },
+      "errorBg":    { "value": "#FDE7E9" },
+      "infoFg":     { "value": "#2A4A6E" },
+      "infoBg":     { "value": "#DDE9F8" }
+    },
+    "transparent": { "value": "transparent" },
+    "currentColor": { "value": "currentColor" }
+  }
+}

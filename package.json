@@ -1,0 +1,86 @@
+{
+  "name": "@lira/design-system",
+  "version": "1.0.0",
+  "description": "Lira Design System — tokens, themes, web primitives, and React Native components for Lira for Women, Lira for Professionals, and feelwithlira.com.",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/js/tokens.cjs.js",
+  "module": "./dist/js/tokens.esm.js",
+  "types": "./dist/js/tokens.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "tokens",
+    "scripts",
+    "assets",
+    "docs",
+    "README.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/js/tokens.d.ts",
+      "import": "./dist/js/tokens.esm.js",
+      "require": "./dist/js/tokens.cjs.js"
+    },
+    "./tokens.css": "./dist/css/tokens.css",
+    "./tailwind": "./dist/tailwind/theme.css",
+    "./web": {
+      "types": "./src/web/index.ts",
+      "import": "./src/web/index.ts"
+    },
+    "./web/styles.css": "./dist/css/components.css",
+    "./react-native": {
+      "types": "./src/react-native/index.ts",
+      "import": "./src/react-native/index.ts"
+    },
+    "./react-native/theme": {
+      "types": "./dist/react-native/theme.ts",
+      "import": "./dist/react-native/theme.ts"
+    },
+    "./chart-utils": {
+      "types": "./src/chart-utils/index.ts",
+      "import": "./src/chart-utils/index.ts"
+    },
+    "./assets/*": "./assets/*"
+  },
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "build": "node scripts/build-tokens.mjs",
+    "showcase": "npx --yes http-server examples -p 4321 -c-1 -o /index.html"
+  },
+  "peerDependencies": {
+    "class-variance-authority": ">=0.7.0",
+    "clsx": ">=2.0.0",
+    "tailwind-merge": ">=3.0.0",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "react-native": ">=0.74",
+    "@radix-ui/react-slot": ">=1.1.0",
+    "@radix-ui/react-checkbox": ">=1.1.0",
+    "@radix-ui/react-label": ">=2.1.0",
+    "lucide-react": ">=0.300.0"
+  },
+  "peerDependenciesMeta": {
+    "react-native": { "optional": true },
+    "react-dom": { "optional": true },
+    "@radix-ui/react-slot": { "optional": true },
+    "@radix-ui/react-checkbox": { "optional": true },
+    "@radix-ui/react-label": { "optional": true },
+    "lucide-react": { "optional": true },
+    "class-variance-authority": { "optional": true },
+    "clsx": { "optional": true },
+    "tailwind-merge": { "optional": true }
+  },
+  "devDependencies": {
+    "typescript": "~5.9.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

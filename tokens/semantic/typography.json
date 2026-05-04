@@ -1,0 +1,76 @@
+{
+  "$description": "Semantic type styles. Each role bundles size + line-height + weight. Use these instead of raw fontSize tokens whenever you mean 'a body' or 'a heading'.",
+  "type": {
+    "display": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.48}" },
+      "lineHeight":    { "value": "{lineHeight.tight}" },
+      "fontWeight":    { "value": "{fontWeight.bold}" },
+      "letterSpacing": { "value": "{letterSpacing.tight}" }
+    },
+    "h1": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.40}" },
+      "lineHeight":    { "value": "{lineHeight.tight}" },
+      "fontWeight":    { "value": "{fontWeight.bold}" },
+      "letterSpacing": { "value": "{letterSpacing.tight}" }
+    },
+    "h2": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.32}" },
+      "lineHeight":    { "value": "{lineHeight.snug}" },
+      "fontWeight":    { "value": "{fontWeight.bold}" },
+      "letterSpacing": { "value": "{letterSpacing.tight}" }
+    },
+    "h3": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.24}" },
+      "lineHeight":    { "value": "{lineHeight.snug}" },
+      "fontWeight":    { "value": "{fontWeight.semibold}" },
+      "letterSpacing": { "value": "{letterSpacing.normal}" }
+    },
+    "h4": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.20}" },
+      "lineHeight":    { "value": "{lineHeight.snug}" },
+      "fontWeight":    { "value": "{fontWeight.semibold}" }
+    },
+    "title": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.18}" },
+      "lineHeight":    { "value": "{lineHeight.snug}" },
+      "fontWeight":    { "value": "{fontWeight.semibold}" }
+    },
+    "bodyLarge": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.18}" },
+      "lineHeight":    { "value": "{lineHeight.relaxed}" },
+      "fontWeight":    { "value": "{fontWeight.regular}" }
+    },
+    "body": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.16}" },
+      "lineHeight":    { "value": "{lineHeight.normal}" },
+      "fontWeight":    { "value": "{fontWeight.regular}" }
+    },
+    "bodySmall": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.14}" },
+      "lineHeight":    { "value": "{lineHeight.normal}" },
+      "fontWeight":    { "value": "{fontWeight.regular}" }
+    },
+    "caption": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.12}" },
+      "lineHeight":    { "value": "{lineHeight.snug}" },
+      "fontWeight":    { "value": "{fontWeight.medium}" }
+    },
+    "label": {
+      "fontFamily":    { "value": "{fontFamily.sans}" },
+      "fontSize":      { "value": "{fontSize.14}" },
+      "lineHeight":    { "value": "{lineHeight.snug}" },
+      "fontWeight":    { "value": "{fontWeight.medium}" },
+      "letterSpacing": { "value": "{letterSpacing.wide}" }
+    }
+  }
+}

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" data-theme="women">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lira Design System — Components</title>
+  <link rel="stylesheet" href="../dist/css/tokens.css" />
+  <link rel="stylesheet" href="docs-site.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Lira Design System</span>
+  <nav class="row" style="gap:16px">
+    <a href="index.html">Overview</a>
+    <a href="colors.html">Colors</a>
+    <a href="typography.html">Typography</a>
+    <a href="components.html" class="active">Components</a>
+    <a href="charts.html">Charts</a>
+  </nav>
+  <div class="theme-toggle" role="tablist" aria-label="Theme">
+    <button data-theme-set="women"        class="active" type="button">Women</button>
+    <button data-theme-set="professionals" type="button">Professionals</button>
+  </div>
+</div>
+
+<main class="shell">
+  <h1>Components</h1>
+  <p class="lede">These are HTML approximations of the React + RN primitives, styled with the same CSS variables. The goal: see how primitives behave under each theme.</p>
+
+  <h2>Buttons</h2>
+  <div class="card">
+    <h3>Variants</h3>
+    <div class="row">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-outline">Outline</button>
+      <button class="btn btn-ghost">Ghost</button>
+    </div>
+    <h3 style="margin-top:24px">Sizes</h3>
+    <div class="row">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Medium</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+    </div>
+    <h3 style="margin-top:24px">Disabled</h3>
+    <div class="row">
+      <button class="btn btn-primary" disabled style="opacity:.6; cursor:not-allowed">Disabled</button>
+      <button class="btn btn-secondary" disabled style="opacity:.6; cursor:not-allowed">Disabled</button>
+    </div>
+  </div>
+
+  <h2>Inputs &amp; fields</h2>
+  <div class="card">
+    <div class="stack" style="max-width:480px">
+      <div>
+        <label style="display:block; font-size:14px; font-weight:500; margin-bottom:6px">Email</label>
+        <input type="email" placeholder="email@…" />
+        <div style="font-size:12px; color:var(--semantic-text-secondary); margin-top:6px">We'll never share this.</div>
+      </div>
+      <div>
+        <label style="display:block; font-size:14px; font-weight:500; margin-bottom:6px">Notes</label>
+        <textarea placeholder="Tell us more…"></textarea>
+      </div>
+      <div>
+        <label style="display:block; font-size:14px; font-weight:500; margin-bottom:6px">Code</label>
+        <input type="text" value="abc-123" aria-invalid="true" style="border-color:var(--semantic-feedback-errorFg)" />
+        <div style="font-size:12px; color:var(--semantic-feedback-errorFg); margin-top:6px">Doesn't match — try again.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Cards</h2>
+  <div class="row" style="align-items:stretch">
+    <div class="card" style="flex:1; min-width:260px">
+      <span class="badge badge-neutral">Default</span>
+      <h3 style="margin-top:12px">Today's check-in</h3>
+      <p>Two minutes — that's it.</p>
+      <div class="row" style="margin-top:16px">
+        <button class="btn btn-primary btn-sm">Start</button>
+        <button class="btn btn-ghost btn-sm">Skip</button>
+      </div>
+    </div>
+    <div class="card" style="flex:1; min-width:260px; background:var(--semantic-background-surfaceSubtle)">
+      <span class="badge badge-neutral">Subtle</span>
+      <h3 style="margin-top:12px">Reward unlocked</h3>
+      <p>+10 sparks earned this week.</p>
+    </div>
+    <div class="card" style="flex:1; min-width:260px; background:var(--semantic-accent-mintSoft); border-color:var(--semantic-accent-mint)">
+      <span class="badge badge-brand">Accent</span>
+      <h3 style="margin-top:12px">Inner world</h3>
+      <p>Lira's inner world just got bigger.</p>
+    </div>
+  </div>
+
+  <h2>Badges</h2>
+  <div class="card">
+    <div class="row">
+      <span class="badge badge-neutral">Neutral</span>
+      <span class="badge badge-brand">Brand</span>
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-warning">Warning</span>
+      <span class="badge badge-error">Error</span>
+      <span class="badge badge-info">Info</span>
+    </div>
+  </div>
+
+  <h2>Callouts</h2>
+  <div class="stack">
+    <div class="callout callout-info">Heads up — we've updated how check-ins work.</div>
+    <div class="callout callout-success">Saved.</div>
+    <div class="callout callout-warning">You're offline — we'll sync later.</div>
+    <div class="callout callout-error">Couldn't save. Try again when you're back online.</div>
+    <div class="callout callout-brand"><strong style="color:inherit">New</strong> &nbsp; Lira's inner world just got bigger.</div>
+  </div>
+
+  <h2>Mobile preview</h2>
+  <div class="row" style="align-items:flex-start">
+    <div style="flex:0 0 320px; background: var(--semantic-background-app); border:1px solid var(--semantic-border-subtle); border-radius:32px; padding:20px">
+      <div class="stack">
+        <div style="display:flex; align-items:center; justify-content:space-between">
+          <div style="font-size:18px; font-weight:600">Today</div>
+          <div style="width:32px; height:32px; border-radius:16px; background:var(--semantic-background-surface); border:1px solid var(--semantic-border-subtle)"></div>
+        </div>
+        <div class="card" style="background:var(--semantic-accent-mintSoft); border-color:var(--semantic-accent-mint); padding:20px">
+          <div style="font-size:14px; font-weight:500; color:var(--semantic-text-onAccent); opacity:.7">Morning</div>
+          <div style="font-size:22px; font-weight:600; line-height:1.3; margin-top:4px; color:var(--semantic-text-onAccent)">How's your energy today?</div>
+          <button class="btn btn-primary btn-sm" style="margin-top:16px">Check in</button>
+        </div>
+        <div class="card" style="padding:16px">
+          <div style="font-size:14px; font-weight:500; color:var(--semantic-text-secondary)">This week</div>
+          <div style="display:flex; align-items:flex-end; gap:6px; height:80px; margin-top:12px">
+            <div style="flex:1; height:30%; background:var(--semantic-action-primarySoft); border-radius:6px"></div>
+            <div style="flex:1; height:55%; background:var(--semantic-action-primarySoft); border-radius:6px"></div>
+            <div style="flex:1; height:42%; background:var(--semantic-action-primarySoft); border-radius:6px"></div>
+            <div style="flex:1; height:70%; background:var(--semantic-action-primary); border-radius:6px"></div>
+            <div style="flex:1; height:60%; background:var(--semantic-action-primarySoft); border-radius:6px"></div>
+            <div style="flex:1; height:50%; background:var(--semantic-action-primarySoft); border-radius:6px"></div>
+            <div style="flex:1; height:35%; background:var(--semantic-action-primarySoft); border-radius:6px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1; min-width:280px">
+      <h3>How to read this</h3>
+      <p>This is the same set of CSS variables driving the React Native layer. Switch the theme above — colors update everywhere.</p>
+      <p>In the actual mobile app, the equivalent components are <code>AppScreen</code>, <code>AppCard</code>, <code>AppButton</code>, <code>AppText</code>.</p>
+    </div>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var saved = localStorage.getItem('lira-showcase-theme') || 'women';
+    document.documentElement.setAttribute('data-theme', saved);
+    document.querySelectorAll('[data-theme-set]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.themeSet === saved);
+      btn.addEventListener('click', function () {
+        var t = btn.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('lira-showcase-theme', t);
+        document.querySelectorAll('[data-theme-set]').forEach(function (b) {
+          b.classList.toggle('active', b.dataset.themeSet === t);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-theme="women">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lira Design System — Charts</title>
+  <link rel="stylesheet" href="../dist/css/tokens.css" />
+  <link rel="stylesheet" href="docs-site.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Lira Design System</span>
+  <nav class="row" style="gap:16px">
+    <a href="index.html">Overview</a>
+    <a href="colors.html">Colors</a>
+    <a href="typography.html">Typography</a>
+    <a href="components.html">Components</a>
+    <a href="charts.html" class="active">Charts</a>
+  </nav>
+  <div class="theme-toggle" role="tablist" aria-label="Theme">
+    <button data-theme-set="women"        class="active" type="button">Women</button>
+    <button data-theme-set="professionals" type="button">Professionals</button>
+  </div>
+</div>
+
+<main class="shell">
+  <h1>Charts</h1>
+  <p class="lede">Two distinct vocabularies. Don't mix them. Consumer charts are warm, single-series, calm. Clinical charts use a defined data palette and never appear in chrome / actions.</p>
+
+  <h2>Consumer — sparkline (Women app)</h2>
+  <div class="card">
+    <svg viewBox="0 0 600 160" width="100%" height="160" preserveAspectRatio="none" aria-label="Energy sparkline">
+      <defs>
+        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"  stop-color="var(--chart-consumer-area)" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="var(--chart-consumer-area)" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M0 100 C40 70, 80 80, 120 50 C160 30, 200 60, 240 50 C280 40, 320 70, 360 60 C400 50, 440 30, 480 40 C520 50, 560 30, 600 40 L600 160 L0 160 Z"
+            fill="url(#areaGrad)" />
+      <path d="M0 100 C40 70, 80 80, 120 50 C160 30, 200 60, 240 50 C280 40, 320 70, 360 60 C400 50, 440 30, 480 40 C520 50, 560 30, 600 40"
+            fill="none" stroke="var(--chart-consumer-stroke)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <p class="muted" style="font-size:12px; margin-top:8px"><code>--chart-consumer-stroke</code> · <code>--chart-consumer-area</code></p>
+  </div>
+
+  <h2>Clinical — multi-series radar (Professionals product)</h2>
+  <div class="card">
+    <svg viewBox="0 0 360 360" width="360" height="360" aria-label="Clinical radar profile">
+      <g transform="translate(180,180)">
+        <!-- grid -->
+        <g stroke="var(--chart-clinical-grid)" fill="none" stroke-width="1">
+          <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75" />
+          <polygon points="0,-100 87,-50 87,50 0,100 -87,50 -87,-50" />
+          <polygon points="0,-50  43,-25 43,25 0,50  -43,25 -43,-25" />
+        </g>
+        <!-- axes -->
+        <g stroke="var(--chart-clinical-axis)" stroke-width="1">
+          <line x1="0" y1="0" x2="0" y2="-150"/>
+          <line x1="0" y1="0" x2="130" y2="-75"/>
+          <line x1="0" y1="0" x2="130" y2="75"/>
+          <line x1="0" y1="0" x2="0" y2="150"/>
+          <line x1="0" y1="0" x2="-130" y2="75"/>
+          <line x1="0" y1="0" x2="-130" y2="-75"/>
+        </g>
+        <!-- series A -->
+        <polygon points="0,-130 100,-58 90,52 0,110 -100,58 -110,-65"
+                 fill="var(--chart-clinical-seriesA)" fill-opacity="0.18"
+                 stroke="var(--chart-clinical-seriesA)" stroke-width="2"/>
+        <!-- series B -->
+        <polygon points="0,-90 60,-35 80,45 0,80 -65,38 -75,-45"
+                 fill="var(--chart-clinical-seriesB)" fill-opacity="0.18"
+                 stroke="var(--chart-clinical-seriesB)" stroke-width="2"/>
+      </g>
+    </svg>
+    <div class="row" style="gap:16px; margin-top:16px">
+      <span class="row" style="gap:6px"><span style="display:inline-block; width:12px; height:12px; border-radius:6px; background:var(--chart-clinical-seriesA)"></span>Series A — communication</span>
+      <span class="row" style="gap:6px"><span style="display:inline-block; width:12px; height:12px; border-radius:6px; background:var(--chart-clinical-seriesB)"></span>Series B — restricted patterns</span>
+    </div>
+    <p class="muted" style="font-size:12px; margin-top:8px"><code>--chart-clinical-seriesA</code> · <code>--chart-clinical-seriesB</code> · …seriesC, D, E available</p>
+  </div>
+
+  <h2>Bar (consumer) — weekly summary</h2>
+  <div class="card">
+    <svg viewBox="0 0 600 160" width="100%" height="160" aria-label="Weekly bars">
+      <g>
+        <rect x="20"  y="60"  width="60" height="100" rx="6" fill="var(--semantic-action-primarySoft)"/>
+        <rect x="100" y="40"  width="60" height="120" rx="6" fill="var(--semantic-action-primarySoft)"/>
+        <rect x="180" y="80"  width="60" height="80"  rx="6" fill="var(--semantic-action-primarySoft)"/>
+        <rect x="260" y="20"  width="60" height="140" rx="6" fill="var(--semantic-action-primary)"/>
+        <rect x="340" y="50"  width="60" height="110" rx="6" fill="var(--semantic-action-primarySoft)"/>
+        <rect x="420" y="70"  width="60" height="90"  rx="6" fill="var(--semantic-action-primarySoft)"/>
+        <rect x="500" y="90"  width="60" height="70"  rx="6" fill="var(--semantic-action-primarySoft)"/>
+      </g>
+    </svg>
+    <div class="row" style="gap:8px; margin-top:8px; font-size:12px; color:var(--semantic-text-secondary)">
+      <span style="width:60px; text-align:center; padding-left:20px">M</span>
+      <span style="width:60px; text-align:center; padding-left:20px">T</span>
+      <span style="width:60px; text-align:center; padding-left:20px">W</span>
+      <span style="width:60px; text-align:center; padding-left:20px"><strong style="color:var(--semantic-text-primary)">T</strong></span>
+      <span style="width:60px; text-align:center; padding-left:20px">F</span>
+      <span style="width:60px; text-align:center; padding-left:20px">S</span>
+      <span style="width:60px; text-align:center; padding-left:20px">S</span>
+    </div>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var saved = localStorage.getItem('lira-showcase-theme') || 'women';
+    document.documentElement.setAttribute('data-theme', saved);
+    document.querySelectorAll('[data-theme-set]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.themeSet === saved);
+      btn.addEventListener('click', function () {
+        var t = btn.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('lira-showcase-theme', t);
+        document.querySelectorAll('[data-theme-set]').forEach(function (b) {
+          b.classList.toggle('active', b.dataset.themeSet === t);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" data-theme="women">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lira Design System — Overview</title>
+  <link rel="stylesheet" href="../dist/css/tokens.css" />
+  <link rel="stylesheet" href="docs-site.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Lira Design System</span>
+  <nav class="row" style="gap:16px">
+    <a href="index.html" class="active">Overview</a>
+    <a href="colors.html">Colors</a>
+    <a href="typography.html">Typography</a>
+    <a href="components.html">Components</a>
+    <a href="charts.html">Charts</a>
+  </nav>
+  <div class="theme-toggle" role="tablist" aria-label="Theme">
+    <button data-theme-set="women"        class="active" type="button">Women</button>
+    <button data-theme-set="professionals" type="button">Professionals</button>
+  </div>
+</div>
+
+<main class="shell">
+
+  <h1>Lira Design System</h1>
+  <p class="lede">
+    One design system for the four Lira surfaces. Tokens and themes flow from a single source through generated CSS and JS into the Women app, the marketing site, and the clinical product.
+  </p>
+
+  <div class="row" style="margin-top:24px">
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-outline">Outline</button>
+    <button class="btn btn-ghost">Ghost</button>
+  </div>
+
+  <p class="muted" style="margin-top:24px">
+    Use the toggle above to swap between <strong>Women</strong> and <strong>Professionals</strong> themes. Every value below is a generated CSS variable.
+  </p>
+
+  <h2>Surfaces</h2>
+
+  <div class="row" style="align-items:stretch">
+    <div class="card" style="flex:1; min-width:280px">
+      <span class="badge badge-brand">Women</span>
+      <h3 style="margin-top:12px">Mobile app + marketing</h3>
+      <p>Warm, calm, slightly magical — never clinical. Pill buttons, soft shadows, generous spacing. Voice: first-person Lira.</p>
+    </div>
+    <div class="card" style="flex:1; min-width:280px">
+      <span class="badge badge-info">Professionals</span>
+      <h3 style="margin-top:12px">Clinical product + marketing</h3>
+      <p>Mostly neutral clinical tool with subtle Lira DNA. Cooler palette, denser layouts, sage primary action. Voice: third-person, evidence-led.</p>
+    </div>
+  </div>
+
+  <h2>Quick reference</h2>
+  <div class="stack">
+    <div class="card">
+      <h3>Install</h3>
+      <pre><code>"@lira/design-system": "github:feelwithlira/lira-design-system#main"</code></pre>
+    </div>
+    <div class="card">
+      <h3>Web (Tailwind v4) — globals.css</h3>
+<pre><code>@import "@lira/design-system/tokens.css";
+@import "@lira/design-system/tailwind";
+@import "tailwindcss";</code></pre>
+    </div>
+    <div class="card">
+      <h3>React Native — App root</h3>
+<pre><code>import { LiraThemeProvider } from "@lira/design-system/react-native";
+&lt;LiraThemeProvider&gt;...&lt;/LiraThemeProvider&gt;</code></pre>
+    </div>
+    <div class="card">
+      <h3>Set theme</h3>
+<pre><code>// Web
+&lt;html data-theme="professionals"&gt;
+
+// React Native
+&lt;LiraThemeProvider themeName="professionals"&gt;</code></pre>
+    </div>
+  </div>
+
+  <h2>Documentation</h2>
+  <div class="stack">
+    <p>For the full developer guide:</p>
+    <ul style="line-height:1.8">
+      <li><a href="../docs/00-getting-started.md">Getting started — per-repo integration</a></li>
+      <li><a href="../docs/01-principles.md">Principles</a></li>
+      <li><a href="../docs/02-tokens.md">Tokens</a></li>
+      <li><a href="../docs/03-themes-and-surfaces.md">Themes &amp; surfaces</a></li>
+      <li><a href="../docs/04-web-primitives.md">Web primitives</a></li>
+      <li><a href="../docs/05-react-native.md">React Native components</a></li>
+      <li><a href="../docs/06-charts.md">Charts</a></li>
+      <li><a href="../docs/07-accessibility.md">Accessibility</a></li>
+      <li><a href="../docs/08-content-and-voice.md">Content &amp; voice</a></li>
+    </ul>
+  </div>
+</main>
+
+<script>
+  (function () {
+    var saved = localStorage.getItem('lira-showcase-theme') || 'women';
+    document.documentElement.setAttribute('data-theme', saved);
+    document.querySelectorAll('[data-theme-set]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.themeSet === saved);
+      btn.addEventListener('click', function () {
+        var t = btn.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('lira-showcase-theme', t);
+        document.querySelectorAll('[data-theme-set]').forEach(function (b) {
+          b.classList.toggle('active', b.dataset.themeSet === t);
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

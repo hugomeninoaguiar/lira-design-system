@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" data-theme="women">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lira Design System — Typography</title>
+  <link rel="stylesheet" href="../dist/css/tokens.css" />
+  <link rel="stylesheet" href="docs-site.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">Lira Design System</span>
+  <nav class="row" style="gap:16px">
+    <a href="index.html">Overview</a>
+    <a href="colors.html">Colors</a>
+    <a href="typography.html" class="active">Typography</a>
+    <a href="components.html">Components</a>
+    <a href="charts.html">Charts</a>
+  </nav>
+  <div class="theme-toggle" role="tablist" aria-label="Theme">
+    <button data-theme-set="women"        class="active" type="button">Women</button>
+    <button data-theme-set="professionals" type="button">Professionals</button>
+  </div>
+</div>
+
+<main class="shell">
+  <h1>Typography</h1>
+  <p class="lede">Type roles map size + line-height + weight to a meaningful name. Pick by role, not by raw size.</p>
+
+  <h2>Roles</h2>
+
+  <div class="stack">
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">display • 48 / 56 / bold</p>
+      <p style="font-size:48px; line-height:1.15; font-weight:700; letter-spacing:-0.01em; margin:8px 0 0; color:var(--semantic-text-primary)">Your brain works differently.</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">h1 • 40 / 46 / bold</p>
+      <p style="font-size:40px; line-height:1.15; font-weight:700; margin:8px 0 0; color:var(--semantic-text-primary)">Earlier recognition, better support.</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">h2 • 32 / 40 / bold</p>
+      <p style="font-size:32px; line-height:1.25; font-weight:700; margin:8px 0 0; color:var(--semantic-text-primary)">Today's check-in</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">h3 • 24 / 32 / semibold</p>
+      <p style="font-size:24px; line-height:1.3; font-weight:600; margin:8px 0 0; color:var(--semantic-text-primary)">Inner world</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">title • 18 / 24 / semibold</p>
+      <p style="font-size:18px; line-height:1.3; font-weight:600; margin:8px 0 0; color:var(--semantic-text-primary)">Morning energy check</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">body large • 18 / 28 / regular</p>
+      <p style="font-size:18px; line-height:1.6; font-weight:400; margin:8px 0 0; color:var(--semantic-text-primary)">A gentle digital space built for neurodivergent women, designed to help you track your energy and feel more in sync with yourself.</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">body • 16 / 24 / regular</p>
+      <p style="font-size:16px; line-height:1.5; font-weight:400; margin:8px 0 0; color:var(--semantic-text-primary)">Lira helps you recognise patterns in energy, overwhelm, sensory sensitivity, and focus.</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">body small • 14 / 20 / regular</p>
+      <p style="font-size:14px; line-height:1.5; font-weight:400; margin:8px 0 0; color:var(--semantic-text-secondary)">Set a reminder or don't — we'll figure it out.</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">caption • 12 / 16 / medium</p>
+      <p style="font-size:12px; line-height:1.3; font-weight:500; letter-spacing:0.02em; margin:8px 0 0; color:var(--semantic-text-secondary)">Last sync • 12:34 PM</p>
+    </div>
+    <div class="card">
+      <p class="muted" style="margin:0; font-size:12px; letter-spacing:0.04em; text-transform:uppercase;">label • 14 / 20 / medium</p>
+      <p style="font-size:14px; line-height:1.3; font-weight:500; letter-spacing:0.02em; margin:8px 0 0; color:var(--semantic-text-primary)">Energy level</p>
+    </div>
+  </div>
+
+  <h2>Size scale (raw)</h2>
+  <table class="token-table">
+    <thead><tr><th>Token</th><th>Pixel</th><th>Sample</th></tr></thead>
+    <tbody id="size-rows"></tbody>
+  </table>
+</main>
+
+<script>
+  (function () {
+    var sizes = [10,12,14,16,18,20,24,28,32,40,48,56,64];
+    var tbody = document.getElementById('size-rows');
+    sizes.forEach(function (n) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td><code>fontSize.' + n + '</code></td>' +
+        '<td><code>' + n + 'px</code></td>' +
+        '<td style="font-size:' + n + 'px; line-height:1.3">Aa Bb 123</td>';
+      tbody.appendChild(tr);
+    });
+    var saved = localStorage.getItem('lira-showcase-theme') || 'women';
+    document.documentElement.setAttribute('data-theme', saved);
+    document.querySelectorAll('[data-theme-set]').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.themeSet === saved);
+      btn.addEventListener('click', function () {
+        var t = btn.dataset.themeSet;
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('lira-showcase-theme', t);
+        document.querySelectorAll('[data-theme-set]').forEach(function (b) {
+          b.classList.toggle('active', b.dataset.themeSet === t);
+        });
+      });
+    });
+  })();
+</script>
+</body>
+</html>
