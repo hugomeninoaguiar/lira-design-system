@@ -47,10 +47,12 @@
   },
   "peerDependencies": {
     "react": ">=18",
-    "react-native": ">=0.74"
+    "react-native": ">=0.74",
+    "@phosphor-icons/react-native": ">=2.0.0"
   },
   "peerDependenciesMeta": {
-    "react-native": { "optional": true }
+    "react-native": { "optional": true },
+    "@phosphor-icons/react-native": { "optional": true }
   },
   "devDependencies": {
     "typescript": "~5.9.0"

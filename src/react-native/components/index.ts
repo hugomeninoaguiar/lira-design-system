@@ -10,3 +10,4 @@ export { AppTextField, type AppTextFieldProps } from './AppTextField';
 export { AppToggle, type AppToggleProps } from './AppToggle';
 export { AppStepper, type AppStepperProps } from './AppStepper';
 export { AppBadge, type AppBadgeProps, type AppBadgeTone } from './AppBadge';
+export { AppIcon, type AppIconProps, type IconWeight, IconSizes } from './AppIcon';
