@@ -1,0 +1,54 @@
+{
+  "$description": "Semantic tokens for the Lira for Women WEB surface (homepage + /for-women pages). Warm peach/cream feel, brand-mint accents, illustrated character. Inherits all primitive scales.",
+  "semantic": {
+    "background": {
+      "app":          { "value": "{color.warm.50}", "$description": "Page background — soft cream" },
+      "surface":      { "value": "{color.neutral.0}", "$description": "Card surface on cream" },
+      "subtle":       { "value": "{color.warm.100}", "$description": "Secondary section background" },
+      "heroPrimary":  { "value": "{color.peach.100}", "$description": "Marketing hero — production peach" },
+      "heroSecondary":{ "value": "{color.warm.50}" },
+      "accentSoft":   { "value": "{color.green.100}", "$description": "Soft mint section / card background" },
+      "accentDeep":   { "value": "{color.green.300}", "$description": "Brand mint card surface" },
+      "warmCard":     { "value": "{color.peach.50}" },
+      "coolCard":     { "value": "{color.cool.50}" }
+    },
+    "text": {
+      "primary":   { "value": "{color.warm.900}", "$description": "Body copy on cream/peach" },
+      "secondary": { "value": "{color.warm.500}", "$description": "Supporting copy" },
+      "muted":     { "value": "{color.warm.400}" },
+      "onAccent":  { "value": "{color.green.700}", "$description": "Text on mint accent surfaces" },
+      "onPrimary": { "value": "{color.neutral.0}", "$description": "Text on filled green CTA" },
+      "link":      { "value": "{color.green.600}" }
+    },
+    "border": {
+      "default": { "value": "{color.warm.200}" },
+      "subtle":  { "value": "{color.warm.150}" },
+      "strong":  { "value": "{color.warm.400}" },
+      "focus":   { "value": "{color.green.500}" }
+    },
+    "action": {
+      "primary":       { "value": "{color.green.500}", "$description": "Filled CTA" },
+      "primaryHover":  { "value": "{color.green.600}" },
+      "primarySoft":   { "value": "{color.green.100}", "$description": "Soft / outlined CTA" },
+      "secondary":     { "value": "{color.neutral.0}" },
+      "destructive":   { "value": "{color.dustyRed.400}" }
+    },
+    "accent": {
+      "primary": { "value": "{color.purple.300}" },
+      "subtle":  { "value": "{color.purple.100}" },
+      "warm":    { "value": "{color.amber.300}", "$description": "Warm highlight underline" }
+    },
+    "feedback": {
+      "success": { "fg": { "value": "{color.feedback.successFg}" }, "bg": { "value": "{color.feedback.successBg}" } },
+      "warning": { "fg": { "value": "{color.feedback.warningFg}" }, "bg": { "value": "{color.feedback.warningBg}" } },
+      "error":   { "fg": { "value": "{color.feedback.errorFg}" },   "bg": { "value": "{color.feedback.errorBg}" } },
+      "info":    { "fg": { "value": "{color.feedback.infoFg}" },    "bg": { "value": "{color.feedback.infoBg}" } }
+    },
+    "radius": {
+      "card":   { "value": "{radius.lg}", "$description": "24 — soft, illustrated feel" },
+      "cardLg": { "value": "{radius.xl}" },
+      "button": { "value": "{radius.pill}" },
+      "input":  { "value": "{radius.md}" }
+    }
+  }
+}

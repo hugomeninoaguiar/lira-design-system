@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lira Design System — Preview</title>
+<meta name="description" content="Tokens and components for Lira: Mobile (Women), Web (Women), Web (Professionals)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap"
+  rel="stylesheet"
+/>
+<style>
+  /* =========================================================================
+     1. PRIMITIVES — same across all themes. Source of truth lives in
+        tokens/primitives/*.json. Mirrored here for the standalone preview.
+     ========================================================================= */
+  :root {
+    /* Neutral */
+    --c-neutral-0:   #FFFFFF;
+    --c-neutral-50:  #F7F9FA;
+    --c-neutral-100: #E8EEF0;
+    --c-neutral-200: #C7D3D9;
+    --c-neutral-300: #6B7C85;
+    --c-neutral-500: #1C2A2E;
+
+    /* Green / Sage (brand) */
+    --c-green-50:  #F0F9F4;
+    --c-green-100: #DDF1E6;
+    --c-green-200: #B8D8C4;
+    --c-green-300: #ACDBC5;
+    --c-green-400: #A8D5BA;
+    --c-green-500: #52766A;
+    --c-green-600: #3F5E56;
+    --c-green-700: #2D5A42;
+    --c-sage-300: #9CC4B0;
+    --c-sage-500: #52766A;
+    --c-sage-600: #3D5A50;
+    --c-sage-700: #2C4339;
+
+    /* Warm / Peach (Women) */
+    --c-warm-0:   #FFFFFF;
+    --c-warm-50:  #FBF8F3;
+    --c-warm-100: #F7F3ED;
+    --c-warm-150: #F6EFE7;
+    --c-warm-200: #E9E0D6;
+    --c-warm-300: #E0D4C4;
+    --c-warm-400: #B5A595;
+    --c-warm-500: #8A7A6A;
+    --c-warm-700: #54493E;
+    --c-warm-800: #2B2722;
+    --c-warm-900: #1C1C1C;
+    --c-peach-50:  #FBF4EA;
+    --c-peach-100: #F4E8D5;
+    --c-peach-150: #EFDDC4;
+    --c-peach-200: #E5CFB0;
+
+    /* Cool (Professionals) */
+    --c-cool-0:   #FFFFFF;
+    --c-cool-50:  #F8FAF8;
+    --c-cool-100: #F1F4F2;
+    --c-cool-200: #D8E0DC;
+    --c-cool-300: #B7C4BE;
+    --c-cool-500: #5F6B64;
+    --c-cool-700: #2E3833;
+    --c-cool-900: #17211D;
+
+    /* Accents */
+    --c-amber-50:  #FFF8D6;
+    --c-amber-100: #F8E8B9;
+    --c-amber-300: #F0C060;
+    --c-amber-500: #C99B3A;
+    --c-purple-100: #EDE7FA;
+    --c-purple-300: #A78BD6;
+    --c-purple-500: #7668C8;
+    --c-dustyRed-50:  #FDE7E9;
+    --c-dustyRed-200: #E8B8BE;
+    --c-dustyRed-400: #B66A72;
+    --c-dustyRed-600: #8C4951;
+
+    /* Feedback */
+    --c-success-fg: #2D5A42;
+    --c-success-bg: #DDF1E6;
+    --c-warning-fg: #7A5A1A;
+    --c-warning-bg: #FFF8D6;
+    --c-error-fg:   #8C4951;
+    --c-error-bg:   #FDE7E9;
+    --c-info-fg:    #2A4A6E;
+    --c-info-bg:    #DDE9F8;
+
+    /* Data – clinical */
+    --c-clin-green: #52766A;
+    --c-clin-teal:  #4F7F82;
+    --c-clin-sand:  #C7B99D;
+    --c-clin-plum:  #7A6578;
+    --c-clin-slate: #5F6B73;
+
+    /* Type primitives */
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+    /* Spacing scale */
+    --s-1: 4px;   --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+    --s-5: 20px;  --s-6: 24px;  --s-7: 28px;  --s-8: 32px;
+    --s-10: 40px; --s-12: 48px; --s-14: 56px; --s-16: 64px;
+    --s-20: 80px; --s-24: 96px; --s-32: 128px;
+
+    /* Radius scale */
+    --r-xs: 4px;  --r-sm: 8px;  --r-md: 16px; --r-lg: 24px;
+    --r-xl: 28px; --r-2xl: 32px; --r-pill: 999px;
+
+    /* Shadow scale */
+    --shadow-sm: 0 1px 2px rgba(28, 28, 28, .04), 0 1px 1px rgba(28, 28, 28, .03);
+    --shadow-md: 0 4px 12px rgba(28, 28, 28, .06), 0 2px 4px rgba(28, 28, 28, .04);
+    --shadow-lg: 0 12px 32px rgba(28, 28, 28, .08), 0 4px 8px rgba(28, 28, 28, .04);
+  }
+
+  /* =========================================================================
+     2. SEMANTIC THEMES — mapped from primitives.
+        Mirrors tokens/semantic/women-mobile (core.json), women-web.json, pro-web.json.
+     ========================================================================= */
+
+  /* Women — Mobile (current core.json) */
+  [data-theme="women-mobile"] {
+    --bg-app:      var(--c-neutral-50);
+    --bg-surface:  var(--c-neutral-0);
+    --bg-subtle:   var(--c-neutral-100);
+    --bg-hero1:    var(--c-peach-100);
+    --bg-hero2:    var(--c-warm-50);
+    --bg-accent-soft: var(--c-green-100);
+    --bg-accent-deep: var(--c-green-300);
+    --bg-warmCard: var(--c-peach-50);
+    --bg-coolCard: var(--c-cool-50);
+
+    --text-primary:   var(--c-neutral-500);
+    --text-secondary: var(--c-neutral-300);
+    --text-muted:     var(--c-cool-300);
+    --text-onAccent:  var(--c-green-700);
+    --text-onPrimary: var(--c-neutral-0);
+    --text-link:      var(--c-green-600);
+
+    --border-default: var(--c-neutral-100);
+    --border-subtle:  var(--c-neutral-100);
+    --border-strong:  var(--c-neutral-200);
+    --border-focus:   var(--c-green-500);
+
+    --action-primary:      var(--c-green-500);
+    --action-primaryHover: var(--c-green-600);
+    --action-primarySoft:  var(--c-green-100);
+
+    --accent-primary: var(--c-purple-300);
+    --accent-subtle:  var(--c-purple-100);
+    --accent-warm:    var(--c-amber-300);
+
+    --r-card:   var(--r-lg);
+    --r-cardLg: var(--r-xl);
+    --r-button: var(--r-pill);
+    --r-input:  var(--r-md);
+
+    --font-display: var(--font-sans);
+    --font-body:    var(--font-sans);
+  }
+
+  /* Women — Web */
+  [data-theme="women-web"] {
+    --bg-app:      var(--c-warm-50);
+    --bg-surface:  var(--c-neutral-0);
+    --bg-subtle:   var(--c-warm-100);
+    --bg-hero1:    var(--c-peach-100);
+    --bg-hero2:    var(--c-warm-50);
+    --bg-accent-soft: var(--c-green-100);
+    --bg-accent-deep: var(--c-green-300);
+    --bg-warmCard: var(--c-peach-50);
+    --bg-coolCard: var(--c-cool-50);
+
+    --text-primary:   var(--c-warm-900);
+    --text-secondary: var(--c-warm-500);
+    --text-muted:     var(--c-warm-400);
+    --text-onAccent:  var(--c-green-700);
+    --text-onPrimary: var(--c-neutral-0);
+    --text-link:      var(--c-green-600);
+
+    --border-default: var(--c-warm-200);
+    --border-subtle:  var(--c-warm-150);
+    --border-strong:  var(--c-warm-400);
+    --border-focus:   var(--c-green-500);
+
+    --action-primary:      var(--c-green-500);
+    --action-primaryHover: var(--c-green-600);
+    --action-primarySoft:  var(--c-green-100);
+
+    --accent-primary: var(--c-purple-300);
+    --accent-subtle:  var(--c-purple-100);
+    --accent-warm:    var(--c-amber-300);
+
+    --r-card:   var(--r-lg);
+    --r-cardLg: var(--r-xl);
+    --r-button: var(--r-pill);
+    --r-input:  var(--r-md);
+
+    --font-display: var(--font-sans);
+    --font-body:    var(--font-sans);
+  }
+
+  /* Professionals — Web */
+  [data-theme="pro-web"] {
+    --bg-app:      var(--c-cool-50);
+    --bg-surface:  var(--c-neutral-0);
+    --bg-subtle:   var(--c-cool-100);
+    --bg-hero1:    var(--c-cool-50);
+    --bg-hero2:    var(--c-neutral-0);
+    --bg-accent-soft: var(--c-green-100);
+    --bg-accent-deep: var(--c-green-500);
+    --bg-warmCard: var(--c-amber-50);
+    --bg-coolCard: var(--c-cool-100);
+
+    --text-primary:   var(--c-cool-900);
+    --text-secondary: var(--c-cool-500);
+    --text-muted:     var(--c-cool-300);
+    --text-onAccent:  var(--c-neutral-0);
+    --text-onPrimary: var(--c-neutral-0);
+    --text-link:      var(--c-green-600);
+
+    --border-default: var(--c-cool-200);
+    --border-subtle:  var(--c-cool-100);
+    --border-strong:  var(--c-cool-300);
+    --border-focus:   var(--c-green-500);
+
+    --action-primary:      var(--c-green-500);
+    --action-primaryHover: var(--c-green-600);
+    --action-primarySoft:  var(--c-green-100);
+
+    --accent-primary: var(--c-sage-500);
+    --accent-subtle:  var(--c-green-100);
+    --accent-warm:    var(--c-amber-500);
+
+    --r-card:   var(--r-md);
+    --r-cardLg: var(--r-lg);
+    --r-button: var(--r-pill);
+    --r-input:  var(--r-sm);
+
+    --font-display: var(--font-serif);
+    --font-body:    var(--font-sans);
+  }
+
+  /* =========================================================================
+     3. PAGE CHROME — preview-only styling for the docs page.
+     ========================================================================= */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--bg-app);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .page { max-width: 1200px; margin: 0 auto; padding: 0 var(--s-6) var(--s-16); }
+
+  header.topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg-app) 88%, transparent);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .topbar-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--s-4) var(--s-6);
+    gap: var(--s-6);
+  }
+  .brand { display: flex; align-items: center; gap: var(--s-3); font-weight: 700; letter-spacing: -.01em; }
+  .brand-dot {
+    width: 28px; height: 28px; border-radius: var(--r-pill);
+    background: var(--action-primary);
+    display: grid; place-items: center; color: var(--text-onPrimary);
+    font-family: var(--font-display); font-size: 16px;
+  }
+  .brand-name { font-size: 14px; color: var(--text-secondary); }
+  .brand-title { font-size: 14px; color: var(--text-primary); }
+  .switcher { display: flex; gap: var(--s-1); background: var(--bg-subtle); padding: 4px; border-radius: var(--r-pill); }
+  .switcher button {
+    appearance: none; border: 0; cursor: pointer;
+    font-family: var(--font-body); font-size: 13px; font-weight: 500;
+    padding: 8px 14px; border-radius: var(--r-pill);
+    color: var(--text-secondary); background: transparent;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .switcher button:hover { color: var(--text-primary); }
+  .switcher button[aria-pressed="true"] {
+    background: var(--bg-surface); color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  nav.toc {
+    position: sticky; top: 73px; z-index: 10;
+    background: color-mix(in srgb, var(--bg-app) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(8px);
+    -webkit-backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .toc-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; gap: var(--s-2); padding: var(--s-3) var(--s-6);
+    overflow-x: auto;
+  }
+  .toc a {
+    font-size: 13px; color: var(--text-secondary); text-decoration: none;
+    padding: 6px 12px; border-radius: var(--r-pill); white-space: nowrap;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .toc a:hover { background: var(--bg-subtle); color: var(--text-primary); }
+
+  section.section { padding: var(--s-12) 0; border-bottom: 1px solid var(--border-subtle); }
+  section.section:last-child { border-bottom: 0; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: var(--s-4); margin-bottom: var(--s-8); }
+  .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  h1.display { font-family: var(--font-display); font-size: 56px; line-height: 1.05; letter-spacing: -.02em; margin: 0 0 var(--s-4); font-weight: 700; }
+  h2.title { font-family: var(--font-display); font-size: 28px; line-height: 1.2; letter-spacing: -.01em; margin: 0; font-weight: 700; }
+  h3.subtitle { font-family: var(--font-display); font-size: 18px; margin: 0 0 var(--s-2); font-weight: 600; }
+  .lead { font-size: 18px; line-height: 1.6; color: var(--text-secondary); max-width: 60ch; margin: 0; }
+
+  /* =========================================================================
+     4. PRESENTATION CARDS for tokens
+     ========================================================================= */
+  .grid { display: grid; gap: var(--s-4); }
+  .grid.cols-2  { grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+  .grid.cols-3  { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .grid.cols-4  { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .grid.cols-6  { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+
+  .swatch {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-card);
+    overflow: hidden;
+  }
+  .swatch .chip { height: 96px; border-bottom: 1px solid var(--border-subtle); }
+  .swatch .meta { padding: var(--s-3) var(--s-4); font-size: 12px; }
+  .swatch .meta .name { font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+  .swatch .meta .hex { color: var(--text-secondary); font-family: var(--font-mono); }
+
+  .token-row {
+    display: grid; grid-template-columns: 1fr auto; gap: var(--s-3);
+    padding: var(--s-3) var(--s-4);
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 13px;
+  }
+  .token-row:last-child { border-bottom: 0; }
+  .token-row .k { color: var(--text-primary); }
+  .token-row .v { color: var(--text-secondary); font-family: var(--font-mono); }
+
+  .panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-card);
+    overflow: hidden;
+  }
+  .panel-head { padding: var(--s-4) var(--s-5); border-bottom: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center; }
+  .panel-head .h { font-weight: 600; font-size: 14px; }
+  .panel-head .tag { font-size: 11px; color: var(--text-secondary); }
+
+  /* type ladder */
+  .type-row { display: grid; grid-template-columns: 80px 1fr auto; gap: var(--s-5); padding: var(--s-4) var(--s-5); border-bottom: 1px solid var(--border-subtle); align-items: baseline; }
+  .type-row:last-child { border-bottom: 0; }
+  .type-row .role { font-size: 12px; color: var(--text-secondary); font-family: var(--font-mono); }
+  .type-row .meta { font-size: 12px; color: var(--text-secondary); font-family: var(--font-mono); white-space: nowrap; }
+  .display-sample { font-family: var(--font-display); }
+
+  /* spacing/radius */
+  .scale-row { display: grid; grid-template-columns: 80px 1fr auto; gap: var(--s-4); padding: var(--s-3) var(--s-5); border-bottom: 1px solid var(--border-subtle); align-items: center; }
+  .scale-row:last-child { border-bottom: 0; }
+  .scale-row .label { font-size: 12px; color: var(--text-secondary); font-family: var(--font-mono); }
+  .scale-row .vis  { display: flex; align-items: center; }
+  .space-bar  { height: 16px; background: var(--accent-subtle); border-radius: 4px; }
+  .radius-vis { width: 80px; height: 80px; background: var(--bg-accent-soft); border: 1px solid var(--border-default); }
+
+  /* =========================================================================
+     5. COMPONENT PRIMITIVES
+     ========================================================================= */
+  .btn {
+    appearance: none; border: 0; cursor: pointer;
+    font-family: var(--font-body); font-weight: 600; font-size: 15px;
+    padding: 12px 22px; border-radius: var(--r-button);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: background-color .15s ease, transform .05s ease, box-shadow .15s ease;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--action-primary); color: var(--text-onPrimary); }
+  .btn-primary:hover { background: var(--action-primaryHover); }
+  .btn-secondary { background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border-strong); }
+  .btn-secondary:hover { background: var(--bg-subtle); }
+  .btn-ghost { background: transparent; color: var(--text-primary); }
+  .btn-ghost:hover { background: var(--bg-subtle); }
+  .btn-soft { background: var(--action-primarySoft); color: var(--text-onAccent); }
+  .btn-soft:hover { background: color-mix(in srgb, var(--action-primarySoft) 70%, var(--action-primary) 30%); }
+  .btn-disabled { background: var(--bg-subtle); color: var(--text-muted); cursor: not-allowed; }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: var(--r-pill);
+    font-size: 12px; font-weight: 500;
+    background: var(--bg-subtle); color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+  }
+  .pill-accent { background: var(--accent-subtle); color: var(--text-onAccent); border-color: transparent; }
+  .pill-evidence {
+    background: transparent;
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    text-transform: uppercase; letter-spacing: .08em; font-size: 10px;
+  }
+  .pill-warm { background: var(--accent-warm); color: var(--c-warm-900); border-color: transparent; }
+
+  .card-product {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-card);
+    padding: var(--s-6);
+    box-shadow: var(--shadow-sm);
+  }
+  .card-accent {
+    background: var(--bg-accent-deep);
+    border: 0;
+    border-radius: var(--r-card);
+    padding: var(--s-6);
+    color: var(--text-onAccent);
+  }
+  .card-soft {
+    background: var(--bg-accent-soft);
+    border-radius: var(--r-card);
+    padding: var(--s-6);
+    color: var(--text-onAccent);
+  }
+  .card-warm {
+    background: var(--bg-warmCard);
+    border-radius: var(--r-card);
+    padding: var(--s-6);
+  }
+
+  .input {
+    width: 100%;
+    appearance: none; border: 1px solid var(--border-strong);
+    background: var(--bg-surface); color: var(--text-primary);
+    border-radius: var(--r-input);
+    padding: 12px 14px; font-family: var(--font-body); font-size: 15px;
+  }
+  .input:focus { outline: 2px solid var(--border-focus); outline-offset: 1px; }
+  .label { font-size: 13px; font-weight: 500; color: var(--text-primary); display: block; margin-bottom: 6px; }
+
+  .alert { display: flex; gap: var(--s-3); align-items: flex-start; padding: var(--s-4); border-radius: var(--r-card); }
+  .alert-success { background: var(--c-success-bg); color: var(--c-success-fg); }
+  .alert-warning { background: var(--c-warning-bg); color: var(--c-warning-fg); }
+  .alert-error   { background: var(--c-error-bg);   color: var(--c-error-fg); }
+  .alert-info    { background: var(--c-info-bg);    color: var(--c-info-fg); }
+
+  /* =========================================================================
+     6. MARKETING PATTERNS — surface-specific examples
+     ========================================================================= */
+  .hero {
+    border-radius: var(--r-cardLg);
+    padding: var(--s-12) var(--s-8);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-women-web { background: var(--bg-hero1); }
+  .hero-pro-web   { background: var(--bg-hero2); border: 1px solid var(--border-subtle); }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--s-8); align-items: center; }
+  @media (max-width: 720px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero h1 { font-family: var(--font-display); font-size: 48px; line-height: 1.05; letter-spacing: -.02em; margin: var(--s-2) 0 var(--s-4); }
+  .hero p { font-size: 18px; color: var(--text-secondary); line-height: 1.6; max-width: 52ch; margin: 0; }
+  .hero-cta { display: flex; gap: var(--s-3); flex-wrap: wrap; margin-top: var(--s-6); }
+  .hero-illu {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-cardLg);
+    aspect-ratio: 4 / 5;
+    display: grid; place-items: center;
+    color: var(--text-muted); font-size: 13px;
+  }
+
+  .feature-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--s-5); }
+
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--s-4); }
+  .stat { padding: var(--s-5); background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--r-card); }
+  .stat .big { font-family: var(--font-display); font-size: 36px; font-weight: 700; letter-spacing: -.02em; }
+  .stat .lbl { color: var(--text-secondary); font-size: 13px; margin-top: 4px; }
+
+  /* Mobile screen mock */
+  .phone {
+    width: 280px; aspect-ratio: 9/19; background: var(--bg-accent-soft);
+    border-radius: 28px; padding: var(--s-4); position: relative;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-subtle);
+  }
+  .phone-screen { background: var(--c-peach-100); border-radius: 22px; height: 100%; padding: var(--s-4); display: flex; flex-direction: column; gap: var(--s-3); }
+  .phone-pill { background: rgba(0,0,0,.08); height: 18px; width: 80px; border-radius: 99px; align-self: center; }
+  .phone-title { font-family: var(--font-display); font-size: 22px; color: var(--c-warm-900); margin-top: var(--s-3); font-weight: 700; line-height: 1.1; }
+  .phone-sub { color: var(--c-warm-500); font-size: 13px; line-height: 1.5; }
+  .phone-cta { margin-top: auto; background: var(--c-green-500); color: white; padding: 12px; border-radius: 99px; text-align: center; font-weight: 600; font-size: 14px; }
+
+  .footer-note { color: var(--text-muted); font-size: 12px; padding: var(--s-8) 0; text-align: center; }
+</style>
+</head>
+<body data-theme="women-web">
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-dot">L</div>
+        <div>
+          <div class="brand-title">Lira Design System</div>
+          <div class="brand-name" id="brand-name">Web · Women</div>
+        </div>
+      </div>
+      <div class="switcher" role="group" aria-label="Theme switcher">
+        <button data-theme-btn="women-mobile">Mobile · Women</button>
+        <button data-theme-btn="women-web" aria-pressed="true">Web · Women</button>
+        <button data-theme-btn="pro-web">Web · Professionals</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-inner">
+      <a href="#overview">Overview</a>
+      <a href="#color">Color</a>
+      <a href="#typography">Typography</a>
+      <a href="#space">Spacing</a>
+      <a href="#radius">Radius</a>
+      <a href="#shadow">Shadow</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#pills">Pills &amp; badges</a>
+      <a href="#cards">Cards</a>
+      <a href="#forms">Forms</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#patterns">Patterns</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- ========= Overview ========= -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Lira · Design System</div>
+          <h1 class="display">One system. <span style="color: var(--accent-primary)">Three surfaces.</span></h1>
+          <p class="lead">Shared primitives — color, type, space, radius, shadow — power three semantic themes: Mobile (Women), Web (Women), Web (Professionals). Use the switcher above to compare.</p>
+        </div>
+      </div>
+      <div class="grid cols-3" style="margin-top: var(--s-6)">
+        <div class="card-product">
+          <span class="pill pill-accent">Mobile · Women</span>
+          <h3 class="subtitle" style="margin-top: var(--s-4)">Daily support, warm + visual</h3>
+          <p style="color: var(--text-secondary); font-size: 14px;">Peach app background, soft mint accents, illustrated character, rounded everything. Built for low-overwhelm daily use.</p>
+        </div>
+        <div class="card-product">
+          <span class="pill pill-accent">Web · Women</span>
+          <h3 class="subtitle" style="margin-top: var(--s-4)">Premium marketing, same warmth</h3>
+          <p style="color: var(--text-secondary); font-size: 14px;">Larger type ladder, refined spacing, peach hero, mint accents. Same warmth as the app — sized up for marketing.</p>
+        </div>
+        <div class="card-product">
+          <span class="pill pill-evidence">Web · Professionals</span>
+          <h3 class="subtitle" style="margin-top: var(--s-4)">Clinical, restrained, credible</h3>
+          <p style="color: var(--text-secondary); font-size: 14px;">Cool off-white surfaces, sage as the lead accent, tighter radii, serif display for editorial weight. DSM-5-TR-ready feel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Color ========= -->
+    <section class="section" id="color">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Foundation</div>
+          <h2 class="title">Color</h2>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 36ch; margin: 0;">Primitives are constants. Semantic tokens change with the theme switcher.</p>
+      </div>
+
+      <h3 class="subtitle" style="margin-bottom: var(--s-3)">Semantic — surfaces</h3>
+      <div class="grid cols-4" id="sem-surface"></div>
+
+      <h3 class="subtitle" style="margin: var(--s-8) 0 var(--s-3)">Semantic — text</h3>
+      <div class="grid cols-4" id="sem-text"></div>
+
+      <h3 class="subtitle" style="margin: var(--s-8) 0 var(--s-3)">Semantic — action &amp; accent</h3>
+      <div class="grid cols-4" id="sem-action"></div>
+
+      <h3 class="subtitle" style="margin: var(--s-8) 0 var(--s-3)">Primitives — brand &amp; neutrals</h3>
+      <div class="grid cols-6" id="prim-brand"></div>
+
+      <h3 class="subtitle" style="margin: var(--s-8) 0 var(--s-3)">Primitives — clinical data</h3>
+      <div class="grid cols-6" id="prim-clin"></div>
+    </section>
+
+    <!-- ========= Typography ========= -->
+    <section class="section" id="typography">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Foundation</div>
+          <h2 class="title">Typography</h2>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 36ch; margin: 0;">Mobile + Web Women use Inter throughout. Pro Web uses Fraunces for display, Inter for body.</p>
+      </div>
+      <div class="panel">
+        <div class="type-row">
+          <div class="role">display</div>
+          <div class="display-sample" style="font-size: 56px; line-height: 1.05; letter-spacing: -.02em; font-weight: 700;">Your inner world</div>
+          <div class="meta">56 · 1.05 · 700</div>
+        </div>
+        <div class="type-row">
+          <div class="role">h1</div>
+          <div class="display-sample" style="font-size: 40px; line-height: 1.15; letter-spacing: -.02em; font-weight: 700;">Structured for women</div>
+          <div class="meta">40 · 1.15 · 700</div>
+        </div>
+        <div class="type-row">
+          <div class="role">h2</div>
+          <div class="display-sample" style="font-size: 32px; line-height: 1.3; letter-spacing: -.01em; font-weight: 700;">What makes this different</div>
+          <div class="meta">32 · 1.3 · 700</div>
+        </div>
+        <div class="type-row">
+          <div class="role">h3</div>
+          <div class="display-sample" style="font-size: 24px; line-height: 1.3; font-weight: 600;">Track your energy</div>
+          <div class="meta">24 · 1.3 · 600</div>
+        </div>
+        <div class="type-row">
+          <div class="role">h4</div>
+          <div class="display-sample" style="font-size: 20px; line-height: 1.3; font-weight: 600;">A guided inner world</div>
+          <div class="meta">20 · 1.3 · 600</div>
+        </div>
+        <div class="type-row">
+          <div class="role">bodyLarge</div>
+          <div style="font-size: 18px; line-height: 1.65; color: var(--text-primary);">Designed by neuropsychologists for neurodivergent women. Lira helps you understand your energy, your cycle, and what your nervous system needs.</div>
+          <div class="meta">18 · 1.65 · 400</div>
+        </div>
+        <div class="type-row">
+          <div class="role">body</div>
+          <div style="font-size: 16px; line-height: 1.5;">A simple daily check-in helps you understand how you're really doing. Log your energy in seconds.</div>
+          <div class="meta">16 · 1.5 · 400</div>
+        </div>
+        <div class="type-row">
+          <div class="role">bodySmall</div>
+          <div style="font-size: 14px; line-height: 1.5; color: var(--text-secondary);">Sources: DSM-5-TR · Beck et al., 2020 · Hull et al., 2019.</div>
+          <div class="meta">14 · 1.5 · 400</div>
+        </div>
+        <div class="type-row">
+          <div class="role">caption</div>
+          <div style="font-size: 12px; line-height: 1.3; color: var(--text-secondary); font-weight: 500;">Selected for the Ímpares Acceleration Program 2026.</div>
+          <div class="meta">12 · 1.3 · 500</div>
+        </div>
+        <div class="type-row">
+          <div class="role">label</div>
+          <div style="font-size: 14px; line-height: 1.3; letter-spacing: .02em; font-weight: 500; text-transform: uppercase;">For clinicians</div>
+          <div class="meta">14 · 1.3 · 500</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Spacing ========= -->
+    <section class="section" id="space">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Foundation</div>
+          <h2 class="title">Spacing</h2>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 36ch; margin: 0;">4 / 8 px rhythm. Tokens scale 1→32 in fixed steps.</p>
+      </div>
+      <div class="panel" id="space-list"></div>
+    </section>
+
+    <!-- ========= Radius ========= -->
+    <section class="section" id="radius">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Foundation</div>
+          <h2 class="title">Radius</h2>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 36ch; margin: 0;">Mobile + Women web prefer 24–28px for cards. Pro web tightens to 16px.</p>
+      </div>
+      <div class="grid cols-4" id="radius-list"></div>
+    </section>
+
+    <!-- ========= Shadow ========= -->
+    <section class="section" id="shadow">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Foundation</div>
+          <h2 class="title">Shadow</h2>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 36ch; margin: 0;">Soft, low-spread. Avoid heavy elevation on warm surfaces.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card-product" style="box-shadow: var(--shadow-sm)"><strong>shadow-sm</strong><div style="color: var(--text-secondary); font-size: 13px; margin-top: 4px;">Resting state on cards.</div></div>
+        <div class="card-product" style="box-shadow: var(--shadow-md)"><strong>shadow-md</strong><div style="color: var(--text-secondary); font-size: 13px; margin-top: 4px;">Lifted card / floating chip.</div></div>
+        <div class="card-product" style="box-shadow: var(--shadow-lg)"><strong>shadow-lg</strong><div style="color: var(--text-secondary); font-size: 13px; margin-top: 4px;">Modals, phone mocks.</div></div>
+      </div>
+    </section>
+
+    <!-- ========= Buttons ========= -->
+    <section class="section" id="buttons">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Components</div>
+          <h2 class="title">Buttons</h2>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><div class="h">Variants</div><div class="tag">Hover the primary to see the hover token in action.</div></div>
+        <div style="padding: var(--s-5); display: flex; gap: var(--s-3); flex-wrap: wrap; align-items: center;">
+          <button class="btn btn-primary">Get started</button>
+          <button class="btn btn-secondary">Learn more</button>
+          <button class="btn btn-soft">Run your first assessment</button>
+          <button class="btn btn-ghost">Cancel</button>
+          <button class="btn btn-disabled" disabled>Disabled</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Pills ========= -->
+    <section class="section" id="pills">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Components</div>
+          <h2 class="title">Pills &amp; badges</h2>
+        </div>
+      </div>
+      <div class="panel">
+        <div style="padding: var(--s-5); display: flex; gap: var(--s-3); flex-wrap: wrap; align-items: center;">
+          <span class="pill">Default</span>
+          <span class="pill pill-accent">Accent</span>
+          <span class="pill pill-warm">Highlight</span>
+          <span class="pill pill-evidence">For Clinicians</span>
+          <span class="pill" style="color: var(--c-success-fg); background: var(--c-success-bg); border-color: transparent;">DSM-5-TR aligned</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Cards ========= -->
+    <section class="section" id="cards">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Components</div>
+          <h2 class="title">Cards</h2>
+        </div>
+      </div>
+      <div class="feature-cards">
+        <div class="card-product">
+          <span class="pill pill-accent">01</span>
+          <h3 class="subtitle" style="margin-top: var(--s-4)">A guided Inner World</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">Evolving worlds and gentle prompts help users notice patterns in their nervous system — no pressure, no perfectionism.</p>
+        </div>
+        <div class="card-accent">
+          <h3 class="subtitle" style="color: var(--text-onAccent)">Built for women's cycles</h3>
+          <p style="font-size: 14px; line-height: 1.6; opacity: .85; color: var(--text-onAccent);">Hormonal shifts can change focus, overwhelm and emotional regulation — especially in ADHD and autism.</p>
+        </div>
+        <div class="card-soft">
+          <h3 class="subtitle" style="color: var(--text-onAccent)">Calmer, kinder well-being</h3>
+          <p style="font-size: 14px; line-height: 1.6; color: var(--text-onAccent); opacity: .85;">No productivity hacks. Listen to your body and honour your limits.</p>
+        </div>
+        <div class="card-warm">
+          <span class="pill pill-warm">Editorial</span>
+          <h3 class="subtitle" style="margin-top: var(--s-4)">Why now</h3>
+          <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">Neurodivergent women are still widely under- or misdiagnosed, often after years of burnout and anxiety.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Forms ========= -->
+    <section class="section" id="forms">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Components</div>
+          <h2 class="title">Forms</h2>
+        </div>
+      </div>
+      <div class="grid cols-2">
+        <div class="panel">
+          <div class="panel-head"><div class="h">Newsletter signup</div></div>
+          <div style="padding: var(--s-5); display: grid; gap: var(--s-3);">
+            <div>
+              <label class="label" for="ex-email">Email address</label>
+              <input class="input" id="ex-email" type="email" placeholder="you@example.com" />
+            </div>
+            <button class="btn btn-primary" style="justify-content: center;">Join the waitlist</button>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><div class="h">Run your first assessment</div></div>
+          <div style="padding: var(--s-5); display: grid; gap: var(--s-3);">
+            <div>
+              <label class="label">Your name</label>
+              <input class="input" placeholder="Dra. Mariana Pinto" />
+            </div>
+            <div>
+              <label class="label">Clinic email</label>
+              <input class="input" placeholder="you@clinic.com" />
+            </div>
+            <button class="btn btn-soft" style="justify-content: center;">Request access</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= Feedback ========= -->
+    <section class="section" id="feedback">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Components</div>
+          <h2 class="title">Feedback states</h2>
+        </div>
+      </div>
+      <div class="grid cols-2">
+        <div class="alert alert-success"><div><strong>Saved.</strong> Your check-in is logged for today.</div></div>
+        <div class="alert alert-info"><div><strong>Reminder.</strong> A short evening reflection helps Lira spot patterns faster.</div></div>
+        <div class="alert alert-warning"><div><strong>Low energy detected.</strong> Consider a 5-minute grounding instead of a task.</div></div>
+        <div class="alert alert-error"><div><strong>Something went wrong.</strong> Couldn't save your entry — try again in a moment.</div></div>
+      </div>
+    </section>
+
+    <!-- ========= Patterns ========= -->
+    <section class="section" id="patterns">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Patterns</div>
+          <h2 class="title">Marketing patterns</h2>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 36ch; margin: 0;">Same components, different theme = different feel. Switch the theme at the top to see them adapt.</p>
+      </div>
+
+      <h3 class="subtitle" style="margin-bottom: var(--s-3)">Hero — Web · Women</h3>
+      <div class="hero hero-women-web" data-pattern-theme="women-web">
+        <div class="hero-grid">
+          <div>
+            <span class="pill pill-accent">For women</span>
+            <h1>Your energy, your cycle, your inner world — all in one app.</h1>
+            <p>Designed by neuropsychologists for neurodivergent women. Lira helps you understand your energy, your cycle, and what your nervous system needs each day.</p>
+            <div class="hero-cta">
+              <button class="btn btn-primary">Get the app</button>
+              <button class="btn btn-secondary">How it works</button>
+            </div>
+            <div style="display: flex; gap: var(--s-4); margin-top: var(--s-6); align-items: center; color: var(--text-secondary); font-size: 13px;">
+              <span class="pill">Ímpares 2026</span>
+              <span>Selected by CUF Hospitals &amp; Fundação Ageas.</span>
+            </div>
+          </div>
+          <div style="display: grid; place-items: center;">
+            <div class="phone">
+              <div class="phone-screen">
+                <div class="phone-pill"></div>
+                <div class="phone-title">Hi, how's your energy today?</div>
+                <div class="phone-sub">Tap to check in. No long forms.</div>
+                <div style="display: flex; gap: 6px; margin-top: var(--s-3);">
+                  <div style="flex: 1; height: 28px; background: var(--c-dustyRed-200); border-radius: 99px;"></div>
+                  <div style="flex: 1; height: 28px; background: var(--c-amber-300); border-radius: 99px;"></div>
+                  <div style="flex: 1; height: 28px; background: var(--c-amber-100); border-radius: 99px;"></div>
+                  <div style="flex: 1; height: 28px; background: var(--c-green-300); border-radius: 99px;"></div>
+                  <div style="flex: 1; height: 28px; background: var(--c-green-700); border-radius: 99px;"></div>
+                </div>
+                <div class="phone-cta">Check in</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="subtitle" style="margin: var(--s-10) 0 var(--s-3)">Hero — Web · Professionals</h3>
+      <div class="hero hero-pro-web" data-pattern-theme="pro-web">
+        <div class="hero-grid">
+          <div>
+            <span class="pill pill-evidence">For Clinicians</span>
+            <h1>Structured for how ADHD and autism present in <span style="background: color-mix(in srgb, var(--accent-primary) 18%, transparent); padding: 2px 8px; border-radius: 6px;">women</span>.</h1>
+            <p>A clinical workflow for assessing ADHD and autism in adult women — from intake to report. Built on DSM-5-TR with structured anamnesis, dimensional profile, and report scaffolding.</p>
+            <div class="hero-cta">
+              <button class="btn btn-soft">Run your first assessment</button>
+              <button class="btn btn-secondary">Read the protocol</button>
+            </div>
+            <div class="stat-row" style="margin-top: var(--s-8);">
+              <div class="stat"><div class="big">5→3</div><div class="lbl">Sessions per assessment (potential)</div></div>
+              <div class="stat"><div class="big">~3h</div><div class="lbl">Saved on report integration</div></div>
+              <div class="stat"><div class="big">DSM-5-TR</div><div class="lbl">PEA &amp; PHDA aligned</div></div>
+            </div>
+          </div>
+          <div style="display: grid; place-items: center;">
+            <div class="hero-illu" style="background: var(--bg-surface); padding: var(--s-5); display: block;">
+              <div style="display: flex; gap: var(--s-2); margin-bottom: var(--s-4);">
+                <span class="pill pill-evidence">Anamnesis</span>
+                <span class="pill">Questionnaire</span>
+                <span class="pill">Profile</span>
+                <span class="pill">Report</span>
+              </div>
+              <div style="display: grid; gap: var(--s-3);">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;"><span>Communication &amp; CRR</span><strong style="color: var(--accent-primary)">Moderate</strong></div>
+                <div style="height: 6px; background: var(--bg-subtle); border-radius: 99px; overflow: hidden;"><div style="width: 62%; height: 100%; background: var(--c-clin-green);"></div></div>
+
+                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-top: var(--s-2);"><span>Sensory profile</span><strong style="color: var(--accent-primary)">High</strong></div>
+                <div style="height: 6px; background: var(--bg-subtle); border-radius: 99px; overflow: hidden;"><div style="width: 82%; height: 100%; background: var(--c-clin-teal);"></div></div>
+
+                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-top: var(--s-2);"><span>Masking strategies</span><strong style="color: var(--accent-primary)">High</strong></div>
+                <div style="height: 6px; background: var(--bg-subtle); border-radius: 99px; overflow: hidden;"><div style="width: 78%; height: 100%; background: var(--c-clin-plum);"></div></div>
+
+                <div style="display: flex; justify-content: space-between; font-size: 13px; margin-top: var(--s-2);"><span>Attention</span><strong style="color: var(--accent-primary)">Moderate</strong></div>
+                <div style="height: 6px; background: var(--bg-subtle); border-radius: 99px; overflow: hidden;"><div style="width: 58%; height: 100%; background: var(--c-clin-slate);"></div></div>
+              </div>
+              <div style="display: flex; gap: var(--s-2); margin-top: var(--s-5); font-size: 12px; color: var(--text-secondary);">
+                <span class="pill" style="background: var(--c-success-bg); color: var(--c-success-fg); border-color: transparent;">A · Communication</span>
+                <span class="pill" style="background: var(--c-success-bg); color: var(--c-success-fg); border-color: transparent;">B · Restricted patterns</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      Source of truth: <code>tokens/primitives/*.json</code> · <code>tokens/semantic/{women-mobile,women-web,pro-web}.json</code>.
+      <br/>Rebuild artefacts with <code>npm run build:tokens</code>.
+    </div>
+  </main>
+
+<script>
+  // ===========================================================================
+  // Theme switching — flips data-theme on <body>. The Pro-web hero block is
+  // pinned to pro-web so it always shows the clinical pattern even when you're
+  // viewing the Women web theme. Same for the Women-web hero.
+  // ===========================================================================
+  const setTheme = (theme) => {
+    document.body.setAttribute('data-theme', theme);
+    document.querySelectorAll('[data-theme-btn]').forEach((b) => {
+      b.setAttribute('aria-pressed', b.dataset.themeBtn === theme ? 'true' : 'false');
+    });
+    const label = {
+      'women-mobile': 'Mobile · Women',
+      'women-web':    'Web · Women',
+      'pro-web':      'Web · Professionals',
+    }[theme];
+    document.getElementById('brand-name').textContent = label;
+    try { localStorage.setItem('lira-ds-theme', theme); } catch (_) {}
+    // Re-pin example heroes to their canonical theme via inline style override.
+    document.querySelectorAll('[data-pattern-theme]').forEach((el) => {
+      el.setAttribute('data-theme', el.getAttribute('data-pattern-theme'));
+    });
+  };
+  document.querySelectorAll('[data-theme-btn]').forEach((b) => {
+    b.addEventListener('click', () => setTheme(b.dataset.themeBtn));
+  });
+  try {
+    const saved = localStorage.getItem('lira-ds-theme');
+    if (saved) setTheme(saved);
+    else setTheme('women-web');
+  } catch (_) { setTheme('women-web'); }
+
+  // ===========================================================================
+  // Build the swatch lists from data (kept in JS so the source of truth is one
+  // place per category — easy to copy-paste into other tools).
+  // ===========================================================================
+  const swatch = (name, cssVar, hex) => `
+    <div class="swatch">
+      <div class="chip" style="background: var(${cssVar});"></div>
+      <div class="meta">
+        <div class="name">${name}</div>
+        <div class="hex">${hex || ('var(' + cssVar + ')')}</div>
+      </div>
+    </div>`;
+
+  document.getElementById('sem-surface').innerHTML = [
+    ['background.app',     '--bg-app'],
+    ['background.surface', '--bg-surface'],
+    ['background.subtle',  '--bg-subtle'],
+    ['background.heroPrimary', '--bg-hero1'],
+    ['background.accentSoft',  '--bg-accent-soft'],
+    ['background.accentDeep',  '--bg-accent-deep'],
+    ['background.warmCard',    '--bg-warmCard'],
+    ['background.coolCard',    '--bg-coolCard'],
+  ].map(([n, v]) => swatch(n, v)).join('');
+
+  document.getElementById('sem-text').innerHTML = [
+    ['text.primary',   '--text-primary'],
+    ['text.secondary', '--text-secondary'],
+    ['text.muted',     '--text-muted'],
+    ['text.link',      '--text-link'],
+    ['text.onAccent',  '--text-onAccent'],
+    ['text.onPrimary', '--text-onPrimary'],
+  ].map(([n, v]) => swatch(n, v)).join('');
+
+  document.getElementById('sem-action').innerHTML = [
+    ['action.primary',      '--action-primary'],
+    ['action.primaryHover', '--action-primaryHover'],
+    ['action.primarySoft',  '--action-primarySoft'],
+    ['accent.primary',      '--accent-primary'],
+    ['accent.subtle',       '--accent-subtle'],
+    ['accent.warm',         '--accent-warm'],
+    ['border.default',      '--border-default'],
+    ['border.focus',        '--border-focus'],
+  ].map(([n, v]) => swatch(n, v)).join('');
+
+  document.getElementById('prim-brand').innerHTML = [
+    ['green.100', '--c-green-100', '#DDF1E6'],
+    ['green.300', '--c-green-300', '#ACDBC5'],
+    ['green.500', '--c-green-500', '#52766A'],
+    ['green.700', '--c-green-700', '#2D5A42'],
+    ['peach.100', '--c-peach-100', '#F4E8D5'],
+    ['peach.150', '--c-peach-150', '#EFDDC4'],
+    ['warm.50',   '--c-warm-50',   '#FBF8F3'],
+    ['warm.500',  '--c-warm-500',  '#8A7A6A'],
+    ['warm.900',  '--c-warm-900',  '#1C1C1C'],
+    ['cool.50',   '--c-cool-50',   '#F8FAF8'],
+    ['cool.500',  '--c-cool-500',  '#5F6B64'],
+    ['cool.900',  '--c-cool-900',  '#17211D'],
+    ['amber.300', '--c-amber-300', '#F0C060'],
+    ['purple.300','--c-purple-300','#A78BD6'],
+    ['dustyRed.400','--c-dustyRed-400','#B66A72'],
+  ].map(([n, v, h]) => swatch(n, v, h)).join('');
+
+  document.getElementById('prim-clin').innerHTML = [
+    ['clinical.green', '--c-clin-green', '#52766A'],
+    ['clinical.teal',  '--c-clin-teal',  '#4F7F82'],
+    ['clinical.sand',  '--c-clin-sand',  '#C7B99D'],
+    ['clinical.plum',  '--c-clin-plum',  '#7A6578'],
+    ['clinical.slate', '--c-clin-slate', '#5F6B73'],
+  ].map(([n, v, h]) => swatch(n, v, h)).join('');
+
+  // Spacing
+  const spaces = [
+    ['space.1',  4],   ['space.2',  8],   ['space.3', 12],
+    ['space.4', 16],   ['space.5', 20],   ['space.6', 24],
+    ['space.8', 32],   ['space.10', 40],  ['space.12', 48],
+    ['space.16', 64],  ['space.20', 80],  ['space.24', 96],
+    ['space.32', 128],
+  ];
+  document.getElementById('space-list').innerHTML = spaces.map(([n, v]) => `
+    <div class="scale-row">
+      <div class="label">${n}</div>
+      <div class="vis"><div class="space-bar" style="width: ${v}px;"></div></div>
+      <div class="label">${v}px</div>
+    </div>`).join('');
+
+  // Radius
+  const radii = [
+    ['radius.xs', 4], ['radius.sm', 8], ['radius.md', 16],
+    ['radius.lg', 24], ['radius.xl', 28], ['radius.2xl', 32],
+    ['radius.pill', 999],
+  ];
+  document.getElementById('radius-list').innerHTML = radii.map(([n, v]) => `
+    <div class="swatch" style="border-radius: var(--r-card);">
+      <div style="height: 96px; display: grid; place-items: center; background: var(--bg-accent-soft);">
+        <div style="width: 64px; height: 64px; background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: ${v >= 999 ? '999px' : v + 'px'};"></div>
+      </div>
+      <div class="meta"><div class="name">${n}</div><div class="hex">${v >= 999 ? 'pill' : v + 'px'}</div></div>
+    </div>`).join('');
+</script>
+</body>
+</html>
