@@ -246,6 +246,52 @@
     --font-body:    var(--font-sans);
   }
 
+  /* Professionals: the clinical app (lira-clinical-protocol).
+     Literal values, not primitives: this surface is built on Tailwind's own
+     scales, and folding them into the brand palette would put a framework
+     default next to the Lira colours and blur both. See tokens/semantic/
+     pro-app.json, and the CLAUDE.md of that repo, which carries the same
+     table. */
+  [data-theme="pro-app"] {
+    --bg-app:      #f8fafc;
+    --bg-surface:  #ffffff;
+    --bg-subtle:   #f1f5f9;
+    --bg-hero1:    #f8fafc;
+    --bg-hero2:    #ffffff;
+    --bg-accent-soft: #f5f3ff;
+    --bg-accent-deep: #7c3aed;
+    --bg-warmCard: #fffbeb;
+    --bg-coolCard: #f1f5f9;
+
+    --text-primary:   #0f172a;
+    --text-secondary: #475569;
+    --text-muted:     #94a3b8;
+    --text-onAccent:  #ffffff;
+    --text-onPrimary: #ffffff;
+    --text-link:      #6d28d9;
+
+    --border-default: #e2e8f0;
+    --border-subtle:  #f1f5f9;
+    --border-strong:  #cbd5e1;
+    --border-focus:   var(--c-green-300);
+
+    --action-primary:      #7c3aed;
+    --action-primaryHover: #6d28d9;
+    --action-primarySoft:  #f5f3ff;
+
+    --accent-primary: #7c3aed;
+    --accent-subtle:  #f5f3ff;
+    --accent-warm:    #b45309;
+
+    --r-card:   12px;
+    --r-cardLg: 12px;
+    --r-button: 6px;
+    --r-input:  6px;
+
+    --font-display: var(--font-sans);
+    --font-body:    var(--font-sans);
+  }
+
   /* =========================================================================
      3. PAGE CHROME — preview-only styling for the docs page.
      ========================================================================= */
@@ -537,6 +583,7 @@
         <button data-theme-btn="women-mobile">Mobile · Women</button>
         <button data-theme-btn="women-web" aria-pressed="true">Web · Women</button>
         <button data-theme-btn="pro-web">Web · Professionals</button>
+        <button data-theme-btn="pro-app">App · Professionals</button>
       </div>
     </div>
   </header>
@@ -556,6 +603,7 @@
       <a href="#forms">Forms</a>
       <a href="#feedback">Feedback</a>
       <a href="#patterns">Patterns</a>
+      <a href="#clinical-app">Clinical app</a>
     </div>
   </nav>
 
@@ -567,7 +615,7 @@
         <div>
           <div class="eyebrow">Lira · Design System</div>
           <h1 class="display">One system. <span style="color: var(--accent-primary)">Three surfaces.</span></h1>
-          <p class="lead">Shared primitives — color, type, space, radius, shadow — power three semantic themes: Mobile (Women), Web (Women), Web (Professionals). Use the switcher above to compare.</p>
+          <p class="lead">Two products, four surfaces. Shared primitives (color, type, space, radius, shadow) power the three page-shaped themes; the clinical app has its own, because it is not a page. Use the switcher above to compare.</p>
         </div>
       </div>
       <div class="grid cols-3" style="margin-top: var(--s-6)">
@@ -985,8 +1033,122 @@
       </div>
     </section>
 
+    <!-- =====================================================================
+         The clinical app. Pinned to pro-app so it always shows what that
+         product actually is, whichever theme is selected above.
+
+         Deliberately not the marketing hero recoloured: the app is tables,
+         chips and panels, and showing a display headline in violet would give
+         a false idea of it. Every colour here already means something, which
+         is the point of the section.
+         ===================================================================== -->
+    <section class="section" id="clinical-app">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">App · Professionals</div>
+          <h2 class="title">The clinical app</h2>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 40ch; margin: 0;">Where a clinician spends her working day. Not a page, so it does not look like one. Repo: <code>lira-clinical-protocol</code>.</p>
+      </div>
+
+      <div data-pattern-theme="pro-app" data-theme="pro-app" style="background: var(--bg-app); border: 1px solid var(--border-default); border-radius: var(--r-card); padding: var(--s-5); display: grid; gap: var(--s-5); font-family: var(--font-body); color: var(--text-primary);">
+
+        <!-- Status, the colours that are already spoken for -->
+        <div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: var(--s-2);">Status, and what each colour is already saying</div>
+          <div style="display: flex; gap: var(--s-2); flex-wrap: wrap;">
+            <span style="display:inline-flex; align-items:center; border-radius:9999px; border:1px solid #e2e8f0; background:#f8fafc; color:#475569; padding:4px 10px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.05em;">New</span>
+            <span style="display:inline-flex; align-items:center; border-radius:9999px; border:1px solid #fde68a; background:#fffbeb; color:#b45309; padding:4px 10px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.05em;">In progress</span>
+            <span style="display:inline-flex; align-items:center; border-radius:9999px; border:1px solid #a7f3d0; background:#ecfdf5; color:#047857; padding:4px 10px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.05em;">Completed</span>
+            <span style="display:inline-flex; align-items:center; border-radius:9999px; border:1px solid #bae6fd; background:#f0f9ff; color:#0369a1; padding:4px 10px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.05em;">Shared with you</span>
+            <span style="display:inline-flex; align-items:center; border-radius:9999px; border:1px solid #ddd6fe; background:#f5f3ff; color:#6d28d9; padding:4px 10px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.05em;">Clínica Apego</span>
+          </div>
+        </div>
+
+        <!-- The client list: the densest surface in the product -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--r-panel, 6px); overflow: hidden;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+            <thead style="background: var(--bg-subtle);">
+              <tr>
+                <th style="text-align:left; padding:10px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); font-weight:500;">Name</th>
+                <th style="text-align:left; padding:10px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); font-weight:500;">Email</th>
+                <th style="text-align:right; padding:10px 14px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); font-weight:500;">Assessments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-top: 1px solid var(--border-subtle);">
+                <td style="padding:11px 14px;">
+                  <span style="font-weight:500;">Joana Pinhão</span>
+                  <span title="Has pinned notes" style="display:inline-block; width:6px; height:6px; border-radius:9999px; background:#7c3aed; margin-left:8px; vertical-align:middle;"></span>
+                </td>
+                <td style="padding:11px 14px; color:var(--text-secondary);">j***@example.com</td>
+                <td style="padding:11px 14px; text-align:right; font-variant-numeric: tabular-nums;">2</td>
+              </tr>
+              <tr style="border-top: 1px solid var(--border-subtle);">
+                <td style="padding:11px 14px;">
+                  <span style="font-weight:500;">Ana Sousa</span>
+                  <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">Shared by Mariana Lucas</div>
+                </td>
+                <td style="padding:11px 14px; color:var(--text-secondary);">a***@example.com</td>
+                <td style="padding:11px 14px; text-align:right; font-variant-numeric: tabular-nums;">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Emphasis is a left rule, never a filled panel -->
+        <div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: var(--s-2);">Emphasis is a left rule, not a filled panel</div>
+          <div style="display: grid; gap: var(--s-2);">
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-left: 4px solid #7c3aed; border-radius: 6px; padding: 12px 14px;">
+              <div style="font-size:11px; color:var(--text-muted); margin-bottom:4px;">Mariana Lucas · 14 Jul · <span style="border:1px solid #ddd6fe; background:#f5f3ff; color:#6d28d9; border-radius:4px; padding:1px 6px;">Pinned</span></div>
+              <div style="font-size:13px;">Prefers written contact. Phone calls raise her anxiety before sessions.</div>
+            </div>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-left: 4px solid #dc2626; border-radius: 6px; padding: 12px 14px;">
+              <div style="font-size:11px; color:var(--text-muted); margin-bottom:4px;">From the crib sheet · <span style="border:1px solid #fecaca; background:#fef2f2; color:#b91c1c; border-radius:4px; padding:1px 6px;">Alert</span></div>
+              <div style="font-size:13px;">Under crisis team. Do not schedule without checking with the GP first.</div>
+            </div>
+          </div>
+          <p style="font-size:12px; color:var(--text-secondary); margin:10px 0 0;">A filled amber box is the house style of generated UI, and reads as a warning that is not there. Violet says important; red says risk.</p>
+        </div>
+
+        <!-- A decision is not an error -->
+        <div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: var(--s-2);">A decision is not an error</div>
+          <div style="background: var(--bg-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 14px; display: grid; gap: 10px;">
+            <div>
+              <div style="font-size:13px; font-weight:600;">A client with this email already exists</div>
+              <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">If this is the same person, use the existing record so the assessments stay linked.</div>
+            </div>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 6px; padding: 8px 12px; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+              <div>
+                <div style="font-size:13px;">Joana Pinhão</div>
+                <div style="font-size:11px; color:var(--text-muted);">2 assessments, same name</div>
+              </div>
+              <button style="background:#7c3aed; color:#fff; border:0; border-radius:6px; padding:6px 12px; font-size:13px; font-weight:500; font-family:inherit; cursor:pointer;">Use this client</button>
+            </div>
+            <a href="#clinical-app" style="font-size:13px; color:var(--text-secondary); text-decoration:underline; text-underline-offset:2px;">This is someone else, create a new client</a>
+          </div>
+          <p style="font-size:12px; color:var(--text-secondary); margin:10px 0 0;">The professional is being asked a question, not told off. Neutral panel, violet on the action.</p>
+        </div>
+
+        <!-- Buttons and focus -->
+        <div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: var(--s-2);">Actions and focus</div>
+          <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+            <button style="background:#7c3aed; color:#fff; border:0; border-radius:6px; padding:8px 16px; font-size:14px; font-weight:500; font-family:inherit; cursor:pointer;">Primary</button>
+            <button style="background:#fff; color:#334155; border:1px solid #cbd5e1; border-radius:6px; padding:8px 16px; font-size:14px; font-weight:500; font-family:inherit; cursor:pointer;">Secondary</button>
+            <button disabled style="background:#cbd5e1; color:#64748b; border:0; border-radius:6px; padding:8px 16px; font-size:14px; font-weight:500; font-family:inherit;">Disabled</button>
+            <input placeholder="Focus ring uses the brand green" style="flex:1; min-width:220px; padding:8px 12px; border:1px solid #cbd5e1; border-radius:6px; font-size:14px; font-family:inherit; outline:3px solid var(--c-green-300); outline-offset:-1px;" />
+          </div>
+          <p style="font-size:12px; color:var(--text-secondary); margin:10px 0 0;">The focus ring is <code>#ACDBC5</code>, the one brand colour this surface keeps. Everything else is Tailwind's slate and violet.</p>
+        </div>
+
+      </div>
+    </section>
+
     <div class="footer-note">
-      Source of truth: <code>tokens/primitives/*.json</code> · <code>tokens/semantic/{women-mobile,women-web,pro-web}.json</code>.
+      Source of truth: <code>tokens/primitives/*.json</code> · <code>tokens/semantic/{women-mobile,women-web,pro-web,pro-app}.json</code>.
       <br/>Rebuild artefacts with <code>npm run build:tokens</code>.
     </div>
   </main>
@@ -1006,6 +1168,7 @@
       'women-mobile': 'Mobile · Women',
       'women-web':    'Web · Women',
       'pro-web':      'Web · Professionals',
+      'pro-app':      'App · Professionals',
     }[theme];
     document.getElementById('brand-name').textContent = label;
     try { localStorage.setItem('lira-ds-theme', theme); } catch (_) {}
