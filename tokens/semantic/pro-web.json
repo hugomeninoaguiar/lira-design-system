@@ -1,5 +1,8 @@
 {
-  "$description": "Semantic tokens for Lira for Professionals (web). Cooler clinical feel — restrained off-white/cool neutrals, deep sage as primary accent, tighter radii, evidence/clinical typographic weight. Inherits all primitive scales.",
+  "$description": "Semantic tokens for the Lira for Professionals MARKETING PAGE (/lira-for-professionals, in lira-website). Cooler clinical feel: restrained off-white and cool neutrals, deep sage as primary accent, tighter radii, evidence-weighted typography. Inherits all primitive scales.",
+  "$surface": "web/professionals-marketing",
+  "$repo": "lira-website",
+  "$note": "Not the clinical app. That is pro-app.json, and it looks nothing like this: slate and violet, built on Tailwind's scales. This file claimed both surfaces until September 2026, which is why the app was never described.",
   "semantic": {
     "background": {
       "app":          { "value": "{color.cool.50}", "$description": "Page background — cool off-white" },

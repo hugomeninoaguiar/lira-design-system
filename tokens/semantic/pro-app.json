@@ -1,0 +1,58 @@
+{
+  "$description": "Semantic tokens for the Lira for Professionals clinical app (lira-clinical-protocol). This records what that product actually is, rather than what we might one day want it to be. Distinct from pro-web.json, which is the /lira-for-professionals marketing page on the website.",
+  "$surface": "app/professionals",
+  "$repo": "lira-clinical-protocol",
+  "$note": "Values here are literal rather than references to tokens/primitives. The clinical app is built on Tailwind's own scales (slate, violet, emerald, amber, red, sky) and adopting them into the brand primitives would put a framework default next to the brand colours and blur both. Two colours are genuinely shared and are marked as such. The app does not import this file; it is the written record of its palette, and the CLAUDE.md in that repo carries the same table. If one changes, change the other.",
+  "semantic": {
+    "background": {
+      "app":     { "value": "#f8fafc", "$description": "slate-50. Page background" },
+      "surface": { "value": "#ffffff", "$description": "Cards and panels" },
+      "subtle":  { "value": "#f1f5f9", "$description": "slate-100. Inset blocks, table headers" }
+    },
+    "text": {
+      "primary":   { "value": "#0f172a", "$description": "slate-900" },
+      "secondary": { "value": "#475569", "$description": "slate-600" },
+      "muted":     { "value": "#94a3b8", "$description": "slate-400. Empty values, hints" },
+      "onAccent":  { "value": "#ffffff" }
+    },
+    "border": {
+      "default": { "value": "#e2e8f0", "$description": "slate-200" },
+      "strong":  { "value": "#cbd5e1", "$description": "slate-300. Panels asking for a decision" },
+      "focus":   { "value": "{color.green.300}", "$description": "#ACDBC5, the brand green. Focus rings and form accents. Shared with the rest of the brand" },
+      "selected":{ "value": "#334155", "$description": "slate-700, --color-primary in globals.css. The chosen card in the wizard" }
+    },
+    "action": {
+      "primary":      { "value": "#7c3aed", "$description": "violet-600. The product accent: primary buttons, links, emphasis" },
+      "primaryHover": { "value": "#6d28d9", "$description": "violet-700" },
+      "primarySoft":  { "value": "#f5f3ff", "$description": "violet-50. Chips and quiet emphasis" },
+      "primaryBorder":{ "value": "#ddd6fe", "$description": "violet-200" },
+      "secondary":    { "value": "#ffffff", "$description": "White on a slate-300 border" },
+      "disabled":     { "value": "#cbd5e1", "$description": "slate-300" }
+    },
+    "state": {
+      "$description": "Each of these already means something. Check the meaning is free before using a colour for something new: a colour that says two things says neither.",
+      "done":       { "fg": { "value": "#047857" }, "bg": { "value": "#ecfdf5" }, "border": { "value": "#a7f3d0" }, "$description": "emerald. Assessment completed, results available" },
+      "inProgress": { "fg": { "value": "#b45309" }, "bg": { "value": "#fffbeb" }, "border": { "value": "#fde68a" }, "$description": "amber. In progress, invite pending. Also the clinician's own amber on the ICSA crib sheet, so it is not free for anything else" },
+      "risk":       { "fg": { "value": "#b91c1c" }, "bg": { "value": "#fef2f2" }, "border": { "value": "#dc2626" }, "$description": "red. Errors, destructive actions, and alerts the clinician flagged" },
+      "shared":     { "fg": { "value": "#0369a1" }, "bg": { "value": "#f0f9ff" }, "border": { "value": "#bae6fd" }, "$description": "sky. Shared with you by someone else" },
+      "neutral":    { "fg": { "value": "#475569" }, "bg": { "value": "#f8fafc" }, "border": { "value": "#e2e8f0" }, "$description": "slate. No state" }
+    },
+    "emphasis": {
+      "$description": "Two habits that keep the surface from drifting into the look of generated UI.",
+      "rule": {
+        "value": "border-left: 4px solid {action.primary}",
+        "$description": "Emphasis is a left rule on white, never a filled panel. A pinned note uses violet; an alert the clinician raised uses red. A filled amber box reads as a warning that is not there"
+      },
+      "decision": {
+        "value": "background {background.subtle}, border {border.strong}",
+        "$description": "A panel asking the professional to decide something (is this the same person?) stays neutral. The violet button carries the action. It is a question, not an error"
+      }
+    },
+    "radius": {
+      "card":   { "value": "12px", "$description": "rounded-xl on the main cards" },
+      "panel":  { "value": "6px",  "$description": "rounded-md, the default" },
+      "chip":   { "value": "9999px" },
+      "input":  { "value": "6px" }
+    }
+  }
+}

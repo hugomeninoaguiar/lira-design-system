@@ -50,7 +50,8 @@ tokens/                    Source of truth (JSON)
   semantic/                Semantic mappings — one file per surface
     core.json              Mobile · Women (current production app)
     women-web.json         Web · Women (homepage + /for-women)
-    pro-web.json           Web · Professionals (/lira-for-professionals)
+    pro-web.json           Web · Professionals, marketing page only
+    pro-app.json           App · Professionals (the clinical app)
     typography.json        Text style roles (shared)
   components/              Component-scoped tokens (e.g. button, chart)
 
@@ -83,13 +84,43 @@ Commit `tokens/` and `dist/` together after token edits.
 - Primitives are shared across all surfaces. Surface-specific decisions live in `tokens/semantic/<surface>.json`.
 - When adding a new design decision, ask first: does it belong in a primitive (shared), a semantic mapping (surface-specific), or as a component token? Avoid duplicating across surfaces.
 
-## Surfaces — when to use which theme
+## Surfaces: which theme, in which repo
 
-| Surface | Theme file | Feel |
-| --- | --- | --- |
-| Mobile · Women (RN app) | `tokens/semantic/core.json` | Warm, illustrated, rounded. Daily-use, low-overwhelm. |
-| Web · Women (homepage + `/for-women`) | `tokens/semantic/women-web.json` | Same warmth, scaled up for marketing — bigger type, more whitespace. |
-| Web · Professionals (`/lira-for-professionals`, clinical) | `tokens/semantic/pro-web.json` | Cooler, restrained, sage-led, tighter radii. Clinical credibility. |
+Two products, four surfaces. The product a surface belongs to matters more
+than whether it is web or native, so the table names the repo: that is the
+question people and models actually need answered.
+
+**Lira for Women** (consumer)
+
+| Surface | Repo | Theme file | Feel |
+| --- | --- | --- | --- |
+| Mobile app | `lira` | `tokens/semantic/core.json` | Warm, illustrated, rounded. Daily-use, low-overwhelm. |
+| Website | `lira-website` | `tokens/semantic/women-web.json` | Same warmth, scaled up for marketing: bigger type, more whitespace. |
+
+**Lira for Professionals** (B2B)
+
+| Surface | Repo | Theme file | Feel |
+| --- | --- | --- | --- |
+| Marketing page (`/lira-for-professionals`) | `lira-website` | `tokens/semantic/pro-web.json` | Cooler, restrained, sage-led, tighter radii. Clinical credibility. |
+| Clinical app | `lira-clinical-protocol` | `tokens/semantic/pro-app.json` | Slate and violet, dense, functional. Built on Tailwind's scales. |
+
+The two Professionals surfaces do not look the same and are not meant to.
+The marketing page persuades a clinician to sign up; the app is where she
+spends her working day. `pro-web.json` used to claim both, which is why the
+clinical app was never described anywhere.
+
+### What consumes what
+
+| Consumer | How |
+| --- | --- |
+| `lira` (mobile app) | npm dependency on this repo; imports `dist/` and `src/react-native/` |
+| `lira-website` | CSS variables generated from the tokens |
+| `lira-clinical-protocol` | **Nothing.** `pro-app.json` is a written record of its palette, not a dependency. Its `CLAUDE.md` carries the same table; change both together |
+
+Only `tokens/primitives/*`, `tokens/semantic/core.json` and
+`tokens/semantic/typography.json` reach the build, so the mobile app is the
+one consumer that can be broken by a token change. The other semantic files
+are documentation of a surface and are safe to edit.
 
 ## Documentation
 
