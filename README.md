@@ -15,6 +15,7 @@ looking like something it is not.
   - `pro-web.json` for the Professionals marketing page (`/lira-for-professionals`)
   - `pro-app.json` for the Professionals clinical app
 - **Component primitives** (`src/react-native/`) — RN components for the mobile app. Web component primitives currently live in the website repo and consume the same tokens via CSS variables.
+- **Brand** (`assets/brand/`) — the v3 logo. `icon-v3.png` is the shipped app icon, `adaptive-icon-v3.png` is the mark alone for surfaces that supply their own field. The preview inlines both, so the page never shows a broken image and the colours below can be checked against the thing they came from.
 - **Preview** (`docs/preview.html`) — self-contained HTML page rendering tokens + components for all three themes with a theme switcher. Open it in any browser; no build step needed.
 
 ## Quick start
