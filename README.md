@@ -119,13 +119,24 @@ clinical app was never described anywhere.
 | Consumer | How |
 | --- | --- |
 | `lira` (mobile app) | npm dependency on this repo; imports `dist/` and `src/react-native/` |
-| `lira-website` | CSS variables generated from the tokens |
+| `lira-website` | CSS variables **copied by hand** into `src/app/globals.css`. Nothing regenerates it, so it drifts. It already has: see below |
 | `lira-clinical-protocol` | **Nothing.** `pro-app.json` is a written record of its palette, not a dependency. Its `CLAUDE.md` carries the same table; change both together |
 
 Only `tokens/primitives/*`, `tokens/semantic/core.json` and
 `tokens/semantic/typography.json` reach the build, so the mobile app is the
 one consumer that can be broken by a token change. The other semantic files
 are documentation of a surface and are safe to edit.
+
+### Known drift: the brand green
+
+`lira-website` rebranded the dark green to `#1E3A2E` in 2026 and records it in
+`globals.css` as "logo dark green (rebrand 2026), was #52766A". This repo still
+carries `#52766A` as `color.green.500`, and `core.json` uses it for the mobile
+app's primary action, focus ring, active tab and high-confidence state.
+
+So the mobile app is on the pre-rebrand green. Whether the rebrand was meant
+for marketing only or the app is behind has not been decided, and changing the
+primitive settles it for the app either way. Decide first, then change it.
 
 ### One surface never imports another
 
