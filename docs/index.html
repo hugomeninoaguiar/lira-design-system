@@ -457,7 +457,10 @@
     background: var(--bg-subtle); color: var(--text-secondary);
     border: 1px solid var(--border-subtle);
   }
-  .pill-accent { background: var(--accent-subtle); color: var(--text-onAccent); border-color: transparent; }
+  /* Foreground is the accent itself, not --text-onAccent. That token means
+     "on a filled accent", and this background is the pale one: white on
+     #f5f3ff is invisible, and sage on #DDF1E6 was barely better. */
+  .pill-accent { background: var(--accent-subtle); color: var(--accent-primary); border-color: transparent; font-weight: 600; }
   .pill-evidence {
     background: transparent;
     color: var(--accent-primary);
@@ -614,26 +617,37 @@
       <div class="section-head">
         <div>
           <div class="eyebrow">Lira · Design System</div>
-          <h1 class="display">One system. <span style="color: var(--accent-primary)">Three surfaces.</span></h1>
+          <h1 class="display">Two products. <span style="color: var(--accent-primary)">Four surfaces.</span></h1>
           <p class="lead">Two products, four surfaces. Shared primitives (color, type, space, radius, shadow) power the three page-shaped themes; the clinical app has its own, because it is not a page. The switcher above changes what you see, not just its colour: only the sections belonging to the chosen surface are shown.</p>
           <p class="lead" id="surface-note" style="margin-top: var(--s-3);"></p>
         </div>
       </div>
-      <div class="grid cols-3" style="margin-top: var(--s-6)">
-        <div class="card-product">
-          <span class="pill pill-accent">Mobile · Women</span>
-          <h3 class="subtitle" style="margin-top: var(--s-4)">Daily support, warm + visual</h3>
-          <p style="color: var(--text-secondary); font-size: 14px;">Peach app background, soft mint accents, illustrated character, rounded everything. Built for low-overwhelm daily use.</p>
+      <!-- The one section that shows every surface, because it is the map.
+           Everything below it is filtered to the surface you picked. -->
+      <div class="grid cols-2" style="margin-top: var(--s-6); gap: var(--s-4);">
+        <div class="card-product" data-surface-card="women-mobile">
+          <span class="pill pill-accent">Lira for Women &middot; mobile app</span>
+          <h3 class="subtitle" style="margin-top: var(--s-4)">Daily support, warm and visual</h3>
+          <p style="color: var(--text-secondary); font-size: 14px;">Peach background, soft mint accents, illustrated character, rounded everything. Built for low-overwhelm daily use.</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: var(--s-3);"><code>lira</code> &middot; <code>core.json</code></p>
         </div>
-        <div class="card-product">
-          <span class="pill pill-accent">Web · Women</span>
+        <div class="card-product" data-surface-card="women-web">
+          <span class="pill pill-accent">Lira for Women &middot; website</span>
           <h3 class="subtitle" style="margin-top: var(--s-4)">Premium marketing, same warmth</h3>
-          <p style="color: var(--text-secondary); font-size: 14px;">Larger type ladder, refined spacing, peach hero, mint accents. Same warmth as the app — sized up for marketing.</p>
+          <p style="color: var(--text-secondary); font-size: 14px;">Larger type ladder, refined spacing, peach hero, mint accents. The warmth of the app, sized up for marketing.</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: var(--s-3);"><code>lira-website</code> &middot; <code>women-web.json</code></p>
         </div>
-        <div class="card-product">
-          <span class="pill pill-evidence">Web · Professionals</span>
+        <div class="card-product" data-surface-card="pro-web">
+          <span class="pill pill-evidence">Lira for Professionals &middot; marketing page</span>
           <h3 class="subtitle" style="margin-top: var(--s-4)">Clinical, restrained, credible</h3>
-          <p style="color: var(--text-secondary); font-size: 14px;">Cool off-white surfaces, sage as the lead accent, tighter radii, serif display for editorial weight. DSM-5-TR-ready feel.</p>
+          <p style="color: var(--text-secondary); font-size: 14px;">Cool off-white surfaces, sage as the lead accent, tighter radii, serif display for editorial weight. Persuades a clinician to sign up.</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: var(--s-3);"><code>lira-website</code> &middot; <code>pro-web.json</code></p>
+        </div>
+        <div class="card-product" data-surface-card="pro-app">
+          <span class="pill pill-evidence">Lira for Professionals &middot; clinical app</span>
+          <h3 class="subtitle" style="margin-top: var(--s-4)">Dense, functional, worked in daily</h3>
+          <p style="color: var(--text-secondary); font-size: 14px;">Slate and violet on Tailwind's scales. Tables, status chips and notes, not heroes. Where a clinician spends her working day, so it is quiet on purpose.</p>
+          <p style="color: var(--text-muted); font-size: 12px; margin-top: var(--s-3);"><code>lira-clinical-protocol</code> &middot; <code>pro-app.json</code></p>
         </div>
       </div>
     </section>
@@ -1189,6 +1203,12 @@
     document.querySelectorAll('[data-surfaces]').forEach((el) => {
       const belongs = el.getAttribute('data-surfaces').split(' ').includes(theme);
       el.hidden = !belongs;
+    });
+    // The overview keeps all four cards; it just says which one you are on.
+    document.querySelectorAll('[data-surface-card]').forEach((el) => {
+      const current = el.getAttribute('data-surface-card') === theme;
+      el.style.borderColor = current ? 'var(--accent-primary)' : '';
+      el.style.opacity = current ? '1' : '.62';
     });
   };
   // Where the components for each surface actually live. The HTML ones on this
