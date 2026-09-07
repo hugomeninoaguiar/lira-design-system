@@ -15,7 +15,7 @@ module.exports = {
       "200": "#B8D8C4",
       "300": "#ACDBC5",
       "400": "#A8D5BA",
-      "500": "#52766A",
+      "500": "#1E3A2E",
       "600": "#3F5E56",
       "700": "#2D5A42"
     },
@@ -191,10 +191,10 @@ module.exports = {
     },
     "border": {
       "default": "#E8EEF0",
-      "focus": "#52766A"
+      "focus": "#1E3A2E"
     },
     "action": {
-      "primary": "#52766A",
+      "primary": "#1E3A2E",
       "primarySoft": "#DDF1E6",
       "destructive": "#B66A72"
     },
@@ -229,13 +229,13 @@ module.exports = {
     "cycle": {
       "surface": "#FFFFFF",
       "border": "#E8EEF0",
-      "confidenceHigh": "#52766A",
+      "confidenceHigh": "#1E3A2E",
       "confidenceMedium": "#C99B3A",
       "confidenceLow": "#B66A72",
       "icon": "#A78BD6"
     },
     "navigation": {
-      "tabActive": "#52766A",
+      "tabActive": "#1E3A2E",
       "tabInactive": "#6B7C85",
       "tabBackground": "#FFFFFF"
     },
@@ -338,7 +338,7 @@ module.exports = {
   },
   "chart": {
     "consumer": {
-      "stroke": "#52766A",
+      "stroke": "#1E3A2E",
       "area": "#DDF1E6",
       "grid": "#E9E0D6",
       "axis": "#8A7A6A",

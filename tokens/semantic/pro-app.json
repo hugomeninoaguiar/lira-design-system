@@ -18,7 +18,7 @@
     "border": {
       "default": { "value": "#e2e8f0", "$description": "slate-200" },
       "strong":  { "value": "#cbd5e1", "$description": "slate-300. Panels asking for a decision" },
-      "focus":   { "value": "{color.green.300}", "$description": "#ACDBC5, the brand green. Focus rings and form accents. Shared with the rest of the brand" },
+      "focus":   { "value": "{color.green.300}", "$description": "#ACDBC5, the brand mint, the mark in the v3 logo. Focus rings and form accents. The one brand colour this surface keeps" },
       "selected":{ "value": "#334155", "$description": "slate-700, --color-primary in globals.css. The chosen card in the wizard" }
     },
     "action": {

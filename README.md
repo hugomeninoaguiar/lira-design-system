@@ -127,16 +127,27 @@ Only `tokens/primitives/*`, `tokens/semantic/core.json` and
 one consumer that can be broken by a token change. The other semantic files
 are documentation of a surface and are safe to edit.
 
-### Known drift: the brand green
+### The brand greens
 
-`lira-website` rebranded the dark green to `#1E3A2E` in 2026 and records it in
-`globals.css` as "logo dark green (rebrand 2026), was #52766A". This repo still
-carries `#52766A` as `color.green.500`, and `core.json` uses it for the mobile
-app's primary action, focus ring, active tab and high-confidence state.
+Two colours, and the logo settles both. Sampled from `assets/brand/icon-v3.png`
+and `play-store-icon-512.png`: the field is `#1E3A2E` and the mark is
+`#ACDBC5`.
 
-So the mobile app is on the pre-rebrand green. Whether the rebrand was meant
-for marketing only or the app is behind has not been decided, and changing the
-primitive settles it for the app either way. Decide first, then change it.
+| Token | Value | What it is |
+|---|---|---|
+| `color.green.500` | `#1E3A2E` | The dark green of the logo. Primary action everywhere |
+| `color.green.300` | `#ACDBC5` | The mint of the mark. Focus rings and accents on every surface, including the clinical app, which keeps this one and nothing else |
+| `color.sage.500` | `#52766A` | **Not** the brand green. The professionals marketing accent, which happened to share the old hex |
+
+`green.500` was `#52766A` until September 2026, when this was reconciled: the
+2026 rebrand had reached the website and the app's own login screens, both
+hardcoded, while this repo and therefore the mobile app's theme stayed on the
+old value. The v2 logo assets in this repo were the old green too, which is
+how the wrong colour survived a look at the supposed source of truth. They
+have been replaced with v3.
+
+The lesson worth keeping: a token repo that carries stale assets will confirm
+the wrong answer to anyone who checks it.
 
 ### One surface never imports another
 

@@ -13,9 +13,9 @@
       "50":  { "value": "#F0F9F4", "$description": "Subtle background tint" },
       "100": { "value": "#DDF1E6", "$description": "Soft background, hover surfaces" },
       "200": { "value": "#B8D8C4", "$description": "Soft borders, dividers" },
-      "300": { "value": "#ACDBC5", "$description": "Brand mint accent surface" },
+      "300": { "value": "#ACDBC5", "$description": "Brand mint. The mark itself in the v3 logo, and the focus ring across every surface" },
       "400": { "value": "#A8D5BA", "$description": "Brand mint hover" },
-      "500": { "value": "#52766A", "$description": "Primary action" },
+      "500": { "value": "#1E3A2E", "$description": "Primary action. The dark green of the v3 logo (icon-v3.png, play-store-icon-512.png). Was #52766A until the 2026 rebrand; sage.500 keeps that value, because it is the professionals marketing accent and a different colour that happened to share the hex" },
       "600": { "value": "#3F5E56", "$description": "Pressed / hover state for primary" },
       "700": { "value": "#2D5A42", "$description": "Deep green for text on light tints" }
     },

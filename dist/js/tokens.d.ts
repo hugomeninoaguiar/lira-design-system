@@ -15,7 +15,7 @@ export declare const tokens: {
       readonly "200": "#B8D8C4";
       readonly "300": "#ACDBC5";
       readonly "400": "#A8D5BA";
-      readonly "500": "#52766A";
+      readonly "500": "#1E3A2E";
       readonly "600": "#3F5E56";
       readonly "700": "#2D5A42";
     };
@@ -191,10 +191,10 @@ export declare const tokens: {
     };
     readonly border: {
       readonly default: "#E8EEF0";
-      readonly focus: "#52766A";
+      readonly focus: "#1E3A2E";
     };
     readonly action: {
-      readonly primary: "#52766A";
+      readonly primary: "#1E3A2E";
       readonly primarySoft: "#DDF1E6";
       readonly destructive: "#B66A72";
     };
@@ -229,13 +229,13 @@ export declare const tokens: {
     readonly cycle: {
       readonly surface: "#FFFFFF";
       readonly border: "#E8EEF0";
-      readonly confidenceHigh: "#52766A";
+      readonly confidenceHigh: "#1E3A2E";
       readonly confidenceMedium: "#C99B3A";
       readonly confidenceLow: "#B66A72";
       readonly icon: "#A78BD6";
     };
     readonly navigation: {
-      readonly tabActive: "#52766A";
+      readonly tabActive: "#1E3A2E";
       readonly tabInactive: "#6B7C85";
       readonly tabBackground: "#FFFFFF";
     };
@@ -338,7 +338,7 @@ export declare const tokens: {
   };
   readonly chart: {
     readonly consumer: {
-      readonly stroke: "#52766A";
+      readonly stroke: "#1E3A2E";
       readonly area: "#DDF1E6";
       readonly grid: "#E9E0D6";
       readonly axis: "#8A7A6A";
