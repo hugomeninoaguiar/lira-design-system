@@ -15,7 +15,7 @@ looking like something it is not.
   - `pro-web.json` for the Professionals marketing page (`/lira-for-professionals`)
   - `pro-app.json` for the Professionals clinical app
 - **Component primitives** (`src/react-native/`) — RN components for the mobile app. Web component primitives currently live in the website repo and consume the same tokens via CSS variables.
-- **Brand** (`assets/brand/`) — the v3 logo. `icon-v3.png` is the shipped app icon, `adaptive-icon-v3.png` is the mark alone for surfaces that supply their own field. The preview inlines both, so the page never shows a broken image and the colours below can be checked against the thing they came from.
+- **Brand** (`assets/brand/`) — the v3 logo. `icon-v3.png` is the shipped app icon, `adaptive-icon-v3.png` is the mark alone for surfaces that supply their own field. The preview inlines both, so the page never shows a broken image and the colours below can be checked against the thing they came from. These files exist here **and** in the app; run `npm run check:brand` (see below).
 - **Preview** (`docs/preview.html`) — self-contained HTML page rendering tokens + components for all three themes with a theme switcher. Open it in any browser; no build step needed.
 
 ## Quick start
@@ -149,6 +149,31 @@ have been replaced with v3.
 
 The lesson worth keeping: a token repo that carries stale assets will confirm
 the wrong answer to anyone who checks it.
+
+### Brand assets live in two places, on purpose
+
+`app.config.js` in the mobile app points Expo at `./assets/*.png` for the
+native icon, splash and notification icon. Pointing that into `node_modules`
+would let a bad install change the app icon silently, so the app keeps its own
+copies and that is the right call: the app is where they ship.
+
+They are here too, because this is where someone comes to look up the brand,
+and a token repo that cannot show you the logo will send you to guess.
+
+What is not acceptable is the two drifting apart quietly. That is what
+happened before September 2026: this repo carried the v2 logo with the old
+green while the app shipped v3, so anyone checking the supposed source of
+truth got the wrong answer with no warning.
+
+```bash
+npm run check:brand          # compares against ../lira
+npm run check:brand -- ../somewhere-else
+```
+
+It exits non-zero when a file differs, so it can gate a release. When it
+fires, the app is usually the newer of the two: copy from there, then check
+that `tokens/primitives/color.json` still matches what the new asset actually
+contains.
 
 ### One surface never imports another
 

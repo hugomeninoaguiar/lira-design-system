@@ -1,7 +1,7 @@
 {
   "name": "@lira/design-system",
   "version": "1.0.0",
-  "description": "Lira Design System — mobile design tokens and React Native components for Lira for Women.",
+  "description": "Lira Design System \u2014 mobile design tokens and React Native components for Lira for Women.",
   "license": "UNLICENSED",
   "private": true,
   "type": "module",
@@ -43,7 +43,8 @@
   },
   "scripts": {
     "build:tokens": "node scripts/build-tokens.mjs",
-    "build": "node scripts/build-tokens.mjs"
+    "build": "node scripts/build-tokens.mjs",
+    "check:brand": "node scripts/check-brand-assets.mjs"
   },
   "peerDependencies": {
     "react": ">=18",
@@ -51,8 +52,12 @@
     "@phosphor-icons/react-native": ">=2.0.0"
   },
   "peerDependenciesMeta": {
-    "react-native": { "optional": true },
-    "@phosphor-icons/react-native": { "optional": true }
+    "react-native": {
+      "optional": true
+    },
+    "@phosphor-icons/react-native": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "typescript": "~5.9.0"
