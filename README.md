@@ -1,14 +1,19 @@
 # Lira Design System
 
-One system, three surfaces. Shared primitives + per-surface semantic themes.
+One system, two products, four surfaces. Shared primitives plus one semantic theme per surface.
+
+A surface only ever uses its own theme. Nothing here is meant to be consumed
+as a whole: importing another surface's tokens is how a product ends up
+looking like something it is not.
 
 ## Scope
 
 - **Primitives** (`tokens/primitives/*.json`) — single source of truth for color, type, space, radius, shadow. Reused across every surface.
-- **Semantic themes** (`tokens/semantic/*.json`):
-  - `core.json` — Mobile · Women (React Native app — current production)
-  - `women-web.json` — Web · Women (homepage + `/for-women` marketing)
-  - `pro-web.json` — Web · Professionals (`/lira-for-professionals` + clinical surfaces)
+- **Semantic themes** (`tokens/semantic/*.json`), one per surface, never mixed:
+  - `core.json` for the Women mobile app (React Native, current production)
+  - `women-web.json` for the Women website (homepage and `/for-women`)
+  - `pro-web.json` for the Professionals marketing page (`/lira-for-professionals`)
+  - `pro-app.json` for the Professionals clinical app
 - **Component primitives** (`src/react-native/`) — RN components for the mobile app. Web component primitives currently live in the website repo and consume the same tokens via CSS variables.
 - **Preview** (`docs/preview.html`) — self-contained HTML page rendering tokens + components for all three themes with a theme switcher. Open it in any browser; no build step needed.
 
@@ -121,6 +126,22 @@ Only `tokens/primitives/*`, `tokens/semantic/core.json` and
 `tokens/semantic/typography.json` reach the build, so the mobile app is the
 one consumer that can be broken by a token change. The other semantic files
 are documentation of a surface and are safe to edit.
+
+### One surface never imports another
+
+The build currently emits a single theme (`themes = { women }`), which is the
+mobile app's. That is the right shape and worth keeping as more surfaces are
+added: a consumer should be handed its own theme and nothing else.
+
+The temptation, when a second consumer arrives, is to export everything and
+let each one pick. Do not. A product that can reach another product's tokens
+will eventually use them, usually by accident, and the two drift into looking
+like each other. If the website ever imports from here rather than generating
+CSS variables, give it `women-web` and `pro-web` as separate entry points.
+
+The clinical app is the clearest case: it imports nothing, and its section in
+`docs/index.html` is pinned to `pro-app` so that even reading the page cannot
+suggest it looks like the marketing site.
 
 ## Documentation
 
