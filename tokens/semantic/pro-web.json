@@ -18,7 +18,7 @@
     "text": {
       "primary":   { "value": "{color.cool.900}", "$description": "Clinical, high-contrast body" },
       "secondary": { "value": "{color.cool.500}" },
-      "muted":     { "value": "{color.cool.300}" },
+      "muted":     { "value": "{color.cool.500}", "$description": "Mesmo valor do text.secondary de propósito, pela mesma razão do women-web. O valor antigo, cool.300, dava 1,63:1 sobre o background.subtle" },
       "onAccent":  { "value": "{color.neutral.0}" },
       "onPrimary": { "value": "{color.neutral.0}" },
       "link":      { "value": "{color.green.600}" },

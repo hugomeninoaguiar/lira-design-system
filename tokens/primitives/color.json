@@ -6,7 +6,7 @@
       "50":  { "value": "#F7F9FA", "$description": "App background" },
       "100": { "value": "#E8EEF0", "$description": "Subtle border" },
       "200": { "value": "#C7D3D9" },
-      "300": { "value": "#6B7C85", "$description": "Secondary text" },
+      "300": { "value": "#5D6C74", "$description": "Secondary text. Darkened from #6B7C85 so it clears WCAG 2.1 AA (4.5:1) on every background core declares; the old value gave 3.70:1 on background.subtle" },
       "500": { "value": "#1C2A2E", "$description": "Primary text" }
     },
     "green": {
@@ -14,8 +14,9 @@
       "100": { "value": "#DDF1E6", "$description": "Soft background, hover surfaces" },
       "200": { "value": "#B8D8C4", "$description": "Soft borders, dividers" },
       "300": { "value": "#ACDBC5", "$description": "Brand mint. The mark itself in the v3 logo, and the focus ring across every surface" },
+      "350": { "value": "#91CFB2", "$description": "Hover da menta. É a green.300 mais escura, com o mesmo matiz (152) e a mesma saturação (39%). Substitui o #9BC4B8 que estava escrito à mão em 61 sítios do lira-website e que era dez graus mais azul e um terço menos saturado, ou seja não era esta menta" },
       "400": { "value": "#A8D5BA", "$description": "Brand mint hover" },
-      "500": { "value": "#1E3A2E", "$description": "Primary action. The dark green of the v3 logo (icon-v3.png, play-store-icon-512.png). Was #52766A until the 2026 rebrand; sage.500 keeps that value, because it is the professionals marketing accent and a different colour that happened to share the hex" },
+      "500": { "value": "#1E3A2E", "$description": "Primary action. The dark green of the v3 logo (icon-v3.png, play-store-icon-512.png). Was #52766A until the 2026 rebrand; sage.500 keeps that value, because it is the professionals marketing accent and a different colour that happened to share the hex. ATENÇÃO, esta escala não é monótona: o 500 é o degrau mais escuro de todos (luminosidade 17%), o 600 (31%) é mais claro que o 700 (26%), e o 200, 300 e 400 estão a três pontos de luminosidade uns dos outros (78, 77, 75). Não é erro de leitura. Fica assim por decisão de setembro de 2026" },
       "600": { "value": "#3F5E56", "$description": "Pressed / hover state for primary" },
       "700": { "value": "#2D5A42", "$description": "Deep green for text on light tints" }
     },
@@ -50,7 +51,7 @@
       "200": { "value": "#E9E0D6", "$description": "Soft border on warm" },
       "300": { "value": "#E0D4C4" },
       "400": { "value": "#B5A595" },
-      "500": { "value": "#8A7A6A", "$description": "Secondary text on warm" },
+      "500": { "value": "#706357", "$description": "Secondary text on warm. Darkened from #8A7A6A so it clears WCAG 2.1 AA (4.5:1) on every background women-web declares; the old value gave 3.42:1 on background.heroPrimary" },
       "700": { "value": "#54493E" },
       "800": { "value": "#2B2722" },
       "900": { "value": "#1C1C1C", "$description": "Primary text on warm" }

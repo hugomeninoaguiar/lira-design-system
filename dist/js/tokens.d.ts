@@ -6,7 +6,7 @@ export declare const tokens: {
       readonly "50": "#F7F9FA";
       readonly "100": "#E8EEF0";
       readonly "200": "#C7D3D9";
-      readonly "300": "#6B7C85";
+      readonly "300": "#5D6C74";
       readonly "500": "#1C2A2E";
     };
     readonly green: {
@@ -14,6 +14,7 @@ export declare const tokens: {
       readonly "100": "#DDF1E6";
       readonly "200": "#B8D8C4";
       readonly "300": "#ACDBC5";
+      readonly "350": "#91CFB2";
       readonly "400": "#A8D5BA";
       readonly "500": "#1E3A2E";
       readonly "600": "#3F5E56";
@@ -50,7 +51,7 @@ export declare const tokens: {
       readonly "200": "#E9E0D6";
       readonly "300": "#E0D4C4";
       readonly "400": "#B5A595";
-      readonly "500": "#8A7A6A";
+      readonly "500": "#706357";
       readonly "700": "#54493E";
       readonly "800": "#2B2722";
       readonly "900": "#1C1C1C";
@@ -186,7 +187,7 @@ export declare const tokens: {
     };
     readonly text: {
       readonly primary: "#1C2A2E";
-      readonly secondary: "#6B7C85";
+      readonly secondary: "#5D6C74";
       readonly onPrimary: "#FFFFFF";
     };
     readonly border: {
@@ -236,7 +237,7 @@ export declare const tokens: {
     };
     readonly navigation: {
       readonly tabActive: "#1E3A2E";
-      readonly tabInactive: "#6B7C85";
+      readonly tabInactive: "#5D6C74";
       readonly tabBackground: "#FFFFFF";
     };
     readonly overlay: {
@@ -341,8 +342,8 @@ export declare const tokens: {
       readonly stroke: "#1E3A2E";
       readonly area: "#DDF1E6";
       readonly grid: "#E9E0D6";
-      readonly axis: "#8A7A6A";
-      readonly label: "#8A7A6A";
+      readonly axis: "#706357";
+      readonly label: "#706357";
     };
     readonly clinical: {
       readonly axis: "#C8D2CD";

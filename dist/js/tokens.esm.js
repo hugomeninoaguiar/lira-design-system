@@ -6,7 +6,7 @@ export const tokens = {
       "50": "#F7F9FA",
       "100": "#E8EEF0",
       "200": "#C7D3D9",
-      "300": "#6B7C85",
+      "300": "#5D6C74",
       "500": "#1C2A2E"
     },
     "green": {
@@ -14,6 +14,7 @@ export const tokens = {
       "100": "#DDF1E6",
       "200": "#B8D8C4",
       "300": "#ACDBC5",
+      "350": "#91CFB2",
       "400": "#A8D5BA",
       "500": "#1E3A2E",
       "600": "#3F5E56",
@@ -50,7 +51,7 @@ export const tokens = {
       "200": "#E9E0D6",
       "300": "#E0D4C4",
       "400": "#B5A595",
-      "500": "#8A7A6A",
+      "500": "#706357",
       "700": "#54493E",
       "800": "#2B2722",
       "900": "#1C1C1C"
@@ -186,7 +187,7 @@ export const tokens = {
     },
     "text": {
       "primary": "#1C2A2E",
-      "secondary": "#6B7C85",
+      "secondary": "#5D6C74",
       "onPrimary": "#FFFFFF"
     },
     "border": {
@@ -236,7 +237,7 @@ export const tokens = {
     },
     "navigation": {
       "tabActive": "#1E3A2E",
-      "tabInactive": "#6B7C85",
+      "tabInactive": "#5D6C74",
       "tabBackground": "#FFFFFF"
     },
     "overlay": {
@@ -341,8 +342,8 @@ export const tokens = {
       "stroke": "#1E3A2E",
       "area": "#DDF1E6",
       "grid": "#E9E0D6",
-      "axis": "#8A7A6A",
-      "label": "#8A7A6A"
+      "axis": "#706357",
+      "label": "#706357"
     },
     "clinical": {
       "axis": "#C8D2CD",

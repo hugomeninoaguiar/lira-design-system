@@ -15,7 +15,7 @@
     "text": {
       "primary":   { "value": "{color.warm.900}", "$description": "Body copy on cream/peach" },
       "secondary": { "value": "{color.warm.500}", "$description": "Supporting copy" },
-      "muted":     { "value": "{color.warm.400}" },
+      "muted":     { "value": "{color.warm.500}", "$description": "Mesmo valor do text.secondary de propósito. Na paleta quente não há espaço para um terceiro nível de texto que passe as WCAG AA: o valor mais claro que passa fica a 1,06:1 do secundário, ou seja é a mesma cor. A distinção de hierarquia faz-se pelo tamanho, pelas maiúsculas e pelo espaçamento entre letras, não pela cor. O valor antigo, warm.400, dava 1,98:1 sobre o heroPrimary" },
       "onAccent":  { "value": "{color.green.700}", "$description": "Text on mint accent surfaces" },
       "onPrimary": { "value": "{color.neutral.0}", "$description": "Text on filled green CTA" },
       "link":      { "value": "{color.green.600}" }
@@ -30,6 +30,7 @@
       "primary":       { "value": "{color.green.500}", "$description": "Filled CTA" },
       "primaryHover":  { "value": "{color.green.600}" },
       "primarySoft":   { "value": "{color.green.100}", "$description": "Soft / outlined CTA" },
+      "accentHover":   { "value": "{color.green.350}", "$description": "Hover das superfícies em menta (background.accentDeep é a green.300 nesta superfície)" },
       "secondary":     { "value": "{color.neutral.0}" },
       "destructive":   { "value": "{color.dustyRed.400}" }
     },
