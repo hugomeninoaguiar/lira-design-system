@@ -23,7 +23,7 @@
     --c-neutral-50:  #F7F9FA;
     --c-neutral-100: #E8EEF0;
     --c-neutral-200: #C7D3D9;
-    --c-neutral-300: #6B7C85;
+    --c-neutral-300: #5D6C74;
     --c-neutral-500: #1C2A2E;
 
     /* Green / Sage (brand) */
@@ -31,6 +31,7 @@
     --c-green-100: #DDF1E6;
     --c-green-200: #B8D8C4;
     --c-green-300: #ACDBC5;
+    --c-green-350: #91CFB2;
     --c-green-400: #A8D5BA;
     --c-green-500: #1E3A2E; /* the dark green of the v3 logo */
     --c-green-600: #3F5E56;
@@ -48,7 +49,7 @@
     --c-warm-200: #E9E0D6;
     --c-warm-300: #E0D4C4;
     --c-warm-400: #B5A595;
-    --c-warm-500: #8A7A6A;
+    --c-warm-500: #706357;
     --c-warm-700: #54493E;
     --c-warm-800: #2B2722;
     --c-warm-900: #1C1C1C;
@@ -178,7 +179,7 @@
 
     --text-primary:   var(--c-warm-900);
     --text-secondary: var(--c-warm-500);
-    --text-muted:     var(--c-warm-400);
+    --text-muted:     var(--c-warm-500);
     --text-onAccent:  var(--c-green-700);
     --text-onPrimary: var(--c-neutral-0);
     --text-link:      var(--c-green-600);
@@ -191,6 +192,7 @@
     --action-primary:      var(--c-green-500);
     --action-primaryHover: var(--c-green-600);
     --action-primarySoft:  var(--c-green-100);
+    --action-accent-hover: var(--c-green-350);
 
     --accent-primary: var(--c-purple-300);
     --accent-subtle:  var(--c-purple-100);
@@ -219,7 +221,7 @@
 
     --text-primary:   var(--c-cool-900);
     --text-secondary: var(--c-cool-500);
-    --text-muted:     var(--c-cool-300);
+    --text-muted:     var(--c-cool-500);
     --text-onAccent:  var(--c-neutral-0);
     --text-onPrimary: var(--c-neutral-0);
     --text-link:      var(--c-green-600);
@@ -1343,12 +1345,13 @@
   document.getElementById('prim-brand').innerHTML = [
     ['green.100', '--c-green-100', '#DDF1E6'],
     ['green.300', '--c-green-300', '#ACDBC5'],
+    ['green.350', '--c-green-350', '#91CFB2'],
     ['green.500', '--c-green-500', '#52766A'],
     ['green.700', '--c-green-700', '#2D5A42'],
     ['peach.100', '--c-peach-100', '#F4E8D5'],
     ['peach.150', '--c-peach-150', '#EFDDC4'],
     ['warm.50',   '--c-warm-50',   '#FBF8F3'],
-    ['warm.500',  '--c-warm-500',  '#8A7A6A'],
+    ['warm.500',  '--c-warm-500',  '#706357'],
     ['warm.900',  '--c-warm-900',  '#1C1C1C'],
     ['cool.50',   '--c-cool-50',   '#F8FAF8'],
     ['cool.500',  '--c-cool-500',  '#5F6B64'],
