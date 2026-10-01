@@ -89,6 +89,7 @@ Commit `tokens/` and `dist/` together after token edits.
 - Components consume **semantic** tokens, not primitives.
 - Primitives are shared across all surfaces. Surface-specific decisions live in `tokens/semantic/<surface>.json`.
 - When adding a new design decision, ask first: does it belong in a primitive (shared), a semantic mapping (surface-specific), or as a component token? Avoid duplicating across surfaces.
+- No callouts with a side bar, on any surface. A box with a tinted background, a coloured left bar and italic or bold text is the house style of generated UI; it reads as a warning or a decorative quote, and Lira never uses it, in any colour. Emphasis is plain text in the flow of the page, and a state is a small text label. The tokens whose descriptions mention callouts (`background.accentSoft` and `background.warmCallout` in `pro-web.json`) stay as tints for plain surfaces; they are not a licence for a box with a left bar. `emphasis.rule` in `pro-app.json` is marked deprecated for the same reason.
 
 ## Surfaces: which theme, in which repo
 

@@ -1177,20 +1177,20 @@
           </table>
         </div>
 
-        <!-- Emphasis is a left rule, never a filled panel -->
+        <!-- No callouts: a note is marked by a text label, never by a bar or a fill -->
         <div>
-          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: var(--s-2);">Emphasis is a left rule, not a filled panel</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: var(--s-2);">A pinned or alert note carries a label, not a bar</div>
           <div style="display: grid; gap: var(--s-2);">
-            <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-left: 4px solid #7c3aed; border-radius: 6px; padding: 12px 14px;">
-              <div style="font-size:11px; color:var(--text-muted); margin-bottom:4px;">Mariana Lucas · 14 Jul · <span style="border:1px solid #ddd6fe; background:#f5f3ff; color:#6d28d9; border-radius:4px; padding:1px 6px;">Pinned</span></div>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 6px; padding: 12px 14px;">
+              <div style="font-size:11px; color:var(--text-muted); margin-bottom:4px;">Mariana Lucas, 14 Jul <span style="border:1px solid #ddd6fe; background:#f5f3ff; color:#6d28d9; border-radius:4px; padding:1px 6px; margin-left:4px;">Pinned</span></div>
               <div style="font-size:13px;">Prefers written contact. Phone calls raise her anxiety before sessions.</div>
             </div>
-            <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-left: 4px solid #dc2626; border-radius: 6px; padding: 12px 14px;">
-              <div style="font-size:11px; color:var(--text-muted); margin-bottom:4px;">From the crib sheet · <span style="border:1px solid #fecaca; background:#fef2f2; color:#b91c1c; border-radius:4px; padding:1px 6px;">Alert</span></div>
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: 6px; padding: 12px 14px;">
+              <div style="font-size:11px; color:var(--text-muted); margin-bottom:4px;">From the crib sheet <span style="background:#f1f5f9; color:#b91c1c; font-weight:600; border-radius:4px; padding:1px 6px; margin-left:4px;">Alert</span></div>
               <div style="font-size:13px;">Under crisis team. Do not schedule without checking with the GP first.</div>
             </div>
           </div>
-          <p style="font-size:12px; color:var(--text-secondary); margin:10px 0 0;">A filled amber box is the house style of generated UI, and reads as a warning that is not there. Violet says important; red says risk.</p>
+          <p style="font-size:12px; color:var(--text-secondary); margin:10px 0 0;">A box with a tinted background and a coloured left bar is the house style of generated UI, and reads as a warning or a decorative quote. This surface never uses it. Violet says important and red says risk, and both sit in the label.</p>
         </div>
 
         <!-- A decision is not an error -->

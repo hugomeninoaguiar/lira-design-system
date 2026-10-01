@@ -42,7 +42,12 @@
       "$description": "Two habits that keep the surface from drifting into the look of generated UI.",
       "rule": {
         "value": "border-left: 4px solid {action.primary}",
-        "$description": "Emphasis is a left rule on white, never a filled panel. A pinned note uses violet; an alert the clinician raised uses red. A filled amber box reads as a warning that is not there"
+        "$deprecated": true,
+        "$description": "Do not use. A box with a tinted background, a coloured left bar and italic or bold text is the house style of generated UI; it reads as a warning or a decorative quote, and Lira never uses it, in any colour. The clinical app removed its last left rules on 2026-10-01; the entry stays as a record of what was there. Emphasis is plain text in the flow of the page"
+      },
+      "label": {
+        "value": "text label beside the note's author: {action.primaryHover} for pinned, {state.risk.fg} for alert",
+        "$description": "How a pinned note or an alert the clinician raised is told apart from the others. The colour sits in the text of the label, never in a bar or a fill on the note"
       },
       "decision": {
         "value": "background {background.subtle}, border {border.strong}",
