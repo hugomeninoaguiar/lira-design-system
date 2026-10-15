@@ -33,7 +33,7 @@
     "state": {
       "$description": "Each of these already means something. Check the meaning is free before using a colour for something new: a colour that says two things says neither.",
       "done":       { "fg": { "value": "#047857" }, "bg": { "value": "#ecfdf5" }, "border": { "value": "#a7f3d0" }, "$description": "emerald. Assessment completed, results available, and an analysis signed off (the chip Assinada / Signed next to the clinical close). A state, so it is a chip; never a green box or green text for a confirmation" },
-      "inProgress": { "fg": { "value": "#b45309" }, "bg": { "value": "#fffbeb" }, "border": { "value": "#fde68a" }, "$description": "amber. In progress, invite pending. Also the clinician's own amber on the ICSA crib sheet, so it is not free for anything else" },
+      "inProgress": { "fg": { "value": "#b45309" }, "bg": { "value": "#fffbeb" }, "border": { "value": "#fde68a" }, "$description": "amber. In progress: assessment in progress, questionnaire unlocked, anamnese being filled in by the client, invite pending. Also the clinician's own amber on the ICSA crib sheet, so it is not free for anything else" },
       "risk":       { "fg": { "value": "#b91c1c" }, "bg": { "value": "#fef2f2" }, "border": { "value": "#dc2626" }, "$description": "red. Errors, destructive actions, and alerts the clinician flagged" },
       "shared":     { "fg": { "value": "#0369a1" }, "bg": { "value": "#f0f9ff" }, "border": { "value": "#bae6fd" }, "$description": "sky. Shared with you by someone else" },
       "neutral":    { "fg": { "value": "#475569" }, "bg": { "value": "#f8fafc" }, "border": { "value": "#e2e8f0" }, "$description": "slate. No state" }
