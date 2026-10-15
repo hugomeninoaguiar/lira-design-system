@@ -1,55 +1,129 @@
 {
-  "$description": "Semantic tokens for the Lira for Women WEB surface (homepage + /for-women pages). Warm peach/cream feel, brand-mint accents, illustrated character. Inherits all primitive scales.",
+  "$description": "Semantic tokens for the Lira for Women WEB surface (homepage + /for-women pages). Warm peach/cream feel, brand-mint accents, illustrated character. Inherits all primitive scales. Feedback colours (success, warning, error, info) are primitives in color.json and are used from there since 2026-10-15; they were duplicated here.",
   "semantic": {
     "background": {
-      "app":          { "value": "{color.warm.50}", "$description": "Page background — soft cream" },
-      "surface":      { "value": "{color.neutral.0}", "$description": "Card surface on cream" },
-      "subtle":       { "value": "{color.warm.100}", "$description": "Secondary section background" },
-      "heroPrimary":  { "value": "{color.peach.100}", "$description": "Marketing hero — production peach" },
-      "heroSecondary":{ "value": "{color.warm.50}" },
-      "accentSoft":   { "value": "{color.green.100}", "$description": "Soft mint section / card background" },
-      "accentDeep":   { "value": "{color.green.300}", "$description": "Brand mint card surface" },
-      "warmCard":     { "value": "{color.peach.50}" },
-      "coolCard":     { "value": "{color.cool.50}" }
+      "app": {
+        "value": "{color.warm.50}",
+        "$description": "Page background — soft cream"
+      },
+      "surface": {
+        "value": "{color.neutral.0}",
+        "$description": "Card surface on cream"
+      },
+      "subtle": {
+        "value": "{color.warm.100}",
+        "$description": "Secondary section background"
+      },
+      "heroPrimary": {
+        "value": "{color.peach.100}",
+        "$description": "Marketing hero — production peach"
+      },
+      "heroSecondary": {
+        "value": "{color.warm.50}"
+      },
+      "accentSoft": {
+        "value": "{color.green.100}",
+        "$description": "Soft mint section / card background"
+      },
+      "accentDeep": {
+        "value": "{color.green.300}",
+        "$description": "Brand mint card surface"
+      },
+      "warmCard": {
+        "value": "{color.peach.50}"
+      },
+      "coolCard": {
+        "value": "{color.cool.50}"
+      }
     },
     "text": {
-      "primary":   { "value": "{color.warm.900}", "$description": "Body copy on cream/peach" },
-      "secondary": { "value": "{color.warm.500}", "$description": "Supporting copy" },
-      "muted":     { "value": "{color.warm.500}", "$description": "Mesmo valor do text.secondary de propósito. Na paleta quente não há espaço para um terceiro nível de texto que passe as WCAG AA: o valor mais claro que passa fica a 1,06:1 do secundário, ou seja é a mesma cor. A distinção de hierarquia faz-se pelo tamanho, pelas maiúsculas e pelo espaçamento entre letras, não pela cor. O valor antigo, warm.400, dava 1,98:1 sobre o heroPrimary" },
-      "onAccent":  { "value": "{color.green.700}", "$description": "Text on mint accent surfaces" },
-      "onPrimary": { "value": "{color.neutral.0}", "$description": "Text on filled green CTA" },
-      "link":      { "value": "{color.green.600}" }
+      "primary": {
+        "value": "{color.warm.900}",
+        "$description": "Body copy on cream/peach"
+      },
+      "secondary": {
+        "value": "{color.warm.500}",
+        "$description": "Supporting copy"
+      },
+      "muted": {
+        "value": "{color.warm.500}",
+        "$description": "Mesmo valor do text.secondary de propósito. Na paleta quente não há espaço para um terceiro nível de texto que passe as WCAG AA: o valor mais claro que passa fica a 1,06:1 do secundário, ou seja é a mesma cor. A distinção de hierarquia faz-se pelo tamanho, pelas maiúsculas e pelo espaçamento entre letras, não pela cor. O valor antigo, warm.400, dava 1,98:1 sobre o heroPrimary"
+      },
+      "onAccent": {
+        "value": "{color.green.700}",
+        "$description": "Text on mint accent surfaces"
+      },
+      "onPrimary": {
+        "value": "{color.neutral.0}",
+        "$description": "Text on filled green CTA"
+      },
+      "link": {
+        "value": "{color.green.600}"
+      }
     },
     "border": {
-      "default": { "value": "{color.warm.200}" },
-      "subtle":  { "value": "{color.warm.150}" },
-      "strong":  { "value": "{color.warm.400}" },
-      "focus":   { "value": "{color.green.500}" }
+      "default": {
+        "value": "{color.warm.200}"
+      },
+      "subtle": {
+        "value": "{color.warm.150}"
+      },
+      "strong": {
+        "value": "{color.warm.400}"
+      },
+      "focus": {
+        "value": "{color.green.500}"
+      }
     },
     "action": {
-      "primary":       { "value": "{color.green.500}", "$description": "Filled CTA" },
-      "primaryHover":  { "value": "{color.green.600}" },
-      "primarySoft":   { "value": "{color.green.100}", "$description": "Soft / outlined CTA" },
-      "accentHover":   { "value": "{color.green.350}", "$description": "Hover das superfícies em menta (background.accentDeep é a green.300 nesta superfície)" },
-      "secondary":     { "value": "{color.neutral.0}" },
-      "destructive":   { "value": "{color.dustyRed.400}" }
+      "primary": {
+        "value": "{color.green.500}",
+        "$description": "Filled CTA"
+      },
+      "primaryHover": {
+        "value": "{color.green.600}"
+      },
+      "primarySoft": {
+        "value": "{color.green.100}",
+        "$description": "Soft / outlined CTA"
+      },
+      "accentHover": {
+        "value": "{color.green.350}",
+        "$description": "Hover das superfícies em menta (background.accentDeep é a green.300 nesta superfície)"
+      },
+      "secondary": {
+        "value": "{color.neutral.0}"
+      },
+      "destructive": {
+        "value": "{color.dustyRed.400}"
+      }
     },
     "accent": {
-      "primary": { "value": "{color.purple.300}" },
-      "subtle":  { "value": "{color.purple.100}" },
-      "warm":    { "value": "{color.amber.300}", "$description": "Warm highlight underline" }
-    },
-    "feedback": {
-      "success": { "fg": { "value": "{color.feedback.successFg}" }, "bg": { "value": "{color.feedback.successBg}" } },
-      "warning": { "fg": { "value": "{color.feedback.warningFg}" }, "bg": { "value": "{color.feedback.warningBg}" } },
-      "error":   { "fg": { "value": "{color.feedback.errorFg}" },   "bg": { "value": "{color.feedback.errorBg}" } },
-      "info":    { "fg": { "value": "{color.feedback.infoFg}" },    "bg": { "value": "{color.feedback.infoBg}" } }
+      "primary": {
+        "value": "{color.purple.300}"
+      },
+      "subtle": {
+        "value": "{color.purple.100}"
+      },
+      "warm": {
+        "value": "{color.amber.300}",
+        "$description": "Warm highlight underline"
+      }
     },
     "radius": {
-      "card":   { "value": "{radius.lg}", "$description": "24 — soft, illustrated feel" },
-      "cardLg": { "value": "{radius.xl}" },
-      "button": { "value": "{radius.pill}" },
-      "input":  { "value": "{radius.md}" }
+      "card": {
+        "value": "{radius.lg}",
+        "$description": "24 — soft, illustrated feel"
+      },
+      "cardLg": {
+        "value": "{radius.xl}"
+      },
+      "button": {
+        "value": "{radius.pill}"
+      },
+      "input": {
+        "value": "{radius.md}"
+      }
     }
   }
 }

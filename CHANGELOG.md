@@ -3,6 +3,15 @@
 All notable changes to the Lira Design System are recorded here.
 The format follows [Keep a Changelog](https://keepachangelog.com), and we follow [Semantic Versioning](https://semver.org).
 
+## [Unreleased] — 2026-10-15
+
+### Changed
+
+- **Pro · Web (`pro-web.json`) reduced to what the page uses.** Direction B of the professionals marketing page: white page, `green.500` as the hero field and the action on light, `green.300` as the action on the field, sage only for eyebrows, Geist and Geist Mono, no serif, radius 8 for buttons. The surface went from 46 tokens to 16; feedback, data and evidence tokens are gone from it (the page uses primitives directly or not at all). The website mirrors these by hand in `globals.css`, which is why the file is short: fewer places to drift.
+- **Pro · App (`pro-app.json`) follows the app.** Chrome, links and identity chips are the brand green (`action.brand`), actions are ink (`#0f172a`), the violet entries are gone. The preview's App · Professionals tab shows the same.
+- **Women · Web (`women-web.json`)**: the `feedback` block came out; those are primitives in `color.json` and were duplicated.
+- **Preview (`docs/index.html`)**: Pro Web without Fraunces, Pro App without violet.
+
 ## [1.0.0] — 2026-05-04
 
 ### Added
