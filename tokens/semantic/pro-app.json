@@ -77,7 +77,9 @@
           "border":     { "value": "#cbd5e1", "$description": "slate-300, border.strong" },
           "text":       { "value": "#334155", "$description": "slate-700" },
           "fontSize":   { "value": "14px",    "$description": "text-sm, font-medium" },
-          "radius":     { "value": "6px",     "$description": "rounded-md, radius.panel" }
+          "radius":     { "value": "6px",     "$description": "rounded-md, radius.panel" },
+          "padding":    { "value": "6px 12px", "$description": "py-1.5 px-3, as the app's other secondary buttons" },
+          "hoverBackground": { "value": "#f8fafc", "$description": "slate-50" }
         }
       },
       "decision": {
