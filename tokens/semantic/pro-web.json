@@ -1,14 +1,14 @@
 {
-  "$description": "Semantic tokens for the Lira for Professionals MARKETING PAGE (/lira-for-professionals, in lira-website). Cooler clinical feel: restrained off-white and cool neutrals, deep sage as primary accent, tighter radii, evidence-weighted typography. Inherits all primitive scales.",
+  "$description": "Semantic tokens for the Lira for Professionals MARKETING PAGE (/lira-for-professionals, in lira-website). Since October 2026 (direction B): white page, the logo's dark green as the hero field and the action colour on light, mint as the action on the green field, sage only for small labels, Geist and Geist Mono for type (no serif). Inherits all primitive scales.",
   "$surface": "web/professionals-marketing",
   "$repo": "lira-website",
   "$note": "Not the clinical app. That is pro-app.json, and it looks nothing like this: slate and violet, built on Tailwind's scales. This file claimed both surfaces until September 2026, which is why the app was never described.",
   "semantic": {
     "background": {
-      "app":          { "value": "{color.cool.50}", "$description": "Page background — cool off-white" },
+      "app":          { "value": "{color.neutral.0}", "$description": "Page background. White since October 2026; the green field carries the contrast" },
       "surface":      { "value": "{color.neutral.0}" },
-      "subtle":       { "value": "{color.cool.100}" },
-      "heroPrimary":  { "value": "{color.cool.50}", "$description": "Hero — restrained, no peach" },
+      "subtle":       { "value": "{color.cool.50}" },
+      "heroPrimary":  { "value": "{color.green.500}", "$description": "Hero, claim band and CTA: the field of the logo. Text on it is white, the action on it is green.300" },
       "heroSecondary":{ "value": "{color.neutral.0}" },
       "accentSoft":   { "value": "{color.green.100}", "$description": "Sage tint for callouts" },
       "accentDeep":   { "value": "{color.green.500}" },
@@ -32,13 +32,14 @@
     },
     "action": {
       "primary":       { "value": "{color.green.500}" },
-      "primaryHover":  { "value": "{color.green.600}" },
+      "primaryHover":  { "value": "{color.green.700}" },
       "primarySoft":   { "value": "{color.green.100}" },
       "secondary":     { "value": "{color.neutral.0}" },
       "destructive":   { "value": "{color.dustyRed.400}" }
     },
     "accent": {
-      "primary": { "value": "{color.sage.500}" },
+      "primary": { "value": "{color.green.500}", "$description": "Was sage.500 until October 2026. Sage survives only as the eyebrow colour (accent.eyebrow)" },
+      "eyebrow": { "value": "{color.sage.500}", "$description": "Small uppercase labels only" },
       "subtle":  { "value": "{color.green.100}" },
       "warm":    { "value": "{color.amber.500}", "$description": "Sparingly — editorial underlines" }
     },
@@ -51,7 +52,7 @@
     "radius": {
       "card":   { "value": "{radius.md}", "$description": "16 — tighter, more clinical than the Women surface" },
       "cardLg": { "value": "{radius.lg}" },
-      "button": { "value": "{radius.pill}" },
+      "button": { "value": "{radius.sm}", "$description": "8 to 10px since October 2026; the pill went with the mint-on-light button" },
       "input":  { "value": "{radius.sm}" }
     },
     "data": {

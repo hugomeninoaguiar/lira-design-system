@@ -2,7 +2,7 @@
   "$description": "Semantic tokens for the Lira for Professionals clinical app (lira-clinical-protocol). This records what that product actually is, rather than what we might one day want it to be. Distinct from pro-web.json, which is the /lira-for-professionals marketing page on the website.",
   "$surface": "app/professionals",
   "$repo": "lira-clinical-protocol",
-  "$note": "Values here are literal rather than references to tokens/primitives. The clinical app is built on Tailwind's own scales (slate, violet, emerald, amber, red, sky) and adopting them into the brand primitives would put a framework default next to the brand colours and blur both. Two colours are genuinely shared and are marked as such. The app does not import this file; it is the written record of its palette, and the CLAUDE.md in that repo carries the same table. If one changes, change the other.",
+  "$note": "Values here are literal rather than references to tokens/primitives. The clinical app is built on Tailwind's own scales (slate, emerald, amber, red, sky) and adopting them into the brand primitives would put a framework default next to the brand colours and blur both. Two colours are genuinely shared and are marked as such. The app does not import this file; it is the written record of its palette, and the CLAUDE.md in that repo carries the same table. If one changes, change the other.",
   "semantic": {
     "background": {
       "app":     { "value": "#f8fafc", "$description": "slate-50. Page background" },
@@ -19,14 +19,15 @@
       "default": { "value": "#e2e8f0", "$description": "slate-200" },
       "strong":  { "value": "#cbd5e1", "$description": "slate-300. Panels asking for a decision" },
       "focus":   { "value": "{color.green.300}", "$description": "#ACDBC5, the brand mint, the mark in the v3 logo. Focus rings and form accents. The one brand colour this surface keeps" },
-      "selected":{ "value": "#334155", "$description": "slate-700, --color-primary in globals.css. The chosen card in the wizard" },
+      "selected":{ "value": "#1e3a2e", "$description": "brand green, --color-primary in globals.css since 2026-10-15 (was slate-700). The chosen card in the wizard" },
       "focusOuter":{ "value": "#0f172a", "$description": "slate-900. O traço exterior do anel de foco. A menta sozinha dá 1,53:1 sobre branco e chumba o critério 1.4.11 da WCAG 2.1, que pede 3:1 para indicadores de foco. Com este traço por fora o anel passa a 17,85:1 e a menta continua a ser a cor da marca por dentro. O anel desenha-se com dois traços: menta a tocar o campo, este por fora" }
     },
     "action": {
-      "primary":      { "value": "#7c3aed", "$description": "violet-600. The product accent: primary buttons, links, emphasis" },
-      "primaryHover": { "value": "#6d28d9", "$description": "violet-700" },
-      "primarySoft":  { "value": "#f5f3ff", "$description": "violet-50. Chips and quiet emphasis" },
-      "primaryBorder":{ "value": "#ddd6fe", "$description": "violet-200" },
+      "primary":      { "value": "#0f172a", "$description": "slate-900, --color-action in globals.css. Primary buttons, checkboxes, the selected row's edge. Was violet-600 until 2026-10-15; the rule since then: green is the brand, ink is the action, slate is neutral, colour is state" },
+      "primaryHover": { "value": "#1e293b", "$description": "slate-800, --color-action-hover" },
+      "primarySoft":  { "value": "#f8fafc", "$description": "slate-50. Selection washes and quiet emphasis (was violet-50)" },
+      "primaryBorder":{ "value": "#cbd5e1", "$description": "slate-300 (was violet-200)" },
+      "brand":        { "value": "{color.green.500}", "$description": "#1E3A2E. Header, auth panels (--color-primary), links and emphasis (text-brand), identity chips (clinic, coordinator). Since 2026-10-15" },
       "secondary":    { "value": "#ffffff", "$description": "White on a slate-300 border" },
       "disabled":     { "value": "#cbd5e1", "$description": "slate-300" }
     },
@@ -51,7 +52,7 @@
       },
       "decision": {
         "value": "background {background.app}, border {border.strong}",
-        "$description": "A panel asking the professional to decide something (is this the same person?) stays neutral. The violet button carries the action. It is a question, not an error. The background is slate-50, as in the app's two decision panels; it said slate-100 here until 2026-10-15, which the app never used. Spelt out under notice.decision"
+        "$description": "A panel asking the professional to decide something (is this the same person?) stays neutral. The ink button carries the action. It is a question, not an error. The background is slate-50, as in the app's two decision panels; it said slate-100 here until 2026-10-15, which the app never used. Spelt out under notice.decision"
       }
     },
     "notice": {
@@ -64,7 +65,7 @@
       "attention": {
         "$description": "Something to do, nothing is wrong. One line: a short label, the text, and a secondary button if there is an action. No background, no bar, no amber",
         "label": {
-          "color":         { "value": "#6d28d9", "$description": "violet-700, action.primaryHover" },
+          "color":         { "value": "#1e3a2e", "$description": "brand green, text-brand (was violet-700)" },
           "fontSize":      { "value": "12px",    "$description": "text-xs" },
           "fontWeight":    { "value": "600",     "$description": "font-semibold" },
           "textTransform": { "value": "uppercase" },
@@ -83,14 +84,14 @@
         }
       },
       "decision": {
-        "$description": "The platform asks a question (is this the same person? export anyway?). The neutral panel of emphasis.decision, with the action in violet. It is never an error",
+        "$description": "The platform asks a question (is this the same person? export anyway?). The neutral panel of emphasis.decision, with the action in ink. It is never an error",
         "background": { "value": "#f8fafc", "$description": "slate-50, background.app" },
         "border":     { "value": "#cbd5e1", "$description": "slate-300, border.strong" },
         "radius":     { "value": "6px",     "$description": "rounded-md, radius.panel" },
         "padding":    { "value": "16px",    "$description": "p-4" },
         "title":      { "value": "#0f172a", "$description": "slate-900, text-sm font-semibold" },
         "text":       { "value": "#475569", "$description": "slate-600, text-sm" },
-        "action":     { "value": "#7c3aed", "$description": "violet-600, action.primary, white text" }
+        "action":     { "value": "#0f172a", "$description": "ink, action.primary, white text (was violet-600)" }
       },
       "error": {
         "$description": "A failure, or a risk. Label and text in red. The box only when the error blocks the main action of the screen (the page did not load, the assessment could not be created); otherwise one line next to what failed",
