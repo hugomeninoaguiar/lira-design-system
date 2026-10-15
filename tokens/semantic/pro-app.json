@@ -50,8 +50,56 @@
         "$description": "How a pinned note or an alert the clinician raised is told apart from the others. The colour sits in the text of the label, never in a bar or a fill on the note"
       },
       "decision": {
-        "value": "background {background.subtle}, border {border.strong}",
-        "$description": "A panel asking the professional to decide something (is this the same person?) stays neutral. The violet button carries the action. It is a question, not an error"
+        "value": "background {background.app}, border {border.strong}",
+        "$description": "A panel asking the professional to decide something (is this the same person?) stays neutral. The violet button carries the action. It is a question, not an error. The background is slate-50, as in the app's two decision panels; it said slate-100 here until 2026-10-15, which the app never used. Spelt out under notice.decision"
+      }
+    },
+    "notice": {
+      "$description": "The four levels of every notice in the clinical app: warnings, strips, notes, status lines and form errors. Pick the level by what the professional has to do, not by how important the text feels. None of them uses a tinted box with a left bar, and none uses amber: amber is state.inProgress. A confirmation (Saved, Invite sent, All saved) is a note beside the button that did it, never green. Business rules (a limit, an account being verified, a link sent less than 30 days ago) are attention, never error. The state chips keep their own colours (state.*); blue is not a state and is not used.",
+      "note": {
+        "$description": "Information, nothing to do. Plain text next to the element it is about. No box, no background, no icon",
+        "text":     { "value": "#475569", "$description": "slate-600, text.secondary" },
+        "fontSize": { "value": "14px",    "$description": "text-sm" }
+      },
+      "attention": {
+        "$description": "Something to do, nothing is wrong. One line: a short label, the text, and a secondary button if there is an action. No background, no bar, no amber",
+        "label": {
+          "color":         { "value": "#6d28d9", "$description": "violet-700, action.primaryHover" },
+          "fontSize":      { "value": "12px",    "$description": "text-xs" },
+          "fontWeight":    { "value": "600",     "$description": "font-semibold" },
+          "textTransform": { "value": "uppercase" },
+          "letterSpacing": { "value": "0.025em", "$description": "tracking-wide, as every uppercase label in the app" }
+        },
+        "text":     { "value": "#334155", "$description": "slate-700" },
+        "fontSize": { "value": "14px",    "$description": "text-sm" },
+        "action": {
+          "background": { "value": "#ffffff", "$description": "action.secondary" },
+          "border":     { "value": "#cbd5e1", "$description": "slate-300, border.strong" },
+          "text":       { "value": "#334155", "$description": "slate-700" },
+          "fontSize":   { "value": "14px",    "$description": "text-sm, font-medium" },
+          "radius":     { "value": "6px",     "$description": "rounded-md, radius.panel" }
+        }
+      },
+      "decision": {
+        "$description": "The platform asks a question (is this the same person? export anyway?). The neutral panel of emphasis.decision, with the action in violet. It is never an error",
+        "background": { "value": "#f8fafc", "$description": "slate-50, background.app" },
+        "border":     { "value": "#cbd5e1", "$description": "slate-300, border.strong" },
+        "radius":     { "value": "6px",     "$description": "rounded-md, radius.panel" },
+        "padding":    { "value": "16px",    "$description": "p-4" },
+        "title":      { "value": "#0f172a", "$description": "slate-900, text-sm font-semibold" },
+        "text":       { "value": "#475569", "$description": "slate-600, text-sm" },
+        "action":     { "value": "#7c3aed", "$description": "violet-600, action.primary, white text" }
+      },
+      "error": {
+        "$description": "A failure, or a risk. Label and text in red. The box only when the error blocks the main action of the screen (the page did not load, the assessment could not be created); otherwise one line next to what failed",
+        "text":     { "value": "#b91c1c", "$description": "red-700, state.risk.fg. Label and text" },
+        "fontSize": { "value": "14px",    "$description": "text-sm; the label as notice.attention.label, in red" },
+        "box": {
+          "background": { "value": "#fef2f2", "$description": "red-50, state.risk.bg" },
+          "border":     { "value": "#fecaca", "$description": "red-200. Not state.risk.border, which is the red-600 of a destructive button" },
+          "radius":     { "value": "6px",     "$description": "rounded-md" },
+          "padding":    { "value": "12px",    "$description": "p-3" }
+        }
       }
     },
     "radius": {
